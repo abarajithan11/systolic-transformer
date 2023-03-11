@@ -1,0 +1,7 @@
+0.6
+2019.2
+Nov  6 2019
+21:42:20
+/home/ani/Documents/ece260bwi23/project/rtl/async_fifo.sv,1678242793,verilog,,/home/ani/Documents/ece260bwi23/project/rtl/synchronizer.sv,,afifo,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/rtl/synchronizer.sv,1678242767,verilog,,,,synchronizer,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/tb/tb_async_fifo.sv,1678242690,verilog,,/home/ani/Documents/ece260bwi23/project/rtl/async_fifo.sv,/home/ani/Documents/ece260bwi23/project/rtl/async_fifo.sv,tb_afifo,,,,,,,,

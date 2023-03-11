@@ -1,0 +1,3 @@
+../tb/tb_async_fifo.sv
+../rtl/async_fifo.sv
+../rtl/synchronizer.sv
