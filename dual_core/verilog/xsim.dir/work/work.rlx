@@ -3,7 +3,7 @@
 Nov  6 2019
 21:42:20
 /home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/core.v,1678853243,verilog,,,,core,,,,,,,,
-/home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/dualcore_tb.v,1678909730,verilog,,,,dualcore_tb,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/dualcore_tb.v,1678913394,verilog,,,,dualcore_tb,,,,,,,,
 /home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/fullchip.v,1678853243,verilog,,,,fullchip,,,,,,,,
 /home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/mac_array.v,1678853243,verilog,,,,mac_array,,,,,,,,
 /home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/mac_col.v,1678853243,verilog,,,,mac_col,,,,,,,,
