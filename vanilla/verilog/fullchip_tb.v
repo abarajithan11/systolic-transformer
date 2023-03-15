@@ -129,7 +129,7 @@ $display("##### K data txt reading #####");
   end
   reset = 0;
 
-  qk_file = $fopen("kdata.txt", "r");
+  qk_file = $fopen("kdata_core0.txt", "r");
 
   //// To get rid of first 4 lines in data file ////
   //qk_scan_file = $fscanf(qk_file, "%s\n", captured_data);

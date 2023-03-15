@@ -1,0 +1,44 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed Mar 15 18:16:50 2023
+[*]
+[dumpfile] "/home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/fullchip_tb.vcd"
+[dumpfile_mtime] "Wed Mar 15 08:00:07 2023"
+[dumpfile_size] 176590
+[savefile] "/home/ani/Documents/ece260bwi23/project/systolic-transformer/vanilla/wvfrm_cfg.gtkw"
+[timestart] 0
+[size] 885 971
+[pos] -1 -1
+*-15.000000 35800 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 221
+[signals_width] 142
+[sst_expanded] 1
+[sst_vpaned_height] 273
+@28
+fullchip_tb.clk
+@29
+fullchip_tb.reset
+@28
+fullchip_tb.execute
+@22
+fullchip_tb.inst[16:0]
+@28
+fullchip_tb.kmem_rd
+fullchip_tb.kmem_wr
+fullchip_tb.load
+@22
+fullchip_tb.mem_in[31:0]
+@28
+fullchip_tb.ofifo_rd
+@22
+fullchip_tb.pmem_add[3:0]
+@28
+fullchip_tb.pmem_rd
+fullchip_tb.pmem_wr
+@22
+fullchip_tb.qkmem_add[3:0]
+@28
+fullchip_tb.qmem_rd
+fullchip_tb.qmem_wr
+[pattern_trace] 1
+[pattern_trace] 0

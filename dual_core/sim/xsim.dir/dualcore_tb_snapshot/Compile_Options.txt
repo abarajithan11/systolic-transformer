@@ -1,0 +1,1 @@
+--nolog -debug "all" -top "dualcore_tb" -snapshot "dualcore_tb_snapshot" 

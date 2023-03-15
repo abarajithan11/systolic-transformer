@@ -1,0 +1,70 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed Mar 15 19:22:09 2023
+[*]
+[dumpfile] "/home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/dualcore_tb.vcd"
+[dumpfile_mtime] "Wed Mar 15 19:20:16 2023"
+[dumpfile_size] 270297
+[savefile] "/home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/wvfrm_cfg.gtkw"
+[timestart] 0
+[size] 862 971
+[pos] 1051 -1
+*-19.000000 106000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] dualcore_tb.
+[treeopen] dualcore_tb.fullchip_core1_inst.core_instance.
+[treeopen] dualcore_tb.fullchip_core2_inst.
+[sst_width] 221
+[signals_width] 190
+[sst_expanded] 1
+[sst_vpaned_height] 260
+@28
+dualcore_tb.clk1
+dualcore_tb.rst1
+dualcore_tb.execute_core1
+@22
+dualcore_tb.inst_core1[16:0]
+@28
+dualcore_tb.kmem_rd_core1
+dualcore_tb.kmem_wr_core1
+dualcore_tb.load_core1
+@22
+dualcore_tb.mem_in_core1[31:0]
+@28
+dualcore_tb.ofifo_rd_core1
+@22
+dualcore_tb.pmem_add_core1[3:0]
+@28
+dualcore_tb.pmem_rd_core1
+dualcore_tb.pmem_wr_core1
+@23
+dualcore_tb.qkmem_add_core1[3:0]
+@28
+dualcore_tb.qmem_rd_core1
+dualcore_tb.qmem_wr_core1
+@200
+-CORE2
+@28
+dualcore_tb.rst2
+dualcore_tb.execute_core2
+@22
+dualcore_tb.inst_core2[16:0]
+@28
+dualcore_tb.kmem_rd_core2
+dualcore_tb.kmem_wr_core2
+dualcore_tb.load_core2
+@22
+dualcore_tb.mem_in_core2[31:0]
+@28
+dualcore_tb.ofifo_rd_core2
+@22
+dualcore_tb.pmem_add_core2[3:0]
+@28
+dualcore_tb.pmem_rd_core2
+dualcore_tb.pmem_wr_core2
+@22
+dualcore_tb.qkmem_add_core2[3:0]
+@28
+dualcore_tb.qmem_rd_core2
+dualcore_tb.qmem_wr_core2
+[pattern_trace] 1
+[pattern_trace] 0
