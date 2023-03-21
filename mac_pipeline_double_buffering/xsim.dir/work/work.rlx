@@ -1,0 +1,15 @@
+0.6
+2019.2
+Nov  6 2019
+21:42:20
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/verilog/core.v,1679380418,verilog,,,,core,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/verilog/fifo_depth16.v,1679381566,verilog,,,,fifo_depth16,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/verilog/fifo_mux_16_1.v,1679349873,verilog,,,,fifo_mux_16_1,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/verilog/fullchip.v,1679363423,verilog,,,,fullchip,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/verilog/fullchip_tb.v,1679381260,verilog,,,,pipelined_single_core_tb,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/verilog/mac_8in.v,1679349873,verilog,,,,mac_8in,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/verilog/mac_array.v,1679354423,verilog,,,,mac_array,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/verilog/mac_col.v,1679378025,verilog,,,,mac_col,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/verilog/ofifo.v,1679381471,verilog,,,,ofifo,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/verilog/sram_w16.v,1679349873,verilog,,,,sram_w16,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/vanilla/verilog/fullchip_tb.v,1679349801,verilog,,,,fullchip_tb,,,,,,,,

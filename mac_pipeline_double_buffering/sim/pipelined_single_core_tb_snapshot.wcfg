@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="pipelined_single_core_tb_snapshot.wdb" id="1">
+         <top_modules>
+            <top_module name="pipelined_single_core_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1320532fs"></ZoomStartTime>
+      <ZoomEndTime time="1725533fs"></ZoomEndTime>
+      <Cursor1Time time="1550000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="184"></NameColumnWidth>
+      <ValueColumnWidth column_width="266"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="90" />
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/Q">
+      <obj_property name="ElementShortName">Q[31:0][7:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[31:0][7:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/K">
+      <obj_property name="ElementShortName">K[7:0][7:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">K[7:0][7:0][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/qmem_wr_core1">
+      <obj_property name="ElementShortName">qmem_wr_core1</obj_property>
+      <obj_property name="ObjectShortName">qmem_wr_core1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/kmem_wr_core1">
+      <obj_property name="ElementShortName">kmem_wr_core1</obj_property>
+      <obj_property name="ObjectShortName">kmem_wr_core1</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider79" type="divider">
+      <obj_property name="label">QMEM0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/WEN">
+      <obj_property name="ElementShortName">WEN</obj_property>
+      <obj_property name="ObjectShortName">WEN</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/CEN">
+      <obj_property name="ElementShortName">CEN</obj_property>
+      <obj_property name="ObjectShortName">CEN</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/D">
+      <obj_property name="ElementShortName">D[31:0]</obj_property>
+      <obj_property name="ObjectShortName">D[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/A">
+      <obj_property name="ElementShortName">A[3:0]</obj_property>
+      <obj_property name="ObjectShortName">A[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/Q">
+      <obj_property name="ElementShortName">Q[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory0">
+      <obj_property name="ElementShortName">memory0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory0[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory1">
+      <obj_property name="ElementShortName">memory1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory2">
+      <obj_property name="ElementShortName">memory2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory3">
+      <obj_property name="ElementShortName">memory3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory3[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory4">
+      <obj_property name="ElementShortName">memory4[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory4[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory5">
+      <obj_property name="ElementShortName">memory5[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory5[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory6">
+      <obj_property name="ElementShortName">memory6[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory6[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory7">
+      <obj_property name="ElementShortName">memory7[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory7[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory8">
+      <obj_property name="ElementShortName">memory8[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory8[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory9">
+      <obj_property name="ElementShortName">memory9[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory9[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory10">
+      <obj_property name="ElementShortName">memory10[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory10[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory11">
+      <obj_property name="ElementShortName">memory11[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory11[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory12">
+      <obj_property name="ElementShortName">memory12[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory12[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory13">
+      <obj_property name="ElementShortName">memory13[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory13[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory14">
+      <obj_property name="ElementShortName">memory14[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory14[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/memory15">
+      <obj_property name="ElementShortName">memory15[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory15[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem0_instance/sram_bit">
+      <obj_property name="ElementShortName">sram_bit[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sram_bit[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/core0_exec_start">
+      <obj_property name="ElementShortName">core0_exec_start</obj_property>
+      <obj_property name="ObjectShortName">core0_exec_start</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/core0_exec_start">
+      <obj_property name="ElementShortName">core0_exec_start</obj_property>
+      <obj_property name="ObjectShortName">core0_exec_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider80" type="divider">
+      <obj_property name="label">QMEM1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/WEN">
+      <obj_property name="ElementShortName">WEN</obj_property>
+      <obj_property name="ObjectShortName">WEN</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/CEN">
+      <obj_property name="ElementShortName">CEN</obj_property>
+      <obj_property name="ObjectShortName">CEN</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/D">
+      <obj_property name="ElementShortName">D[31:0]</obj_property>
+      <obj_property name="ObjectShortName">D[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/A">
+      <obj_property name="ElementShortName">A[3:0]</obj_property>
+      <obj_property name="ObjectShortName">A[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/Q">
+      <obj_property name="ElementShortName">Q[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory0">
+      <obj_property name="ElementShortName">memory0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory0[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory1">
+      <obj_property name="ElementShortName">memory1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory2">
+      <obj_property name="ElementShortName">memory2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory3">
+      <obj_property name="ElementShortName">memory3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory3[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory4">
+      <obj_property name="ElementShortName">memory4[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory4[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory5">
+      <obj_property name="ElementShortName">memory5[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory5[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory6">
+      <obj_property name="ElementShortName">memory6[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory6[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory7">
+      <obj_property name="ElementShortName">memory7[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory7[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory8">
+      <obj_property name="ElementShortName">memory8[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory8[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory9">
+      <obj_property name="ElementShortName">memory9[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory9[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory10">
+      <obj_property name="ElementShortName">memory10[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory10[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory11">
+      <obj_property name="ElementShortName">memory11[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory11[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory12">
+      <obj_property name="ElementShortName">memory12[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory12[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory13">
+      <obj_property name="ElementShortName">memory13[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory13[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory14">
+      <obj_property name="ElementShortName">memory14[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory14[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/memory15">
+      <obj_property name="ElementShortName">memory15[31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory15[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/qmem1_instance/sram_bit">
+      <obj_property name="ElementShortName">sram_bit[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sram_bit[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/qmem_wr_buffer_sel_core0">
+      <obj_property name="ElementShortName">qmem_wr_buffer_sel_core0</obj_property>
+      <obj_property name="ObjectShortName">qmem_wr_buffer_sel_core0</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider69" type="divider">
+      <obj_property name="label">MAC_ARRAY</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/qmem_wr_buffer_sel_core0">
+      <obj_property name="ElementShortName">qmem_wr_buffer_sel_core0</obj_property>
+      <obj_property name="ObjectShortName">qmem_wr_buffer_sel_core0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/core0_exec_start">
+      <obj_property name="ElementShortName">core0_exec_start</obj_property>
+      <obj_property name="ObjectShortName">core0_exec_start</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/execute_core1">
+      <obj_property name="ElementShortName">execute_core1</obj_property>
+      <obj_property name="ObjectShortName">execute_core1</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/out">
+      <obj_property name="ElementShortName">out[87:0]</obj_property>
+      <obj_property name="ObjectShortName">out[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/in">
+      <obj_property name="ElementShortName">in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">in[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/inst">
+      <obj_property name="ElementShortName">inst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">inst[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/fifo_wr">
+      <obj_property name="ElementShortName">fifo_wr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_wr[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/inst_temp">
+      <obj_property name="ElementShortName">inst_temp[17:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_temp[17:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/q_temp">
+      <obj_property name="ElementShortName">q_temp[575:0]</obj_property>
+      <obj_property name="ObjectShortName">q_temp[575:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/col">
+      <obj_property name="ElementShortName">col[31:0]</obj_property>
+      <obj_property name="ObjectShortName">col[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/bw">
+      <obj_property name="ElementShortName">bw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bw[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/bw_psum">
+      <obj_property name="ElementShortName">bw_psum[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bw_psum[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/mac_array_instance/pr">
+      <obj_property name="ElementShortName">pr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider111" type="divider">
+      <obj_property name="label">OFIFO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/wr">
+      <obj_property name="ElementShortName">wr[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wr[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/rd">
+      <obj_property name="ElementShortName">rd</obj_property>
+      <obj_property name="ObjectShortName">rd</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/in">
+      <obj_property name="ElementShortName">in[87:0]</obj_property>
+      <obj_property name="ObjectShortName">in[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/\col_idx[0].fifo_instance /rd_ptr">
+      <obj_property name="ElementShortName">rd_ptr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_ptr[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/\col_idx[0].fifo_instance /wr_ptr">
+      <obj_property name="ElementShortName">wr_ptr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_ptr[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/\col_idx[0].fifo_instance /q0">
+      <obj_property name="ElementShortName">q0[10:0]</obj_property>
+      <obj_property name="ObjectShortName">q0[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/out">
+      <obj_property name="ElementShortName">out[87:0]</obj_property>
+      <obj_property name="ObjectShortName">out[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/o_full">
+      <obj_property name="ElementShortName">o_full</obj_property>
+      <obj_property name="ObjectShortName">o_full</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/o_valid">
+      <obj_property name="ElementShortName">o_valid</obj_property>
+      <obj_property name="ObjectShortName">o_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/full">
+      <obj_property name="ElementShortName">full[7:0]</obj_property>
+      <obj_property name="ObjectShortName">full[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/empty">
+      <obj_property name="ElementShortName">empty[7:0]</obj_property>
+      <obj_property name="ObjectShortName">empty[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/col">
+      <obj_property name="ElementShortName">col[31:0]</obj_property>
+      <obj_property name="ObjectShortName">col[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/simd">
+      <obj_property name="ElementShortName">simd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">simd[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/pipelined_single_core_tb/dut/core_instance/ofifo_inst/bw">
+      <obj_property name="ElementShortName">bw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bw[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider87" type="divider">
+      <obj_property name="label">PMEM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/pipelined_single_core_tb/pmem_wr_core1">
+      <obj_property name="ElementShortName">pmem_wr_core1</obj_property>
+      <obj_property name="ObjectShortName">pmem_wr_core1</obj_property>
+   </wvobject>
+</wave_config>

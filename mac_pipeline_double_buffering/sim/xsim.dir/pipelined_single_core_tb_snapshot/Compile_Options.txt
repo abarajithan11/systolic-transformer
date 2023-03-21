@@ -1,0 +1,1 @@
+--nolog -debug "all" -top "pipelined_single_core_tb" -snapshot "pipelined_single_core_tb_snapshot" 

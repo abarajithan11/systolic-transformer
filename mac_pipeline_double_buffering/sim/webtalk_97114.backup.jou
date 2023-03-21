@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Mon Mar 20 23:52:53 2023
+# Process ID: 97114
+# Current directory: /home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/sim
+# Command line: wbtcv -mode batch -source /home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/sim/xsim.dir/pipelined_single_core_tb_snapshot/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/sim/webtalk.log
+# Journal file: /home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/sim/webtalk.jou
+#-----------------------------------------------------------
+source /home/ani/Documents/ece260bwi23/project/systolic-transformer/mac_pipeline/sim/xsim.dir/pipelined_single_core_tb_snapshot/webtalk/xsim_webtalk.tcl -notrace
