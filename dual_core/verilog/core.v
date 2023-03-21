@@ -1,17 +1,18 @@
 // Created by prof. Mingu Kang @VVIP Lab in UCSD ECE department
 // Please do not spread this code without permission 
-module core (clk, mem_in, out, inst, reset);
+module core (clk, mem_in, out, inst, mode_sel, reset);
 
 parameter col = 8;
 parameter bw = 4;
-parameter bw_psum = 2*bw+3;
 parameter pr = 8;
+parameter bw_psum = 2*bw+3;
 
 //output [bw_psum+3:0] sum_out;
 output [bw_psum*col-1:0] out;
 wire   [bw_psum*col-1:0] pmem_out;
 input  [pr*bw-1:0] mem_in;
 input  clk;
+input  mode_sel;
 input  [16:0] inst; 
 input  reset;
 
@@ -47,7 +48,6 @@ assign pmem_wr = inst[0];
 
 assign mac_in  = inst[6] ? kmem_out : qmem_out;
 assign pmem_in = fifo_out;
-
 
 assign out = pmem_out;
 

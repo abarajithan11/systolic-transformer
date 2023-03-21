@@ -2,5 +2,12 @@
 2019.2
 Nov  6 2019
 21:42:20
-/home/ani/Documents/ece260bwi23/project/systolic-transformer/afifo/rtl/async_fifo.sv,1679424071,systemVerilog,,,,afifo,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/afifo/rtl/async_fifo.sv,1679424376,systemVerilog,,,,afifo,,,,,,,,
 /home/ani/Documents/ece260bwi23/project/systolic-transformer/afifo/tb/tb_async_fifo.sv,1679423892,systemVerilog,,,/home/ani/Documents/ece260bwi23/project/systolic-transformer/afifo/rtl/async_fifo.sv,tb_afifo,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/clock_gate.v,1679441180,verilog,,,,clk_gate,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/core.v,1679425343,verilog,,,,core,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/dualcore.v,1679441277,verilog,,,,dualcore,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/dualcore_tb.v,1679441201,verilog,,,,dualcore_tb,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/fullchip.v,1679349801,verilog,,,,fullchip,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/dual_core/verilog/normalizer/normalizer_tb.sv,1679421265,systemVerilog,,,,normalizer_tb,,,,,,,,
+/home/ani/Documents/ece260bwi23/project/systolic-transformer/normalizer/normalizer.sv,1679431823,systemVerilog,,,,normalizer,,,,,,,,

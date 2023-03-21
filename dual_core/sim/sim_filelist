@@ -1,5 +1,6 @@
 ../verilog/dualcore_tb.v
-../verilog/fullchip.v
+../verilog/dualcore.v
+../verilog/clock_gate.v
 ../verilog/core.v
 ../verilog/mac_col.v
 ../verilog/mac_8in.v
