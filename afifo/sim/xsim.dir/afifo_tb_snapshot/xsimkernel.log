@@ -1,7 +1,7 @@
-Running: xsim.dir/afifo_tb_snapshot/xsimk -simmode gui -wdb afifo_tb_snapshot.wdb -simrunnum 0 -socket 49519
+Running: xsim.dir/afifo_tb_snapshot/xsimk -simmode gui -wdb afifo_tb_snapshot.wdb -simrunnum 0 -socket 50821
 Design successfully loaded
-Design Loading Memory Usage: 33140 KB (Peak: 33728 KB)
+Design Loading Memory Usage: 33128 KB (Peak: 33728 KB)
 Design Loading CPU Usage: 0 ms
 Simulation completed
-Simulation Memory Usage: 115136 KB (Peak: 172408 KB)
-Simulation CPU Usage: 40 ms
+Simulation Memory Usage: 115124 KB (Peak: 172396 KB)
+Simulation CPU Usage: 10 ms

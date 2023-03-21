@@ -6,7 +6,7 @@ localparam CLK_PERIOD_W = 10;
 localparam CLK_PERIOD_R = 15;
 
 localparam WIDTH = 32;
-localparam DEPTH = 64;
+localparam DEPTH = 1;
 
 reg w_clk, r_clk, w_rst, r_rst;
 reg w_en, r_en;
@@ -30,6 +30,10 @@ afifo #(.C_DEPTH(DEPTH), .C_WIDTH(WIDTH)) dut (
 initial begin 
    w_clk = 0;
    r_clk = 0;
+   w_en = 0;
+   w_rst = 0;
+   r_en = 0;
+   r_rst = 0;
 end
 
 always #(CLK_PERIOD_W/2) w_clk =~ w_clk;
@@ -45,9 +49,14 @@ initial begin
    #1 r_rst <= 1'b1;
    @(posedge r_clk);
    #1 r_rst <= 1'b0;
+   r_en = 0;
+   wait (r_empty == 0);
+   @(posedge r_clk);
+   #1 r_en = 1;
+   wait (r_empty == 1);
+   @(posedge r_clk);
    #1 r_en = 0;
    wait (r_empty == 0);
-   wait (w_full == 1);
    @(posedge r_clk);
    #1 r_en = 1;
    wait (r_empty == 1);
@@ -61,7 +70,16 @@ initial begin
    #1 w_rst = 1'b0; 
    repeat(2) @(posedge w_clk);
    #1 w_en = 1;
-   repeat (64) begin
+   repeat (1) begin
+      w_data_in = $urandom();
+      $display("Input = %d\n", w_data_in);
+      @(posedge w_clk);
+   end
+   #1 w_en = 0;
+   wait(w_full == 0);
+   @(posedge w_clk);
+   #1 w_en = 1;
+   repeat (1) begin
       #1 w_data_in = $urandom();
       #1 $display("Input = %d\n", w_data_in);
       @(posedge w_clk);

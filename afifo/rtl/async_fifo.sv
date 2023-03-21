@@ -15,7 +15,9 @@ module afifo #(
    output [C_WIDTH - 1 : 0] o_rd_data
 );
 
-localparam COUNTER_WIDTH = $clog2(C_DEPTH) + 1;
+localparam COUNTER_WIDTH = (C_DEPTH == 1) ? 1 
+                                          : $clog2(C_DEPTH) + 1;
+
 
 function [COUNTER_WIDTH - 1 : 0] bin2gray;
    input [COUNTER_WIDTH - 1 : 0] bin_ip;
@@ -51,8 +53,8 @@ assign rd_ptr_gray = bin2gray(rd_addr);
 //---------Initialize Synchronizers-------------
 for (i = 0; i < COUNTER_WIDTH; i = i + 1) begin
    synchronizer wr_ptr_gray_synchronizer (
-      .i_clk(i_wclk),
-      .i_rst(i_wrst),
+      .i_clk(i_rclk),
+      .i_rst(i_rrst),
       .i_data(wr_ptr_gray[i]),
       .o_data(wr_ptr_gray_synced[i])
    );
@@ -60,8 +62,8 @@ end
 
 for (i = 0; i < COUNTER_WIDTH; i = i + 1) begin
    synchronizer rd_ptr_synchronizer (
-      .i_clk(i_rclk),
-      .i_rst(i_rrst),
+      .i_clk(i_wclk),
+      .i_rst(i_wrst),
       .i_data(rd_ptr_gray[i]),
       .o_data(rd_ptr_gray_synced[i])
    );
@@ -95,19 +97,34 @@ always @(posedge i_wclk) begin
    end
 end
 
-assign o_full = (wr_ptr_gray[COUNTER_WIDTH - 1] != rd_ptr_gray_synced[COUNTER_WIDTH - 1]) && (wr_ptr_gray[COUNTER_WIDTH - 2] == ~rd_ptr_gray_synced[COUNTER_WIDTH - 2]) && (wr_ptr_gray[COUNTER_WIDTH - 3 : 0] == rd_ptr_gray_synced[COUNTER_WIDTH - 3 : 0]);
+generate
+   if (C_DEPTH == 1) begin
+      assign o_full =  wr_ptr_gray[0] != rd_ptr_gray_synced[0];
+   end
+   else if (C_DEPTH > 2) begin
+      assign o_full = (wr_ptr_gray[COUNTER_WIDTH - 1] != rd_ptr_gray_synced[COUNTER_WIDTH - 1]) && (wr_ptr_gray[COUNTER_WIDTH - 2] == ~rd_ptr_gray_synced[COUNTER_WIDTH - 2]) && (wr_ptr_gray[COUNTER_WIDTH - 3 : 0] == rd_ptr_gray_synced[COUNTER_WIDTH - 3 : 0]);   
+   end
+endgenerate
 //----------------------------------------------
 
 //-------------FIFO MEMORY FUNCTIONS------------
 // Write
 always @(posedge i_wclk) begin
    if (i_wen && !o_full) begin
-      fifo_mem_arr[wr_addr] <= i_wr_data;
+      if (C_DEPTH == 1)
+         fifo_mem_arr[0] <= i_wr_data;
+      else
+         fifo_mem_arr[wr_addr] <= i_wr_data;
    end
 end
 
 // Read
-assign o_rd_data = fifo_mem_arr[rd_addr];
+generate
+   if (C_DEPTH == 1)
+      assign o_rd_data = fifo_mem_arr[0];
+   else
+      assign o_rd_data = fifo_mem_arr[rd_addr];
+endgenerate
 //----------------------------------------------
 
 endmodule

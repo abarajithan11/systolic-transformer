@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="afifo_tb_snapshot.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_afifo" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="27202fs"></ZoomStartTime>
+      <ZoomEndTime time="192403fs"></ZoomEndTime>
+      <Cursor1Time time="104802fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="184"></NameColumnWidth>
+      <ValueColumnWidth column_width="250"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="17" />
+   <wvobject type="logic" fp_name="/tb_afifo/w_clk">
+      <obj_property name="ElementShortName">w_clk</obj_property>
+      <obj_property name="ObjectShortName">w_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_afifo/w_rst">
+      <obj_property name="ElementShortName">w_rst</obj_property>
+      <obj_property name="ObjectShortName">w_rst</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_afifo/w_data_in">
+      <obj_property name="ElementShortName">w_data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_data_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_afifo/dut/fifo_mem_arr">
+      <obj_property name="ElementShortName">fifo_mem_arr[0:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_mem_arr[0:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_afifo/w_en">
+      <obj_property name="ElementShortName">w_en</obj_property>
+      <obj_property name="ObjectShortName">w_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_afifo/w_full">
+      <obj_property name="ElementShortName">w_full</obj_property>
+      <obj_property name="ObjectShortName">w_full</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_afifo/dut/o_full">
+      <obj_property name="ElementShortName">o_full</obj_property>
+      <obj_property name="ObjectShortName">o_full</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_afifo/dut/wr_addr">
+      <obj_property name="ElementShortName">wr_addr[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_addr[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_afifo/dut/rd_ptr_gray">
+      <obj_property name="ElementShortName">rd_ptr_gray[0:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_ptr_gray[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_afifo/dut/wr_ptr_gray_synced">
+      <obj_property name="ElementShortName">wr_ptr_gray_synced[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_ptr_gray_synced[0:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_afifo/r_rst">
+      <obj_property name="ElementShortName">r_rst</obj_property>
+      <obj_property name="ObjectShortName">r_rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_afifo/r_empty">
+      <obj_property name="ElementShortName">r_empty</obj_property>
+      <obj_property name="ObjectShortName">r_empty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_afifo/dut/o_empty">
+      <obj_property name="ElementShortName">o_empty</obj_property>
+      <obj_property name="ObjectShortName">o_empty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_afifo/r_clk">
+      <obj_property name="ElementShortName">r_clk</obj_property>
+      <obj_property name="ObjectShortName">r_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_afifo/r_en">
+      <obj_property name="ElementShortName">r_en</obj_property>
+      <obj_property name="ObjectShortName">r_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_afifo/r_data_out">
+      <obj_property name="ElementShortName">r_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">r_data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_afifo/dut/i_wr_data">
+      <obj_property name="ElementShortName">i_wr_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_wr_data[31:0]</obj_property>
+   </wvobject>
+</wave_config>
