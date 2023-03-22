@@ -1,1 +1,0 @@
-/home/linux/ieng6/oce/1b/agnaneswaran/systolic-transformer/dual_core_opt/dualcore.sdc
