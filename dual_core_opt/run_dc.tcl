@@ -1,6 +1,8 @@
 set top_module dualcore
 set rtlPath "/home/linux/ieng6/ee260bwi23/kevijayakumar/systolic-transformer/dual_core_opt/verilog"
 
+set_host_options -max_cores 8
+
 # Target library
 set target_library /home/linux/ieng6/ee260bwi23/public/PDKdata/db/tcbn65gplustc.db 
 set link_library $target_library
