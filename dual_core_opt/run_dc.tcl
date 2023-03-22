@@ -1,8 +1,8 @@
-set top_module fullchip
-set rtlPath "/home/linux/ieng6/ee260bwi23/kevijayakumar/project_v1/ece260_prj/ece260_project/verilog"
+set top_module dualcore
+set rtlPath "/home/linux/ieng6/ee260bwi23/kevijayakumar/systolic-transformer/dual_core_opt/verilog"
 
 # Target library
-set target_library /home/linux/ieng6/ee260bwi23/public/PDKdata/db/tcbn65gpluswc.db 
+set target_library /home/linux/ieng6/ee260bwi23/public/PDKdata/db/tcbn65gplustc.db 
 set link_library $target_library
 set symbol_library {}
 set wire_load_mode enclosed
@@ -42,17 +42,21 @@ define_design_lib WORK -path .template
 set verilogout_single_bit false
 
 # read RTL
-analyze -format verilog -lib WORK fullchip.v
+analyze -format sverilog -lib WORK async_fifo.sv
+analyze -format verilog -lib WORK clock_gate.v
 analyze -format verilog -lib WORK core.v
-analyze -format verilog -lib WORK mac_col.v
+analyze -format verilog -lib WORK dualcore.v
+analyze -format verilog -lib WORK fifo_depth8.v
+analyze -format verilog -lib WORK fifo_mux_2_1.v
+analyze -format verilog -lib WORK fifo_mux_8_1.v
+analyze -format verilog -lib WORK fifo_mux_16_1.v
 analyze -format verilog -lib WORK mac_8in.v
 analyze -format verilog -lib WORK mac_array.v
-analyze -format verilog -lib WORK sram_w16.v
+analyze -format verilog -lib WORK mac_col.v
+analyze -format sverilog -lib WORK normalizer.sv
 analyze -format verilog -lib WORK ofifo.v
-analyze -format verilog -lib WORK fifo_depth8.v
-analyze -format verilog -lib WORK fifo_mux_16_1.v
-analyze -format verilog -lib WORK fifo_mux_8_1.v
-analyze -format verilog -lib WORK fifo_mux_2_1.v
+analyze -format verilog -lib WORK sram_w16.v
+analyze -format sverilog -lib WORK synchronizer.sv
 
 elaborate $top_module -lib WORK -update
 current_design $top_module
@@ -65,7 +69,8 @@ read_sdc ${top_module}.sdc
 propagate_constraints
 
 current_design $top_module
-
+set_false_path -from [get_ports "rst1"]
+set_false_path -from [get_ports "rst2"]
 set_cost_priority {max_transition max_fanout max_delay max_capacitance}
 set_fix_multiple_port_nets -all -buffer_constants
 set_fix_hold [all_clocks]
