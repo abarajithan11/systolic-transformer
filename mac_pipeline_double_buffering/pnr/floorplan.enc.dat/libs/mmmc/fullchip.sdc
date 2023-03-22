@@ -1,1 +1,0 @@
-/home/linux/ieng6/ee260bwi23/a6srinivasan/project/systolic-transformer/mac_pipeline_double_buffering/pnr/constraints/fullchip.sdc
