@@ -16,17 +16,13 @@
 # addStripe -nets {VSS VDD} -layer M4 -direction vertical -width 1.8 -spacing 1.8 -number_of_sets 20 -start_from left -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit M8 -padcore_ring_bottom_layer_limit M1 -block_ring_top_layer_limit M8 -block_ring_bottom_layer_limit M1 -use_wire_group 0 -snap_wire_center_to_grid None -stacked_via_bottom_layer M1 -stacked_via_top_layer M8 -via_using_exact_crossover_size false
 # 3 
 # 2 
-# 1 
 # 0 
 # 0 
-# 2 
+# 0 
+# 0 
 # BOX_LIST 
-# 2000 2000 1155600 1151600 0 
-# 12000 12000 1145600 1141600 0 
 # END_BOX_LIST 
 # NET_INFO_LIST 
-# VDD 3600 4 0 27200 1145400 58560 0 0 
-# VSS 3600 4 0 20000 1145400 58560 0 0 
 # END_NET_INFO_LIST 
 # END_PPCMD 2 
 

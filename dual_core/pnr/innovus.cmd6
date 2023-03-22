@@ -57,3 +57,45 @@ saveDesign floorplan.enc
 setPlaceMode -timingDriven true -reorderScan false -congEffort medium -modulePlan false
 setOptMode -effort high -powerEffort high -leakageToDynamicRatio 0.5 -fixFanoutLoad true -restruct true -verbose true
 place_opt_design
+addFiller -cell {DCAP DCAP4 DCAP8 DCAP16 DCAP32} -merge true
+saveDesign placement.enc
+set_ccopt_property -update_io_latency false
+create_ccopt_clock_tree_spec -file ./constraints/dualcore.ccopt
+ccopt_design
+set_propagated_clock [all_clocks]
+optDesign -postCTS -hold
+saveDesign cts.enc
+setNanoRouteMode -quiet -drouteAllowMergedWireAtPin false
+setNanoRouteMode -quiet -drouteFixAntenna true
+setNanoRouteMode -quiet -routeWithTimingDriven true
+setNanoRouteMode -quiet -routeWithSiDriven true
+setNanoRouteMode -quiet -routeSiEffort medium
+setNanoRouteMode -quiet -routeWithSiPostRouteFix false
+setNanoRouteMode -quiet -drouteAutoStop true
+setNanoRouteMode -quiet -routeSelectedNetOnly false
+setNanoRouteMode -quiet -drouteStartIteration default
+routeDesign
+setExtractRCMode -engine postRoute
+extractRC
+setAnalysisMode -analysisType onChipVariation -cppr both
+optDesign -postRoute -setup -hold
+optDesign -postRoute -drv
+optDesign -postRoute -inc
+saveDesign route.enc
+verifyGeometry
+verifyConnectivity
+report_timing -max_paths 5 > ${design}.post_route.timing.rpt
+report_power -outfile dualcore.post_route.power.rpt
+summaryReport -nohtml -outfile dualcore.post_route.summary.rpt
+streamOut dualcore.gds2
+write_lef_abstract dualcore.lef
+defOut -netlist -routing dualcore.def
+saveNetlist dualcore.pnr.v
+setAnalysisMode -setup
+set_analysis_view -setup WC_VIEW -hold WC_VIEW
+do_extract_model -view WC_VIEW -format dotlib ${design}_WC.lib
+write_sdf -view WC_VIEW ${design}_WC.sdf
+setAnalysisMode -hold
+set_analysis_view -setup BC_VIEW -hold BC_VIEW
+do_extract_model -view BC_VIEW -format dotlib ${design}_BC.lib
+write_sdf -view BC_VIEW ${design}_BC.sdf
