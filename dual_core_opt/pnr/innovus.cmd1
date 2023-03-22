@@ -1,0 +1,127 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Wed Mar 22 01:51:23 2023                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v19.17-s077_1 (64bit) 12/01/2020 11:09 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 19.17-s077_1 NR201130-0207/19_17-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+#@(#)CDS: AAE 19.17-s018 (64bit) 12/01/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 19.17-s022_1 () Nov 18 2020 03:10:35 ( )
+#@(#)CDS: SYNTECH 19.17-s005_1 () Oct 28 2020 05:12:49 ( )
+#@(#)CDS: CPE v19.17-s044
+#@(#)CDS: IQuantus/TQuantus 19.1.3-s268 (64bit) Mon Aug 10 22:57:12 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+win
+setMultiCpuUsage -localCpu 8
+set init_pwr_net VDD
+set init_gnd_net VSS
+set init_verilog ../dualcore.out.v
+set init_design_netlisttype Verilog
+set init_design_settop 1
+set init_top_cell dualcore
+set init_lef_file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef
+create_library_set -name WC_LIB -timing $worst_timing_lib
+create_library_set -name BC_LIB -timing $best_timing_lib
+create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+create_constraint_mode -name CON -sdc_file [list $sdc]
+create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+init_design -setup WC_VIEW -hold BC_VIEW
+set_interactive_constraint_modes {CON}
+setDesignMode -process 65
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {VSS VDD} -type core_rings -follow core -layer {top M1 bottom M1 left M2 right M2} -width {top 3 bottom 3 left 3 right 3} -spacing {top 2 bottom 2 left 2 right 2} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {VSS VDD} -type core_rings -follow core -layer {top M1 bottom M1 left M2 right M2} -width {top 3 bottom 3 left 3 right 3} -spacing {top 2 bottom 2 left 2 right 2} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {VSS VDD} -type core_rings -follow core -layer {top M1 bottom M1 left M2 right M2} -width {top 3 bottom 3 left 3 right 3} -spacing {top 2 bottom 2 left 2 right 2} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+addRing -nets {VSS VDD} -type core_rings -follow core -layer {top M1 bottom M1 left M2 right M2} -width {top 3 bottom 3 left 3 right 3} -spacing {top 2 bottom 2 left 2 right 2} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+zoomBox -111.69350 -133.54550 685.35650 587.20200
+zoomBox -196.04850 -285.62250 907.13450 711.95200
+zoomBox -127.15050 -50.27550 448.71850 470.46500
+zoomBox -108.48900 -10.82950 381.00000 431.80050
+zoomBox -51.42300 49.05550 165.76600 245.45300
+zoomBox -29.66700 71.88650 83.70750 174.40750
+zoomBox -107.49900 16.00350 246.15950 335.80600
+zoomBox -397.13600 -178.32800 280.36350 434.31400
+zoomBox -762.87300 -430.86100 340.32250 566.72450
+fit
+zoomBox -532.69900 -434.76900 765.16400 738.84850
+zoomBox -1077.06350 -898.95550 1036.29100 1012.08550
+zoomBox -548.52500 -445.31950 749.33900 728.29900
+zoomBox -160.89400 -74.54200 516.59950 538.09450
+zoomBox -97.39550 -13.80400 478.47400 506.93700
+floorPlan -site core -r 1 0.50 10.0 10.0 10.0 10.0
+timeDesign -preplace -prefix preplace
+globalNetConnect VDD -type pgpin -pin VDD -inst * -verbose
+globalNetConnect VSS -type pgpin -pin VSS -inst * -verbose
+addRing -spacing {top 2 bottom 2 left 2 right 2} -width {top 3 bottom 3 left 3 right 3} -layer {top M1 bottom M1 left M2 right M2} -center 1 -type core_rings -nets {VSS  VDD}
+zoomBox -178.64250 -71.51800 1278.88900 541.11850
+zoomBox -386.67950 -218.96150 1630.66550 628.97850
+zoomBox -518.97600 -312.72500 1854.37100 684.85150
+zoomBox -236.62150 11.63750 1220.91050 624.27400
+zoomBox -122.06800 155.62000 930.99900 598.25000
+zoomBox -63.20100 276.16500 697.64000 595.96550
+zoomBox -20.67050 363.25900 529.03800 594.31500
+zoomBox 31.51850 467.73850 318.47050 588.35150
+zoomBox -106.21000 345.39750 540.50900 617.22950
+zoomBox -77.18050 404.64350 390.07350 601.04200
+zoomBox -41.05400 478.37500 202.85600 580.89650
+zoomBox -25.59100 508.95850 124.20050 571.91950
+zoomBox -104.16900 445.07100 292.99850 612.01050
+zoomBox -200.66000 393.29900 446.06300 665.13250
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+set sprCreateIeRingLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeThreshold 1.0
+setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe -nets {VSS VDD} -layer M4 -direction vertical -width 1.8 -spacing 1.8 -number_of_sets 20 -start_from left -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit M8 -padcore_ring_bottom_layer_limit M1 -block_ring_top_layer_limit M8 -block_ring_bottom_layer_limit M1 -use_wire_group 0 -snap_wire_center_to_grid None
+setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe -nets {VSS VDD} -layer M4 -direction vertical -width 1.8 -spacing 1.8 -number_of_sets 20 -start_from left -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit M8 -padcore_ring_bottom_layer_limit M1 -block_ring_top_layer_limit M8 -block_ring_bottom_layer_limit M1 -use_wire_group 0 -snap_wire_center_to_grid None
+zoomBox -430.10700 363.24300 622.97400 805.87900
+zoomBox -553.14200 344.80450 685.77650 865.55250
+zoomBox -701.30750 328.10750 756.24400 940.75250
+zoomBox -1321.95750 258.16750 1051.42350 1255.75800
+zoomBox -515.62400 296.83100 723.29650 817.58000
+zoomBox -381.74950 301.63600 671.33400 744.27300
+zoomBox -267.95550 305.72050 627.16550 681.96200
