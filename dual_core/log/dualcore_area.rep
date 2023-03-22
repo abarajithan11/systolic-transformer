@@ -1,4 +1,60 @@
-Error: Current design is not defined. (UID-4)
-0
-Error: Current design is not defined. (UID-4)
-0
+ 
+****************************************
+Report : area
+Design : dualcore
+Version: Q-2019.12-SP5-3
+Date   : Wed Mar 22 01:11:29 2023
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'dualcore' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    tcbn65gplustc (File: /home/linux/ieng6/ee260bwi23/public/PDKdata/db/tcbn65gplustc.db)
+
+Number of ports:                        11536
+Number of nets:                         52436
+Number of cells:                        39355
+Number of combinational cells:          30892
+Number of sequential cells:              8269
+Number of macros/black boxes:               0
+Number of buf/inv:                       5158
+Number of references:                       3
+
+Combinational area:              84171.960824
+Buf/Inv area:                     6925.320232
+Noncombinational area:           73025.997982
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                157197.958806
+Total area:                 undefined
+1
+ 
+****************************************
+Report : reference
+Design : dualcore
+Version: Q-2019.12-SP5-3
+Date   : Wed Mar 22 01:11:31 2023
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+core_col8_bw4_pr8_bw_psum11_0 58244.759202       1  58244.759202  h, n
+core_col8_bw4_pr8_bw_psum11_1 56443.319086       1  56443.319086  h, n
+normalizer_BW_PSUM11_COL8_W_OUT11
+                              42509.880518       1  42509.880518  h, n
+-----------------------------------------------------------------------------
+Total 3 references                                  157197.958806
+1
