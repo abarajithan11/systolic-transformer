@@ -1,3 +1,5 @@
+setMultiCpuUsage -localCpu 8
+
 source ./loadDesignTech.tcl
 source ./initialFloorplan.tcl
 source ./pinPlacement.tcl

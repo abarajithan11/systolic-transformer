@@ -10,8 +10,6 @@ set lef 		"$libdir/lef/tcbn65gplus_8lmT2.lef"
 set best_captbl 	"$libdir/captbl/cln65g+_1p08m+alrdl_top2_cbest.captable"
 set worst_captbl 	"$libdir/captbl/cln65g+_1p08m+alrdl_top2_cworst.captable"
 
-setMultiCpuUsage -localCpu 8
-
 # default settings
 set init_pwr_net "VDD"
 set init_gnd_net "VSS"
