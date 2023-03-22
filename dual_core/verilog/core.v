@@ -99,13 +99,13 @@ sram_w16 #(.sram_bit(col*bw_psum)) psum_mem_instance (
 );
 
 
-
+/*
   //////////// For printing purpose ////////////
   always @(posedge clk) begin
       if(pmem_wr)
          $display("Memory write to PSUM mem add %x %x ", pmem_add, pmem_in); 
   end
-
+*/
 
 
 endmodule
