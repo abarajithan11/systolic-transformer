@@ -1,0 +1,595 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v19.17-s077_1, built Tue Dec 1 11:09:44 PST 2020
+Options:	
+Date:		Wed Mar 22 01:51:04 2023
+Host:		ieng6-ece-07.ucsd.edu (x86_64 w/Linux 3.10.0-1160.80.1.el7.x86_64) (4cores*8cpus*Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz 20480KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		invs	Innovus Implementation System	19.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+<CMD> setMultiCpuUsage -localCpu 8
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> set init_verilog ../dualcore.out.v
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_design_settop 1
+<CMD> set init_top_cell dualcore
+<CMD> set init_lef_file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef
+<CMD> create_library_set -name WC_LIB -timing $worst_timing_lib
+<CMD> create_library_set -name BC_LIB -timing $best_timing_lib
+<CMD> create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+<CMD> create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+<CMD> create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+<CMD> create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+<CMD> create_constraint_mode -name CON -sdc_file [list $sdc]
+<CMD> create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+<CMD> create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+<CMD> init_design -setup WC_VIEW -hold BC_VIEW
+
+Loading LEF file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef ...
+WARNING (LEFPARS-2007): NAMESCASESENSITIVE statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 28.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 867.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 877.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1014.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1024.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1161.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1171.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1308.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1318.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1372.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1383.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1604.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1614.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1769.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1771.
+WARNING (LEFPARS-2021): turn-via is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1772.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1776.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1778.
+WARNING (LEFPARS-2021): turn-via is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1779.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1783.
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'I' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+viaInitial starts at Wed Mar 22 01:52:08 2023
+viaInitial ends at Wed Mar 22 01:52:08 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Starting library reading in 'Multi-threaded flow' (with '8' threads)
+Reading WC_LIB timing library /home/linux/ieng6/ee260bwi23/public/PDKdata/lib/tcbn65gpluswc.lib.
+Read 811 cells in library tcbn65gpluswc.
+Library reading multithread flow ended.
+Starting library reading in 'Multi-threaded flow' (with '8' threads)
+Reading BC_LIB timing library /home/linux/ieng6/ee260bwi23/public/PDKdata/lib/tcbn65gplusbc.lib.
+Read 811 cells in library tcbn65gplusbc.
+Library reading multithread flow ended.
+*** End library_loading (cpu=0.09min, real=0.02min, mem=70.0M, fe_cpu=0.50min, fe_real=1.08min, fe_mem=776.0M) ***
+#% Begin Load netlist data ... (date=03/22 01:52:09, mem=518.2M)
+*** Begin netlist parsing (mem=776.0M) ***
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Created 811 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../dualcore.out.v'
+
+*** Memory Usage v#1 (Current mem = 784.000M, initial mem = 283.785M) ***
+*** End netlist parsing (cpu=0:00:00.3, real=0:00:00.0, mem=784.0M) ***
+#% End Load netlist data ... (date=03/22 01:52:09, total cpu=0:00:00.4, real=0:00:00.0, peak res=547.6M, current mem=547.6M)
+Set top cell to dualcore.
+Hooked 1622 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell dualcore ...
+*** Netlist is unique.
+** info: there are 1850 modules.
+** info: there are 39161 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 829.914M, initial mem = 283.785M) ***
+**WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'ccore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+WC_VIEW BC_VIEW
+Extraction setup Started 
+Initializing multi-corner RC extraction with 2 active RC Corners ...
+Reading Capacitance Table File /home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cworst.captable ...
+**WARN: (IMPEXT-2760):	Layer M9 specified in the cap table is ignored because it is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2771):	Via VIA_8 specified in the cap table is ignored because its top layer, M9, is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2801):	Resistance values are not provided in the Cap Table. Sheet resistance defined in the LEF file will be used.
+**WARN: (IMPEXT-2710):	Basic Cap table for layer M9 is ignored because the layer is not specified in the technology LEF file.
+Reading Capacitance Table File /home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cbest.captable ...
+**WARN: (IMPEXT-2760):	Layer M9 specified in the cap table is ignored because it is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2771):	Via VIA_8 specified in the cap table is ignored because its top layer, M9, is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2801):	Resistance values are not provided in the Cap Table. Sheet resistance defined in the LEF file will be used.
+**WARN: (IMPEXT-2710):	Basic Cap table for layer M9 is ignored because the layer is not specified in the technology LEF file.
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: WC_VIEW
+    RC-Corner Name        : Cmax
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 125 Celsius
+    RC-Corner Cap Table   : '/home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cworst.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+ 
+ Analysis View: BC_VIEW
+    RC-Corner Name        : Cmin
+    RC-Corner Index       : 1
+    RC-Corner Temperature : -40 Celsius
+    RC-Corner Cap Table   : '/home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cbest.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '../synth/constraints/dualcore.sdc' ...
+Current (total cpu=0:00:32.1, real=0:01:07, peak res=790.0M, current mem=790.0M)
+**WARN: (TCLNL-330):	set_input_delay on clock root 'clk2' is not supported. You should use the -source option to set_clock_latency to provide this offset. You can also use the global timing_allow_input_delay_on_clock_source to allow set_input_delay assertion to have an effect on clock source paths beginning at this clock root. (File ../synth/constraints/dualcore.sdc, Line 14).
+
+INFO (CTE): Reading of timing constraints file ../synth/constraints/dualcore.sdc completed, with 1 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=807.9M, current mem=807.9M)
+Current (total cpu=0:00:32.2, real=0:01:07, peak res=807.9M, current mem=807.9M)
+Total number of combinational cells: 497
+Total number of sequential cells: 303
+Total number of tristate cells: 11
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFFD1 BUFFD0 BUFFD2 BUFFD3 BUFFD4 BUFFD6 BUFFD8 BUFFD12 BUFFD16 CKBD1 CKBD0 CKBD2 CKBD3 CKBD4 CKBD6 CKBD8 CKBD12 CKBD16
+Total number of usable buffers: 18
+List of unusable buffers: BUFFD20 BUFFD24 CKBD20 CKBD24 GBUFFD1 GBUFFD3 GBUFFD2 GBUFFD4 GBUFFD8
+Total number of unusable buffers: 9
+List of usable inverters: CKND1 CKND0 CKND2 CKND3 CKND4 CKND6 CKND8 CKND12 CKND16 INVD1 INVD0 INVD2 INVD3 INVD4 INVD6 INVD8 INVD12 INVD16
+Total number of usable inverters: 18
+List of unusable inverters: CKND20 CKND24 GINVD2 GINVD1 GINVD4 GINVD3 GINVD8 INVD20 INVD24
+Total number of unusable inverters: 9
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells: DEL0 DEL005 DEL01 DEL015 DEL02 DEL1 DEL2 DEL3 DEL4
+Total number of identified unusable delay cells: 9
+All delay cells are dont_use. Buffers will be used to fix hold violations.
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPEXT-2710          2  Basic Cap table for layer M%d is ignored...
+WARNING   IMPEXT-2760          2  Layer M%d specified in the cap table is ...
+WARNING   IMPEXT-2771          2  Via %s specified in the cap table is ign...
+WARNING   IMPEXT-2801          2  Resistance values are not provided in th...
+WARNING   IMPVL-159         1622  Pin '%s' of cell '%s' is defined in LEF ...
+WARNING   TCLNL-330            1  set_input_delay on clock root '%s' is no...
+*** Message Summary: 1634 warning(s), 0 error(s)
+
+<CMD> set_interactive_constraint_modes {CON}
+<CMD> setDesignMode -process 65
+##  Process: 65            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 65nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VSS VDD} -type core_rings -follow core -layer {top M1 bottom M1 left M2 right M2} -width {top 3 bottom 3 left 3 right 3} -spacing {top 2 bottom 2 left 2 right 2} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1129.4M)
+**WARN: (IMPPP-220):	The power planner does not create core rings outside the design boundary. Check the design boundary, or specify valid offsets.
+**WARN: (IMPPP-4051):	Fail to add rings. Gaps among IO cells may exist. Execute command addIoFiller to fill gaps among cells before addRing.
+Type 'man IMPPP-4051' for more detail.
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VSS VDD} -type core_rings -follow core -layer {top M1 bottom M1 left M2 right M2} -width {top 3 bottom 3 left 3 right 3} -spacing {top 2 bottom 2 left 2 right 2} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1129.4M)
+**WARN: (IMPPP-220):	The power planner does not create core rings outside the design boundary. Check the design boundary, or specify valid offsets.
+**WARN: (IMPPP-4051):	Fail to add rings. Gaps among IO cells may exist. Execute command addIoFiller to fill gaps among cells before addRing.
+Type 'man IMPPP-4051' for more detail.
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VSS VDD} -type core_rings -follow core -layer {top M1 bottom M1 left M2 right M2} -width {top 3 bottom 3 left 3 right 3} -spacing {top 2 bottom 2 left 2 right 2} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1171.0M)
+**WARN: (IMPPP-220):	The power planner does not create core rings outside the design boundary. Check the design boundary, or specify valid offsets.
+**WARN: (IMPPP-4051):	Fail to add rings. Gaps among IO cells may exist. Execute command addIoFiller to fill gaps among cells before addRing.
+Type 'man IMPPP-4051' for more detail.
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VSS VDD} -type core_rings -follow core -layer {top M1 bottom M1 left M2 right M2} -width {top 3 bottom 3 left 3 right 3} -spacing {top 2 bottom 2 left 2 right 2} -offset {top 1.8 bottom 1.8 left 1.8 right 1.8} -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1171.0M)
+**WARN: (IMPPP-220):	The power planner does not create core rings outside the design boundary. Check the design boundary, or specify valid offsets.
+**WARN: (IMPPP-4051):	Fail to add rings. Gaps among IO cells may exist. Execute command addIoFiller to fill gaps among cells before addRing.
+Type 'man IMPPP-4051' for more detail.
+<CMD> zoomBox -111.69350 -133.54550 685.35650 587.20200
+<CMD> zoomBox -196.04850 -285.62250 907.13450 711.95200
+<CMD> zoomBox -127.15050 -50.27550 448.71850 470.46500
+<CMD> zoomBox -108.48900 -10.82950 381.00000 431.80050
+<CMD> zoomBox -51.42300 49.05550 165.76600 245.45300
+<CMD> zoomBox -29.66700 71.88650 83.70750 174.40750
+<CMD> zoomBox -107.49900 16.00350 246.15950 335.80600
+<CMD> zoomBox -397.13600 -178.32800 280.36350 434.31400
+<CMD> zoomBox -762.87300 -430.86100 340.32250 566.72450
+<CMD> fit
+<CMD> zoomBox -532.69900 -434.76900 765.16400 738.84850
+<CMD> zoomBox -1077.06350 -898.95550 1036.29100 1012.08550
+<CMD> zoomBox -548.52500 -445.31950 749.33900 728.29900
+<CMD> zoomBox -160.89400 -74.54200 516.59950 538.09450
+<CMD> zoomBox -97.39550 -13.80400 478.47400 506.93700
+<CMD> floorPlan -site core -r 1 0.50 10.0 10.0 10.0 10.0
+**WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'ccore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+<CMD> timeDesign -preplace -prefix preplace
+Setting timing_disable_library_data_to_data_checks to 'true'.
+Setting timing_disable_user_data_to_data_checks to 'true'.
+Multithreaded Timing Analysis is initialized with 8 threads
+
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Setting High Fanout Nets ( > 100 ) as ideal temporarily for -prePlace option
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+Starting delay calculation for Setup views
+AAE DB initialization (MEM=1532.49 CPU=0:00:00.3 REAL=0:00:01.0) 
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: dualcore
+# Design Mode: 65nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (8 T). (MEM=1554.49)
+Total number of fetched objects 41351
+End delay calculation. (MEM=1986.95 CPU=0:00:04.8 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=1903.87 CPU=0:00:06.6 REAL=0:00:02.0)
+*** Done Building Timing Graph (cpu=0:00:08.8 real=0:00:03.0 totSessionCpu=0:03:14 mem=1871.9M)
+
+------------------------------------------------------------
+          timeDesign Summary                             
+------------------------------------------------------------
+
+Setup views included:
+ WC_VIEW 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):| -1.638  | -1.638  | -0.577  |
+|           TNS (ns):| -1340.9 |-861.404 |-537.754 |
+|    Violating Paths:|  5028   |  1636   |  3567   |
+|          All Paths:|  14976  |  7502   |  10795  |
++--------------------+---------+---------+---------+
+
+Density: 49.984%
+------------------------------------------------------------
+Set Using Default Delay Limit as 1000.
+Resetting back High Fanout Nets as non-ideal
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Reported timing to dir ./timingReports
+Total CPU time: 12.3 sec
+Total Real time: 5.0 sec
+Total Memory Usage: 1540.347656 Mbytes
+<CMD> globalNetConnect VDD -type pgpin -pin VDD -inst * -verbose
+39161 new pwr-pin connections were made to global net 'VDD'.
+<CMD> globalNetConnect VSS -type pgpin -pin VSS -inst * -verbose
+39161 new gnd-pin connections were made to global net 'VSS'.
+<CMD> addRing -spacing {top 2 bottom 2 left 2 right 2} -width {top 3 bottom 3 left 3 right 3} -layer {top M1 bottom M1 left M2 right M2} -center 1 -type core_rings -nets {VSS  VDD}
+#% Begin addRing (date=03/22 02:05:59, mem=1107.1M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1540.3M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   M1   |        4       |       NA       |
+|  VIA1  |        8       |        0       |
+|   M2   |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=03/22 02:05:59, total cpu=0:00:00.0, real=0:00:00.0, peak res=1108.5M, current mem=1108.5M)
+<CMD> zoomBox -178.64250 -71.51800 1278.88900 541.11850
+<CMD> zoomBox -386.67950 -218.96150 1630.66550 628.97850
+<CMD> zoomBox -518.97600 -312.72500 1854.37100 684.85150
+<CMD> zoomBox -236.62150 11.63750 1220.91050 624.27400
+<CMD> zoomBox -122.06800 155.62000 930.99900 598.25000
+<CMD> zoomBox -63.20100 276.16500 697.64000 595.96550
+<CMD> zoomBox -20.67050 363.25900 529.03800 594.31500
+<CMD> zoomBox 31.51850 467.73850 318.47050 588.35150
+<CMD> zoomBox -106.21000 345.39750 540.50900 617.22950
+<CMD> zoomBox -77.18050 404.64350 390.07350 601.04200
+<CMD> zoomBox -41.05400 478.37500 202.85600 580.89650
+<CMD> zoomBox -25.59100 508.95850 124.20050 571.91950
+<CMD> zoomBox -104.16900 445.07100 292.99850 612.01050
+<CMD> zoomBox -200.66000 393.29900 446.06300 665.13250
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> set sprCreateIeRingOffset 1.0
+<CMD> set sprCreateIeRingThreshold 1.0
+<CMD> set sprCreateIeRingJogDistance 1.0
+<CMD> set sprCreateIeRingLayers {}
+<CMD> set sprCreateIeStripeWidth 10.0
+<CMD> set sprCreateIeStripeThreshold 1.0
+<CMD> setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+<CMD> addStripe -nets {VSS VDD} -layer M4 -direction vertical -width 1.8 -spacing 1.8 -number_of_sets 20 -start_from left -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit M8 -padcore_ring_bottom_layer_limit M1 -block_ring_top_layer_limit M8 -block_ring_bottom_layer_limit M1 -use_wire_group 0 -snap_wire_center_to_grid None
+
+Initialize fgc environment(mem: 1567.3M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+**WARN: (IMPPP-4063):	Multi-CPU is set to 1 in addStripe automatically according to the free memory on the current machine.  When the number of CPU in setMultiCpuUsage is more than 1, addStripe gets worse runtime caused by data exchange and other time consuming operations
+Completing 10% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 20% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 30% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 40% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 50% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 60% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 70% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 80% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 90% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Stripe generation is complete.
+vias are now being generated.
+addStripe created 40 wires.
+ViaGen created 240 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  VIA1  |       80       |        0       |
+|  VIA2  |       80       |        0       |
+|  VIA3  |       80       |        0       |
+|   M4   |       40       |       NA       |
++--------+----------------+----------------+
+<CMD> setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+<CMD> addStripe -nets {VSS VDD} -layer M4 -direction vertical -width 1.8 -spacing 1.8 -number_of_sets 20 -start_from left -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit M8 -padcore_ring_bottom_layer_limit M1 -block_ring_top_layer_limit M8 -block_ring_bottom_layer_limit M1 -use_wire_group 0 -snap_wire_center_to_grid None
+
+Initialize fgc environment(mem: 1567.3M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+**WARN: (IMPPP-4063):	Multi-CPU is set to 1 in addStripe automatically according to the free memory on the current machine.  When the number of CPU in setMultiCpuUsage is more than 1, addStripe gets worse runtime caused by data exchange and other time consuming operations
+Completing 10% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 20% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 30% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 40% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 50% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 60% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 70% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 80% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+Completing 90% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1567.3M)
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (10.900000, 6.000000) (10.900000, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (40.180000, 6.000000) (40.180000, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (69.459999, 6.000000) (69.459999, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (98.739998, 6.000000) (98.739998, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (128.020004, 6.000000) (128.020004, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (157.300003, 6.000000) (157.300003, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (186.580002, 6.000000) (186.580002, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (215.860001, 6.000000) (215.860001, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (245.139999, 6.000000) (245.139999, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (274.420013, 6.000000) (274.420013, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (303.700012, 6.000000) (303.700012, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (332.980011, 6.000000) (332.980011, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (362.260010, 6.000000) (362.260010, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (391.540009, 6.000000) (391.540009, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (420.820007, 6.000000) (420.820007, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (450.100006, 6.000000) (450.100006, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (479.380005, 6.000000) (479.380005, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (508.660004, 6.000000) (508.660004, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (537.940002, 6.000000) (537.940002, 573.799988) because same wire already exists.
+**WARN: (IMPPP-170):	The power planner failed to create a wire at (567.219971, 6.000000) (567.219971, 573.799988) because same wire already exists.
+**WARN: (EMS-27):	Message (IMPPP-170) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Stripe generation is complete.
+<CMD> zoomBox -430.10700 363.24300 622.97400 805.87900
+<CMD> zoomBox -553.14200 344.80450 685.77650 865.55250
+<CMD> zoomBox -701.30750 328.10750 756.24400 940.75250
+<CMD> zoomBox -1321.95750 258.16750 1051.42350 1255.75800
+<CMD> zoomBox -515.62400 296.83100 723.29650 817.58000
+<CMD> zoomBox -381.74950 301.63600 671.33400 744.27300
+<CMD> zoomBox -267.95550 305.72050 627.16550 681.96200
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Wed Mar 22 02:23:50 2023
+  Total CPU time:     0:06:29
+  Total real time:    0:32:48
+  Peak memory (main): 1141.16MB
+
+
+*** Memory Usage v#1 (Current mem = 1567.324M, initial mem = 283.785M) ***
+*** Message Summary: 1688 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:06:29, real=0:32:46, mem=1567.3M) ---
