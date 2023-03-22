@@ -1,0 +1,9 @@
+/****************************************************************************/
+/* Apollo technology file for TSMC N65 LOGIC SALICIDE (1P8M)                */
+/****************************************************************************/
+/* DESIGN RULE DOCUMENT: T-N65-CL-DR-001 V1.2                               */
+/* SPICE MODEL DOCUMENT: T-N65-CL-SP-031 V1.0                               */
+/* Resistor & Capacitor are referenced from spice model interconnect table. */
+/* The index is "width=minWidth", "Space=Pitch".                            */
+/* Note :                                                                   */
+/****************************************************************************/

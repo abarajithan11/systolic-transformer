@@ -1,0 +1,57 @@
+ 
+****************************************
+Report : area
+Design : fullchip
+Version: Q-2019.12-SP5-3
+Date   : Tue Mar 21 14:00:36 2023
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'fullchip' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    tcbn65gpluswc (File: /home/linux/ieng6/ee260bwi23/public/PDKdata/db/tcbn65gpluswc.db)
+
+Number of ports:                        10165
+Number of nets:                         31886
+Number of cells:                        21799
+Number of combinational cells:          15440
+Number of sequential cells:              6184
+Number of macros/black boxes:               0
+Number of buf/inv:                       2466
+Number of references:                       1
+
+Combinational area:              34300.080429
+Buf/Inv area:                     3372.480116
+Noncombinational area:           54469.798687
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 88769.879116
+Total area:                 undefined
+1
+ 
+****************************************
+Report : reference
+Design : fullchip
+Version: Q-2019.12-SP5-3
+Date   : Tue Mar 21 14:00:37 2023
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+core_col8_bw4_bw_psum11_pr8   88769.879116       1  88769.879116  h, n
+-----------------------------------------------------------------------------
+Total 1 references                                  88769.879116
+1
