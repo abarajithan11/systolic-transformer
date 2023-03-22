@@ -1,0 +1,4 @@
+*.log
+xsim.dir/
+*.pb
+*.jou

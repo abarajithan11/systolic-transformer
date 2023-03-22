@@ -1,0 +1,3 @@
+../../afifo/rtl/async_fifo.sv
+../../afifo/rtl/synchronizer.sv
+../../normalizer/normalizer.sv
