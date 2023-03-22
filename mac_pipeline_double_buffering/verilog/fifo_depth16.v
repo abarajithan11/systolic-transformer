@@ -17,8 +17,8 @@ module fifo_depth16 (rd_clk, wr_clk, in, out, rd, wr, o_full, o_empty, reset);
 
   wire full, empty;
 
-  reg [4:0] rd_ptr = 4'b00000;
-  reg [4:0] wr_ptr = 4'b00000;
+  reg [4:0] rd_ptr = 'b0;
+  reg [4:0] wr_ptr = 'b0;
 
   reg [simd*bw-1:0] q0;
   reg [simd*bw-1:0] q1;

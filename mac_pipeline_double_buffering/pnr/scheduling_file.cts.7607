@@ -1,0 +1,9 @@
+MacroModel pin core_instance/mac_array_instance/col_idx_2__mac_col_inst/add1_reg_l2_reg_7_/CP  40.70ps 40.70ps 40.70ps 40.70ps 0pf WC_VIEW
+MacroModel pin core_instance/ofifo_inst/col_idx_0__fifo_instance/rd_ptr_reg_0_/CP  27.20ps 27.20ps 27.20ps 27.20ps 0pf WC_VIEW
+MacroModel pin core_instance/ofifo_inst/col_idx_3__fifo_instance/rd_ptr_reg_0_/CP  13.40ps 13.40ps 13.40ps 13.40ps 0pf WC_VIEW
+MacroModel pin core_instance/mac_array_instance/col_idx_3__mac_col_inst/key_q_reg_30_/CP  53.70ps 53.70ps 53.70ps 53.70ps 0pf WC_VIEW
+MacroModel pin core_instance/mac_array_instance/col_idx_8__mac_col_inst/key_q_reg_1_/CP  53.20ps 53.20ps 53.20ps 53.20ps 0pf WC_VIEW
+MacroModel pin core_instance/mac_array_instance/col_idx_6__mac_col_inst/add0_reg_l2_reg_3_/CP  40.90ps 40.90ps 40.90ps 40.90ps 0pf WC_VIEW
+MacroModel pin core_instance/mac_array_instance/col_idx_6__mac_col_inst/key_q_reg_11_/CP  60.80ps 60.80ps 60.80ps 60.80ps 0pf WC_VIEW
+MacroModel pin core_instance/ofifo_inst/col_idx_1__fifo_instance/rd_ptr_reg_0_/CP  43.90ps 43.90ps 43.90ps 43.90ps 0pf WC_VIEW
+MacroModel pin core_instance/mac_array_instance/col_idx_4__mac_col_inst/add0_reg_l2_reg_6_/CP  21.80ps 21.80ps 21.80ps 21.80ps 0pf WC_VIEW
