@@ -17,7 +17,7 @@ module normalizer #(
   logic empty;
   logic [COL-1:0][BW_PSUM-1:0] psum_2_sync;
 
-  afifo #(.C_DEPTH(4), .C_WIDTH (COL*BW_PSUM)) AFIFO (
+  afifo #(.C_DEPTH(1), .C_WIDTH (COL*BW_PSUM)) AFIFO (
 
     .i_wclk    (clk_2    ), 
     .i_wrst    (reset_2  ),

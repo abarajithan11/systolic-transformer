@@ -42,7 +42,7 @@ module dualcore #(
       .out(out_core2));
 
    normalizer #(.BW_PSUM(bw_psum), .COL(col / 2), .W_OUT(bw_psum)) normalizer_inst (
-      .clk(gclk),
+      .clk(clk1),
       .clk_2(clk2),
       .reset(rst1),
       .reset_2(rst2),
