@@ -1,0 +1,3 @@
+../verilog/async_fifo.sv
+../verilog/synchronizer.sv
+../verilog/normalizer.sv
