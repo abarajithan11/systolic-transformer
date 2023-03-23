@@ -52,7 +52,7 @@ module dualcore_tb;
    reg [3:0] qkmem_add_core2 = 0;
    reg [3:0] pmem_add_core2  = 0;
    wire [bw_psum*(col / 2)-1:0] out_core2;
-   reg norm_en = 1;
+   reg core_en = 1;
    reg s_valid1, s_valid2;
    wire [bw_psum-1:0] psum_norm_1, psum_norm_2;
    wire norm_valid;
@@ -101,7 +101,7 @@ module dualcore_tb;
       .mem_in_core2(mem_in_core2), 
       .inst_core2(inst_core2),
       .out_core2(out_core2),
-      .norm_gate(norm_en),
+      .core_gate(core_en),
       .s_valid1(s_valid1),
       .s_valid2(s_valid2),
       .psum_norm_1(psum_norm_1),
@@ -209,7 +209,6 @@ module dualcore_tb;
       repeat (10) @(posedge clk1);
       #1 rst1 = 0; 
       @(posedge clk1);
-      #1 norm_en = 0;
 
       $display("##### Qmem writing core0 #####");
       for (i = 0; i < total_cycle; i = i + 1) begin
@@ -471,8 +470,10 @@ module dualcore_tb;
          s_valid2 = 1;
          @(posedge clk2) #1;
          s_valid2 = 0;
+         core_en = 0; // clock gating
          wait (norm_valid == 1);
          wait (norm_valid == 0);
+         // core_en = 0; // clock gating
          //repeat(8) @(posedge clk2);
       end
 
@@ -574,7 +575,6 @@ module dualcore_tb;
    //---------------------------------------NORMALIZATION--------------------------------------//
    initial begin : norm_compute
       wait (core0_exec_done == 1 && core1_exec_done == 1);
-      norm_en = 1;
       norm_start = 1;
       repeat(20000) @(posedge clk1);
    end
