@@ -1,0 +1,77 @@
+[03/22 20:10:07      0s] 
+[03/22 20:10:07      0s] Cadence Innovus(TM) Implementation System.
+[03/22 20:10:07      0s] Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+[03/22 20:10:07      0s] 
+[03/22 20:10:07      0s] Version:	v19.17-s077_1, built Tue Dec 1 11:09:44 PST 2020
+[03/22 20:10:07      0s] Options:	
+[03/22 20:10:07      0s] Date:		Wed Mar 22 20:10:07 2023
+[03/22 20:10:07      0s] Host:		ieng6-ece-18.ucsd.edu (x86_64 w/Linux 3.10.0-1160.80.1.el7.x86_64) (4cores*8cpus*Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz 20480KB)
+[03/22 20:10:07      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[03/22 20:10:07      0s] 
+[03/22 20:10:07      0s] License:
+[03/22 20:10:07      0s] 		invs	Innovus Implementation System	19.1	checkout succeeded
+[03/22 20:10:07      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[03/22 20:10:25     15s] @(#)CDS: Innovus v19.17-s077_1 (64bit) 12/01/2020 11:09 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/22 20:10:25     15s] @(#)CDS: NanoRoute 19.17-s077_1 NR201130-0207/19_17-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+[03/22 20:10:25     15s] @(#)CDS: AAE 19.17-s018 (64bit) 12/01/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/22 20:10:25     15s] @(#)CDS: CTE 19.17-s022_1 () Nov 18 2020 03:10:35 ( )
+[03/22 20:10:25     15s] @(#)CDS: SYNTECH 19.17-s005_1 () Oct 28 2020 05:12:49 ( )
+[03/22 20:10:25     15s] @(#)CDS: CPE v19.17-s044
+[03/22 20:10:25     15s] @(#)CDS: IQuantus/TQuantus 19.1.3-s268 (64bit) Mon Aug 10 22:57:12 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/22 20:10:25     15s] @(#)CDS: OA 22.60-s011 Tue Jun 16 12:27:00 2020
+[03/22 20:10:25     15s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[03/22 20:10:25     15s] @(#)CDS: RCDB 11.14.18
+[03/22 20:10:25     15s] @(#)CDS: STYLUS 19.10-s021_1 (10/28/2020 08:51 PDT)
+[03/22 20:10:25     15s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_21228_ieng6-ece-18.ucsd.edu_vsureshkumar_B6Zq48.
+
+[03/22 20:10:25     15s] Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+[03/22 20:10:26     16s] 
+[03/22 20:10:26     16s] **INFO:  MMMC transition support version v31-84 
+[03/22 20:10:26     16s] 
+[03/22 20:10:26     16s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[03/22 20:10:26     16s] <CMD> suppressMessage ENCEXT-2799
+[03/22 20:10:26     16s] <CMD> win
+[03/22 20:10:26     16s] couldn't read file "innovus.enc": no such file or directory
+[03/22 20:10:26     16s] <CMD> zoomBox -0.02600 -0.01100 0.11300 0.11500
+[03/22 20:10:45     19s] <CMD> is_common_ui_mode
+[03/22 20:10:45     19s] <CMD> restoreDesign /home/linux/ieng6/ee260bwi23/vsureshkumar/systolic-transformer/vanilla/pnr/placement.enc.dat fullchip
+[03/22 20:10:45     20s] #% Begin load design ... (date=03/22 20:10:45, mem=489.2M)
+[03/22 20:10:45     20s] #% End load design ... (date=03/22 20:10:45, total cpu=0:00:00.0, real=0:00:00.0, peak res=489.2M, current mem=489.2M)
+[03/22 20:10:45     20s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[03/22 20:10:45     20s] **ERROR: (IMPSYT-7338):	The specified design session directory '/home/linux/ieng6/ee260bwi23/vsureshkumar/systolic-transformer/vanilla/pnr/placement.enc.dat' could not be located as specified. Check your file system, correct the location, and try restoring the design again.
+[03/22 20:10:45     20s] 
+[03/22 20:10:45     20s] 
+[03/22 20:10:45     20s] ERROR: 
+[03/22 20:10:45     20s] 
+[03/22 20:10:45     20s] 
+[03/22 20:10:45     20s]     while executing
+[03/22 20:10:45     20s] "error $catchMsg"
+[03/22 20:10:45     20s]     (procedure "restoreDesign" line 31)
+[03/22 20:10:45     20s] 
+[03/22 20:10:45     20s] 
+[03/22 20:11:31     28s] <CMD> is_common_ui_mode
+[03/22 20:11:31     28s] <CMD> restoreDesign /home/linux/ieng6/ee260bwi23/vsureshkumar/systolic-transformer/vanilla/pnr/route.enc.dat fullchip
+[03/22 20:11:31     28s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[03/22 20:11:31     28s] #% Begin load design ... (date=03/22 20:11:31, mem=489.4M)
+[03/22 20:11:31     28s] #% End load design ... (date=03/22 20:11:31, total cpu=0:00:00.0, real=0:00:00.0, peak res=489.4M, current mem=489.4M)
+[03/22 20:11:31     28s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[03/22 20:11:31     28s] **ERROR: (IMPSYT-7338):	The specified design session directory '/home/linux/ieng6/ee260bwi23/vsureshkumar/systolic-transformer/vanilla/pnr/route.enc.dat' could not be located as specified. Check your file system, correct the location, and try restoring the design again.
+[03/22 20:11:31     28s] 
+[03/22 20:11:31     28s] 
+[03/22 20:11:31     28s] ERROR: 
+[03/22 20:11:31     28s] 
+[03/22 20:11:31     28s] 
+[03/22 20:11:31     28s]     while executing
+[03/22 20:11:31     28s] "error $catchMsg"
+[03/22 20:11:31     28s]     (procedure "restoreDesign" line 31)
+[03/22 20:11:31     28s] 
+[03/22 20:11:31     28s] 
+[03/22 20:11:55     33s] 
+[03/22 20:11:55     33s] *** Memory Usage v#1 (Current mem = 710.727M, initial mem = 283.785M) ***
+[03/22 20:11:55     33s] 
+[03/22 20:11:55     33s] *** Summary of all messages that are not suppressed in this session:
+[03/22 20:11:55     33s] Severity  ID               Count  Summary                                  
+[03/22 20:11:55     33s] ERROR     IMPSYT-7338          2  The specified design session directory '...
+[03/22 20:11:55     33s] *** Message Summary: 0 warning(s), 2 error(s)
+[03/22 20:11:55     33s] 
+[03/22 20:11:55     33s] --- Ending "Innovus" (totcpu=0:00:33.3, real=0:01:48, mem=710.7M) ---

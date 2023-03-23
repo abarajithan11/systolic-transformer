@@ -70,7 +70,8 @@ reg [bw_psum*col-1:0] temp16b;
 
 
 
-fullchip #(.bw(bw), .bw_psum(bw_psum), .col(col), .pr(pr)) fullchip_instance (
+//fullchip #(.bw(bw), .bw_psum(bw_psum), .col(col), .pr(pr)) fullchip_instance (
+fullchip fullchip_instance (
       .reset(reset),
       .clk(clk), 
       .mem_in(mem_in), 
@@ -359,11 +360,32 @@ $display("##### move ofifo to pmem #####");
   #0.5 clk = 1'b1;  
 
 ///////////////////////////////////////////
+////////////// output fifo rd and wb to psum mem ///////////////////
+
+$display("##### pmem read #####");
+
+  for (q=0; q<total_cycle; q=q+1) begin
+    #0.5 clk = 1'b0;  
+    ofifo_rd = 0; 
+    pmem_wr = 0;
+    pmem_rd = 1;  
+
+    if (q>0) begin
+       pmem_add = pmem_add + 1;
+    end
+
+    #0.5 clk = 1'b1;  
+  end
+
+  #0.5 clk = 1'b0;  
+  pmem_wr = 0; pmem_add = 0; ofifo_rd = 0;pmem_rd = 0; 
+  #0.5 clk = 1'b1;  
+
+///////////////////////////////////////////
 
 
 
-
-  #10 $finish;
+  //#10 $finish;
 
 
 end

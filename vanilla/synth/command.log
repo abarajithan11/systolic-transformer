@@ -1,7 +1,7 @@
 #@ # 
 #@ # Running dc_shell Version Q-2019.12-SP5-3 for linux64 -- Dec 04, 2020
-#@ # Date:   Sun Mar 12 21:11:36 2023
-#@ # Run by: a6srinivasan@ieng6-ece-05.ucsd.edu
+#@ # Date:   Wed Mar 22 21:22:17 2023
+#@ # Run by: vsureshkumar@ieng6-ece-20.ucsd.edu
 #@ 
 
 source /software/ECE/DesignCompiler-Q2019.12/syn/Q-2019.12-SP5-3/admin/setup/.synopsys_dc.setup

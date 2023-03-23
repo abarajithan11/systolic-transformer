@@ -1,0 +1,1104 @@
+xrun(64): 20.09-s017: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.09-s017: Started on Mar 22, 2023 at 23:21:56 PDT
+xrun
+	+gui
+	+access+rwc
+	+xm64bit
+	+xmstatus
+	+xmtimescale+1ns/1ps
+	+xmoveride_timescale
+	+xmseq_udp_delay+20ps
+	-v ./pnr/fullchip.pnr.v
+	-v /home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v
+	./verilog/fullchip_tb.v
+
+   User defined plus("+") options:
+	+xmoveride_timescale
+
+file: ./verilog/fullchip_tb.v
+	module worklib.fullchip_tb:v
+		errors: 0, warnings: 0
+file: ./pnr/fullchip.pnr.v
+	module fullchip.fullchip:v
+		errors: 0, warnings: 0
+file: ./pnr/fullchip.pnr.v
+	module fullchip.core_col8_bw4_bw_psum11_pr8:v
+		errors: 0, warnings: 0
+file: ./pnr/fullchip.pnr.v
+	module fullchip.mac_array_col8_bw4_bw_psum11_pr8:v
+		errors: 0, warnings: 0
+	module fullchip.ofifo_col8_bw11:v
+		errors: 0, warnings: 0
+	module fullchip.sram_w16_sram_bit32_1:v
+		errors: 0, warnings: 0
+	module fullchip.sram_w16_sram_bit88:v
+		errors: 0, warnings: 0
+	module fullchip.sram_w16_sram_bit32_0:v
+		errors: 0, warnings: 0
+file: ./pnr/fullchip.pnr.v
+	module fullchip.mac_col_bw4_bw_psum11_pr8_col_id1:v
+		errors: 0, warnings: 0
+	module fullchip.mac_col_bw4_bw_psum11_pr8_col_id2:v
+		errors: 0, warnings: 0
+	module fullchip.mac_col_bw4_bw_psum11_pr8_col_id3:v
+		errors: 0, warnings: 0
+	module fullchip.mac_col_bw4_bw_psum11_pr8_col_id4:v
+		errors: 0, warnings: 0
+	module fullchip.mac_col_bw4_bw_psum11_pr8_col_id5:v
+		errors: 0, warnings: 0
+	module fullchip.mac_col_bw4_bw_psum11_pr8_col_id6:v
+		errors: 0, warnings: 0
+	module fullchip.mac_col_bw4_bw_psum11_pr8_col_id7:v
+		errors: 0, warnings: 0
+	module fullchip.mac_col_bw4_bw_psum11_pr8_col_id8:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_depth8_bw11_simd1_7:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_depth8_bw11_simd1_6:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_depth8_bw11_simd1_0:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_depth8_bw11_simd1_1:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_depth8_bw11_simd1_2:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_depth8_bw11_simd1_3:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_depth8_bw11_simd1_4:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_depth8_bw11_simd1_5:v
+		errors: 0, warnings: 0
+file: ./pnr/fullchip.pnr.v
+	module fullchip.mac_8in_bw4_bw_psum11_pr8_7:v
+		errors: 0, warnings: 0
+	module fullchip.mac_8in_bw4_bw_psum11_pr8_6:v
+		errors: 0, warnings: 0
+	module fullchip.mac_8in_bw4_bw_psum11_pr8_5:v
+		errors: 0, warnings: 0
+	module fullchip.mac_8in_bw4_bw_psum11_pr8_4:v
+		errors: 0, warnings: 0
+	module fullchip.mac_8in_bw4_bw_psum11_pr8_3:v
+		errors: 0, warnings: 0
+	module fullchip.mac_8in_bw4_bw_psum11_pr8_2:v
+		errors: 0, warnings: 0
+	module fullchip.mac_8in_bw4_bw_psum11_pr8_1:v
+		errors: 0, warnings: 0
+	module fullchip.mac_8in_bw4_bw_psum11_pr8_0:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_8_1_bw11_simd1_7:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_8_1_bw11_simd1_6:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_8_1_bw11_simd1_0:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_8_1_bw11_simd1_1:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_8_1_bw11_simd1_2:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_8_1_bw11_simd1_3:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_8_1_bw11_simd1_4:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_8_1_bw11_simd1_5:v
+		errors: 0, warnings: 0
+file: ./pnr/fullchip.pnr.v
+	module fullchip.fifo_mux_2_1_bw11_simd1_55:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_49:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_50:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_51:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_52:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_53:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_54:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_42:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_43:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_44:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_45:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_46:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_47:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_48:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_0:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_1:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_2:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_3:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_4:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_5:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_6:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_7:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_8:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_9:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_10:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_11:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_12:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_13:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_14:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_15:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_16:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_17:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_18:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_19:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_20:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_21:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_22:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_23:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_24:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_25:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_26:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_27:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_28:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_29:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_30:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_31:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_32:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_33:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_34:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_35:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_36:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_37:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_38:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_39:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_40:v
+		errors: 0, warnings: 0
+	module fullchip.fifo_mux_2_1_bw11_simd1_41:v
+		errors: 0, warnings: 0
+file: /home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v
+	module tcbn65gplus.AN2D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AN2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AN2D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AN2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AN2XD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AN3D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AN3D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AN4D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AN4XD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AO21D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AO21D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AO21D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AO21D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AO22D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AO22D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AO22D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AO22D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI211D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI211XD0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI211XD4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI21D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI21D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI21D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI21D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI22D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI22D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI22D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI22D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI31D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.AOI31D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.BUFFD0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.BUFFD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.BUFFD12:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.BUFFD16:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.BUFFD2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.BUFFD3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.BUFFD4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.BUFFD6:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.BUFFD8:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKAN2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKAN2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKBD0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKBD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKBD12:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKBD16:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKBD2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKBD3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKBD4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKBD6:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKBD8:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKMUX2D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKMUX2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND12:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND16:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND2D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND2D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND2D3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND2D8:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND6:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKND8:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKXOR2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.CKXOR2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.DFD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.DFD2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.DFD4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.DFKCNQD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.DFKCNQD2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.DFKCNQD4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.DFQD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.DFQD2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.DFQD4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.EDFQD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.EDFQD2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.EDFQD4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.FA1D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.FA1D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.FA1D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.FCICIND1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.HA1D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.HA1D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.HA1D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IAO21D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IAO21D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IAO21D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IINR4D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IND2D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IND2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IND2D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IND2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IND3D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IND3D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IND3D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INR2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INR2D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INR2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INR2XD0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INR2XD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INR2XD2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INR2XD4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INR3D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INR3D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INVD0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INVD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INVD12:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INVD16:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INVD2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INVD3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INVD4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INVD6:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.INVD8:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IOA21D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IOA21D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IOA21D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IOA21D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.IOA22D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.MOAI22D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.MOAI22D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.MUX2D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.MUX2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.MUX2D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.MUX2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.MUX2ND0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.MUX2ND2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.MUX2ND4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND2D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND2D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND2D3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND2D8:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND3D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND3D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND3D3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND3D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND3D8:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND4D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND4D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND4D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND4D3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.ND4D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR2D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR2D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR2D3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR2D8:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR2XD0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR2XD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR2XD2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR2XD3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR2XD4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR3D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR3D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR3D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR3D3:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR3D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.NR3D8:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OA211D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OA211D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OA211D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OA21D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OA21D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OA21D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OA21D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI211D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI211D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI211D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI21D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI21D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI21D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI21D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI221D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI22D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI22D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI22D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OAI31D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OR2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OR2D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OR2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.OR2XD1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XNR2D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XNR2D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XNR2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XNR3D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XNR3D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XOR2D0:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XOR2D2:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XOR2D4:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XOR3D1:v
+		errors: 0, warnings: 0
+	module tcbn65gplus.XOR3D2:v
+		errors: 0, warnings: 0
+	primitive tcbn65gplus.tsmc_mux:v
+		errors: 0, warnings: 0
+	primitive tcbn65gplus.tsmc_xbuf:v
+		errors: 0, warnings: 0
+	primitive tcbn65gplus.tsmc_dff:v
+		errors: 0, warnings: 0
+xmvlog: Memory Usage - Current physical: 21.0M, Current virtual: 92.3M
+xmvlog: CPU Usage - 0.1s system + 0.9s user = 0.9s total (1.2s, 75.3% cpu)
+xmelab: *N,INFSUD: -NOSPECIFY is automatically used with -SEQ_UDP_DELAY.
+		Caching library 'fullchip' ....... Done
+		Caching library 'worklib' ....... Done
+		Caching library 'tcbn65gplus' ....... Done
+	Elaborating the design hierarchy:
+fullchip fullchip_instance (
+                         |
+xmelab: *W,CUVWSP (./verilog/fullchip_tb.v,74|25): 1 output port was not connected:
+xmelab: (./pnr/fullchip.pnr.v,72277): out
+
+   DFD1 load_ready_q_reg (.CP(clk),
+                       |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,8381|23): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5821): Q
+
+   DFD4 cnt_q_reg_1_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,8384|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): QN
+
+   DFD4 cnt_q_reg_2_ (.CP(clk_clone1),
+                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,12642|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): Q
+
+   DFD2 cnt_q_reg_0_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,16710|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5860): Q
+
+   DFD1 cnt_q_reg_2_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,16723|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5821): Q
+
+   DFD2 cnt_q_reg_2_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,21691|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5860): Q
+
+   DFD4 cnt_q_reg_1_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,25951|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): Q
+
+   DFD4 cnt_q_reg_0_ (.CP(clk),
+                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,34907|19): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): Q
+
+   ofifo_col8_bw11 ofifo_inst (.in({ array_out[87],
+                            |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,71940|28): 2 output ports were not connected:
+xmelab: (./pnr/fullchip.pnr.v,48697): o_valid
+xmelab: (./pnr/fullchip.pnr.v,48699): o_full
+
+   fifo_depth8_bw11_simd1_7 col_idx_0__fifo_instance (.in({ in[10],
+                                                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,48797|51): 2 output ports were not connected:
+xmelab: (./pnr/fullchip.pnr.v,37583): o_full
+xmelab: (./pnr/fullchip.pnr.v,37584): o_empty
+
+   DFD1 wr_ptr_reg_3_ (.CP(rd_clk_clone2),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,37779|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   DFD4 rd_ptr_reg_1_ (.CP(rd_clk),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,37786|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): QN
+
+   DFD2 wr_ptr_reg_2_ (.CP(rd_clk_clone2),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,37796|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5860): QN
+
+   fifo_depth8_bw11_simd1_6 col_idx_1__fifo_instance (.in({ in[21],
+                                                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,48827|51): 2 output ports were not connected:
+xmelab: (./pnr/fullchip.pnr.v,39049): o_full
+xmelab: (./pnr/fullchip.pnr.v,39050): o_empty
+
+   DFD1 wr_ptr_reg_3_ (.CP(rd_clk_clone1),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,39286|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   DFD4 rd_ptr_reg_1_ (.CP(rd_clk_clone3),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,39293|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): QN
+
+   DFD2 wr_ptr_reg_2_ (.CP(rd_clk_clone1),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,39303|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5860): QN
+
+   fifo_depth8_bw11_simd1_5 col_idx_2__fifo_instance (.in({ in[32],
+                                                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,48858|51): 2 output ports were not connected:
+xmelab: (./pnr/fullchip.pnr.v,47986): o_full
+xmelab: (./pnr/fullchip.pnr.v,47987): o_empty
+
+   DFD1 wr_ptr_reg_3_ (.CP(rd_clk),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,48156|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   DFD4 rd_ptr_reg_1_ (.CP(rd_clk),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,48163|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): QN
+
+   DFD4 wr_ptr_reg_2_ (.CP(rd_clk),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,48173|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): QN
+
+   fifo_depth8_bw11_simd1_4 col_idx_3__fifo_instance (.in({ in[43],
+                                                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,48891|51): 2 output ports were not connected:
+xmelab: (./pnr/fullchip.pnr.v,46513): o_full
+xmelab: (./pnr/fullchip.pnr.v,46514): o_empty
+
+   DFD1 wr_ptr_reg_3_ (.CP(rd_clk_clone1),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,46729|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   DFD4 rd_ptr_reg_1_ (.CP(rd_clk_clone3),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,46736|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): QN
+
+   DFD2 wr_ptr_reg_2_ (.CP(rd_clk_clone1),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,46746|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5860): QN
+
+   fifo_depth8_bw11_simd1_3 col_idx_4__fifo_instance (.in({ in[54],
+                                                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,48924|51): 2 output ports were not connected:
+xmelab: (./pnr/fullchip.pnr.v,45031): o_full
+xmelab: (./pnr/fullchip.pnr.v,45032): o_empty
+
+   DFD1 wr_ptr_reg_3_ (.CP(rd_clk_clone2),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,45223|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   DFD4 rd_ptr_reg_1_ (.CP(rd_clk_clone2),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,45230|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): QN
+
+   DFD2 wr_ptr_reg_2_ (.CP(rd_clk_clone2),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,45240|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5860): QN
+
+   fifo_depth8_bw11_simd1_2 col_idx_5__fifo_instance (.in({ in[65],
+                                                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,48955|51): 2 output ports were not connected:
+xmelab: (./pnr/fullchip.pnr.v,43535): o_full
+xmelab: (./pnr/fullchip.pnr.v,43536): o_empty
+
+   DFD1 wr_ptr_reg_3_ (.CP(rd_clk),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,43744|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   DFD4 rd_ptr_reg_1_ (.CP(rd_clk),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,43751|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): QN
+
+   DFD2 wr_ptr_reg_2_ (.CP(rd_clk),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,43761|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5860): QN
+
+   fifo_depth8_bw11_simd1_1 col_idx_6__fifo_instance (.in({ in[76],
+                                                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,48986|51): 2 output ports were not connected:
+xmelab: (./pnr/fullchip.pnr.v,42029): o_full
+xmelab: (./pnr/fullchip.pnr.v,42030): o_empty
+
+   DFD1 wr_ptr_reg_3_ (.CP(rd_clk),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,42253|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   DFD4 rd_ptr_reg_1_ (.CP(rd_clk),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,42260|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): QN
+
+   DFD2 wr_ptr_reg_2_ (.CP(rd_clk),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,42270|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5860): QN
+
+   fifo_depth8_bw11_simd1_0 col_idx_7__fifo_instance (.in({ in[87],
+                                                   |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,49018|51): 2 output ports were not connected:
+xmelab: (./pnr/fullchip.pnr.v,40534): o_full
+xmelab: (./pnr/fullchip.pnr.v,40535): o_empty
+
+   DFD1 wr_ptr_reg_3_ (.CP(rd_clk_clone1),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,40727|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5821): QN
+
+   DFD4 rd_ptr_reg_1_ (.CP(rd_clk_clone1),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,40734|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): QN
+
+   DFD4 wr_ptr_reg_2_ (.CP(rd_clk_clone2),
+                    |
+xmelab: *W,CUVWSP (./pnr/fullchip.pnr.v,40744|20): 1 output port was not connected:
+xmelab: (/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v,5899): QN
+
+	Top level design units:
+		fullchip_tb
+	Building instance overlay tables: 
+         temp16b = {temp16b[139:0], temp5b};
+                          |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,178|26): Bit-select or part-select index out of declared bounds.
+    mem_in[9*bw-1:8*bw] = Q[q][8];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,209|9): Bit-select or part-select index out of declared bounds.
+    mem_in[9*bw-1:8*bw] = Q[q][8];
+                              |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,209|30): Bit-select or part-select index out of declared bounds.
+    mem_in[10*bw-1:9*bw] = Q[q][9];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,210|9): Bit-select or part-select index out of declared bounds.
+    mem_in[10*bw-1:9*bw] = Q[q][9];
+                               |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,210|31): Bit-select or part-select index out of declared bounds.
+    mem_in[11*bw-1:10*bw] = Q[q][10];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,211|9): Bit-select or part-select index out of declared bounds.
+    mem_in[11*bw-1:10*bw] = Q[q][10];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,211|32): Bit-select or part-select index out of declared bounds.
+    mem_in[12*bw-1:11*bw] = Q[q][11];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,212|9): Bit-select or part-select index out of declared bounds.
+    mem_in[12*bw-1:11*bw] = Q[q][11];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,212|32): Bit-select or part-select index out of declared bounds.
+    mem_in[13*bw-1:12*bw] = Q[q][12];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,213|9): Bit-select or part-select index out of declared bounds.
+    mem_in[13*bw-1:12*bw] = Q[q][12];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,213|32): Bit-select or part-select index out of declared bounds.
+    mem_in[14*bw-1:13*bw] = Q[q][13];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,214|9): Bit-select or part-select index out of declared bounds.
+    mem_in[14*bw-1:13*bw] = Q[q][13];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,214|32): Bit-select or part-select index out of declared bounds.
+    mem_in[15*bw-1:14*bw] = Q[q][14];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,215|9): Bit-select or part-select index out of declared bounds.
+    mem_in[15*bw-1:14*bw] = Q[q][14];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,215|32): Bit-select or part-select index out of declared bounds.
+    mem_in[16*bw-1:15*bw] = Q[q][15];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,216|9): Bit-select or part-select index out of declared bounds.
+    mem_in[16*bw-1:15*bw] = Q[q][15];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,216|32): Bit-select or part-select index out of declared bounds.
+    mem_in[9*bw-1:8*bw] = K[q][8];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,250|9): Bit-select or part-select index out of declared bounds.
+    mem_in[9*bw-1:8*bw] = K[q][8];
+                              |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,250|30): Bit-select or part-select index out of declared bounds.
+    mem_in[10*bw-1:9*bw] = K[q][9];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,251|9): Bit-select or part-select index out of declared bounds.
+    mem_in[10*bw-1:9*bw] = K[q][9];
+                               |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,251|31): Bit-select or part-select index out of declared bounds.
+    mem_in[11*bw-1:10*bw] = K[q][10];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,252|9): Bit-select or part-select index out of declared bounds.
+    mem_in[11*bw-1:10*bw] = K[q][10];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,252|32): Bit-select or part-select index out of declared bounds.
+    mem_in[12*bw-1:11*bw] = K[q][11];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,253|9): Bit-select or part-select index out of declared bounds.
+    mem_in[12*bw-1:11*bw] = K[q][11];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,253|32): Bit-select or part-select index out of declared bounds.
+    mem_in[13*bw-1:12*bw] = K[q][12];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,254|9): Bit-select or part-select index out of declared bounds.
+    mem_in[13*bw-1:12*bw] = K[q][12];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,254|32): Bit-select or part-select index out of declared bounds.
+    mem_in[14*bw-1:13*bw] = K[q][13];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,255|9): Bit-select or part-select index out of declared bounds.
+    mem_in[14*bw-1:13*bw] = K[q][13];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,255|32): Bit-select or part-select index out of declared bounds.
+    mem_in[15*bw-1:14*bw] = K[q][14];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,256|9): Bit-select or part-select index out of declared bounds.
+    mem_in[15*bw-1:14*bw] = K[q][14];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,256|32): Bit-select or part-select index out of declared bounds.
+    mem_in[16*bw-1:15*bw] = K[q][15];
+         |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,257|9): Bit-select or part-select index out of declared bounds.
+    mem_in[16*bw-1:15*bw] = K[q][15];
+                                |
+xmelab: *W,BNDWRN (./verilog/fullchip_tb.v,257|32): Bit-select or part-select index out of declared bounds.
+.................... Done
+	Generating native compiled code:
+		worklib.fullchip_tb:v <0x0b5257a9>
+			streams:  28, words: 36968
+		fullchip.fifo_depth8_bw11_simd1_6:v <0x4c8c0302>
+			streams:   0, words:     0
+		fullchip.fifo_depth8_bw11_simd1_7:v <0x6a86773f>
+			streams:   0, words:     0
+		fullchip.ofifo_col8_bw11:v <0x2ec36ffb>
+			streams:   0, words:     0
+		fullchip.mac_col_bw4_bw_psum11_pr8_col_id7:v <0x105d7c6b>
+			streams:   0, words:     0
+		fullchip.mac_col_bw4_bw_psum11_pr8_col_id6:v <0x3198056d>
+			streams:   0, words:     0
+		fullchip.mac_col_bw4_bw_psum11_pr8_col_id5:v <0x7cbd7b04>
+			streams:   0, words:     0
+		fullchip.mac_col_bw4_bw_psum11_pr8_col_id4:v <0x0f47fdca>
+			streams:   0, words:     0
+		fullchip.mac_col_bw4_bw_psum11_pr8_col_id3:v <0x34898376>
+			streams:   0, words:     0
+		fullchip.mac_col_bw4_bw_psum11_pr8_col_id2:v <0x69dc0b2e>
+			streams:   0, words:     0
+		fullchip.mac_col_bw4_bw_psum11_pr8_col_id1:v <0x49d64eed>
+			streams:   0, words:     0
+		fullchip.mac_array_col8_bw4_bw_psum11_pr8:v <0x25425d75>
+			streams:   0, words:     0
+		fullchip.core_col8_bw4_bw_psum11_pr8:v <0x3340a072>
+			streams:   0, words:     0
+		tcbn65gplus.CKMUX2D0:v <0x26990b3a>
+			streams:   0, words:     0
+		tcbn65gplus.DFKCNQD2:v <0x37f8baa0>
+			streams:   0, words:     0
+		tcbn65gplus.XNR3D1:v <0x07cd28be>
+			streams:   0, words:     0
+		tcbn65gplus.HA1D1:v <0x33a92e5f>
+			streams:   0, words:     0
+		tcbn65gplus.DFD2:v <0x039c4322>
+			streams:   0, words:     0
+		tcbn65gplus.MUX2D2:v <0x619bccd2>
+			streams:   0, words:     0
+		tcbn65gplus.XOR3D1:v <0x637a68d0>
+			streams:   0, words:     0
+		tcbn65gplus.CKMUX2D1:v <0x327906cd>
+			streams:   0, words:     0
+		tcbn65gplus.EDFQD4:v <0x2b2e2727>
+			streams:   0, words:     0
+		tcbn65gplus.DFD4:v <0x6d940ca8>
+			streams:   0, words:     0
+		tcbn65gplus.DFD1:v <0x057ed475>
+			streams:   0, words:     0
+		tcbn65gplus.XOR2D4:v <0x1b381223>
+			streams:   0, words:     0
+		tcbn65gplus.XNR2D4:v <0x241a7ec5>
+			streams:   0, words:     0
+		tcbn65gplus.CKXOR2D4:v <0x6110a9d1>
+			streams:   0, words:     0
+		tcbn65gplus.MUX2ND2:v <0x5a7a5bf8>
+			streams:   0, words:     0
+		tcbn65gplus.FCICIND1:v <0x2f5ca6e2>
+			streams:   0, words:     0
+		tcbn65gplus.MUX2ND4:v <0x5b4f0c72>
+			streams:   0, words:     0
+		tcbn65gplus.XOR2D0:v <0x4c9be404>
+			streams:   0, words:     0
+		tcbn65gplus.MUX2D0:v <0x4d16f57b>
+			streams:   0, words:     0
+		tcbn65gplus.EDFQD2:v <0x18f7d792>
+			streams:   0, words:     0
+		tcbn65gplus.DFQD2:v <0x3e9d6fa7>
+			streams:   0, words:     0
+		tcbn65gplus.DFQD1:v <0x7e049845>
+			streams:   0, words:     0
+		tcbn65gplus.EDFQD1:v <0x2ca3ace8>
+			streams:   0, words:     0
+		tcbn65gplus.DFQD4:v <0x5c63e147>
+			streams:   0, words:     0
+		tcbn65gplus.DFKCNQD1:v <0x36fcb39c>
+			streams:   0, words:     0
+		tcbn65gplus.DFKCNQD4:v <0x0cdac996>
+			streams:   0, words:     0
+		tcbn65gplus.XNR2D2:v <0x35d0f0d1>
+			streams:   0, words:     0
+		tcbn65gplus.CKXOR2D1:v <0x0499ab43>
+			streams:   0, words:     0
+		tcbn65gplus.FA1D2:v <0x6e21157d>
+			streams:   0, words:     0
+		tcbn65gplus.FA1D1:v <0x0b42909a>
+			streams:   0, words:     0
+		tcbn65gplus.HA1D2:v <0x36feb791>
+			streams:   0, words:     0
+		tcbn65gplus.HA1D4:v <0x3c51840d>
+			streams:   0, words:     0
+		tcbn65gplus.FA1D4:v <0x24e61eb3>
+			streams:   0, words:     0
+		tcbn65gplus.XOR2D2:v <0x0af29c37>
+			streams:   0, words:     0
+		tcbn65gplus.XNR3D4:v <0x6f45b409>
+			streams:   0, words:     0
+		tcbn65gplus.MUX2D1:v <0x5ffd0254>
+			streams:   0, words:     0
+		tcbn65gplus.XNR2D1:v <0x4cd30749>
+			streams:   0, words:     0
+		tcbn65gplus.MUX2ND0:v <0x006f8b2a>
+			streams:   0, words:     0
+		tcbn65gplus.XOR3D2:v <0x572e13aa>
+			streams:   0, words:     0
+		tcbn65gplus.MUX2D4:v <0x2cb0e14c>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:               16330     293
+		UDPs:                  11761       3
+		Primitives:            31145       9
+		Registers:              3962      47
+		Scalar wires:           8288       -
+		Expanded wires:           40       3
+		Initial blocks:           14      14
+		Cont. assignments:        11      11
+		Pseudo assignments:        3       3
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.fullchip_tb:v
+xmelab: Memory Usage - Final: 44.4M, Peak: 47.5M, Peak virtual: 173.5M
+xmelab: CPU Usage - 0.2s system + 1.6s user = 1.8s total (2.0s, 91.6% cpu)
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /software/ECE/XCELIUM-2009/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm fullchip_tb.fullchip_instance.out
+Created probe 1
+xcelium> run
+##### Q data txt reading #####
+##### K data txt reading #####
+##### Estimated multiplication result #####
+prd @cycle 0: 000000000000000000xxxxxxxxxxxxxxxxxxxX76
+prd @cycle 1: 000000000000000000xxxxxxxxxxxxxxxxxxxX79
+prd @cycle 2: 000000000000000000xxxxxxxxxxxxxxxxxxxX60
+prd @cycle 3: 000000000000000000xxxxxxxxxxxxxxxxxxxXf0
+prd @cycle 4: 000000000000000000xxxxxxxxxxxxxxxxxxxXf3
+prd @cycle 5: 000000000000000000xxxxxxxxxxxxxxxxxxxX4f
+prd @cycle 6: 000000000000000000xxxxxxxxxxxxxxxxxxxXa3
+prd @cycle 7: 000000000000000000xxxxxxxxxxxxxxxxxxxXad
+##### Qmem writing  #####
+##### Kmem writing #####
+##### K data loading to processor #####
+##### execute #####
+##### move ofifo to pmem #####
+##### pmem read #####
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> ^C
+xcelium> exit
+xmsim: Memory Usage - Final: 79.1M, Peak: 82.6M, Peak virtual: 547.9M
+xmsim: Main Thread CPU Usage - 2.0s system + 2.1s user = 4.1s total
+xmsim: CPU Usage - 2.0s system + 1.8s user = 3.8s total (110.4s, 3.4% cpu)
+TOOL:	xrun(64)	20.09-s017: Exiting on Mar 22, 2023 at 23:23:50 PDT  (total: 00:01:54)

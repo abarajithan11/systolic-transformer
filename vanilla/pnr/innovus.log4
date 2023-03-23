@@ -1,0 +1,40 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v19.17-s077_1, built Tue Dec 1 11:09:44 PST 2020
+Options:	
+Date:		Wed Mar 22 20:19:04 2023
+Host:		ieng6-ece-18.ucsd.edu (x86_64 w/Linux 3.10.0-1160.80.1.el7.x86_64) (4cores*8cpus*Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz 20480KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		invs	Innovus Implementation System	19.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+<CMD> is_common_ui_mode
+<CMD> restoreDesign /home/linux/ieng6/ee260bwi23/vsureshkumar/systolic-transformer/vanilla/pnr/route.enc.dat fullchip
+#% Begin load design ... (date=03/22 20:20:17, mem=487.1M)
+#% End load design ... (date=03/22 20:20:17, total cpu=0:00:00.0, real=0:00:00.0, peak res=487.2M, current mem=487.2M)
+**ERROR: (IMPSYT-7338):	The specified design session directory '/home/linux/ieng6/ee260bwi23/vsureshkumar/systolic-transformer/vanilla/pnr/route.enc.dat' could not be located as specified. Check your file system, correct the location, and try restoring the design again.
+
+
+ERROR: 
+
+
+    while executing
+"error $catchMsg"
+    (procedure "restoreDesign" line 31)
+
+
+
+*** Memory Usage v#1 (Current mem = 707.484M, initial mem = 283.785M) ***
+*** Message Summary: 0 warning(s), 1 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:29.2, real=0:01:32, mem=707.5M) ---

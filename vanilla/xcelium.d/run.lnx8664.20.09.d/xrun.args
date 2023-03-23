@@ -1,0 +1,16 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
++gui
++access+rwc
++xm64bit
++xmstatus
++xmtimescale+1ns/1ps
++xmoveride_timescale
++xmseq_udp_delay+20ps
+-v
+./pnr/fullchip.pnr.v
+-v
+/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v
+./verilog/fullchip_tb.v

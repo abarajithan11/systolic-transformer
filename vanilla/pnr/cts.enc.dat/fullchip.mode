@@ -1,0 +1,43 @@
+catch { setDesignMode -process 65 }
+catch { setAnalysisMode -analysisType bcwc }
+catch { setAnalysisMode -checkType setup }
+catch { setAnalysisMode -clkSrcPath true }
+catch { setAnalysisMode -clockPropagation sdcControl }
+catch { setAnalysisMode -usefulSkew true }
+catch { setOptMode -activeHoldViews { BC_VIEW  } }
+catch { setOptMode -activeSetupViews { WC_VIEW } }
+catch { setOptMode -autoHoldViews { BC_VIEW } }
+catch { setOptMode -autoSetupViews { WC_VIEW} }
+catch { setOptMode -autoTDGRSetupViews { WC_VIEW} }
+catch { setOptMode -autoViewHoldTargetSlack 0 }
+catch { setOptMode -drcMargin 0 }
+catch { setOptMode -effort high }
+catch { setOptMode -fixDrc true }
+catch { setOptMode -fixFanoutLoad true }
+catch { setOptMode -leakageToDynamicRatio 0.5 }
+catch { setOptMode -optimizeFF true }
+catch { setOptMode -powerEffort high }
+catch { setOptMode -preserveAllSequential false }
+catch { setOptMode -restruct true }
+catch { setOptMode -setupTargetSlack 0 }
+catch { setOptMode -verbose true }
+catch { setExtractRCMode  -engine preRoute -total_c_th 0 -relative_c_th 1 -coupling_c_th 0.1 }
+catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
+catch {setNanoRouteMode -quiet -grouteExpTdStdDelay 14.500000}
+
+catch { setPlaceMode -place_global_cong_effort medium }
+catch { setPlaceMode -place_global_reorder_scan false }
+catch { setPlaceMode -timingDriven true }
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
+catch { setUsefulSkewMode -ecoRoute false }
+catch { setDelayCalMode -enable_high_fanout true }
+catch { setDelayCalMode -eng_copyNetPropToNewNet true }
+catch { setDelayCalMode -eng_tcDelayMargin 0 }
+catch { setDelayCalMode -eng_tcSlewMargin -1e-12 }
+catch { setDelayCalMode -engine aae }
+catch { setDelayCalMode -ignoreNetLoad false }
+catch { setPinAssignMode -pinEditInBatch false }
+catch { setSIMode -separate_delta_delay_on_data true }
+catch { setAddStripeMode -break_at block_ring }
+catch { setFPlanMode -maxIoHeight false }
+catch { setFPlanMode -powerRailLayer {} }

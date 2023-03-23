@@ -1,0 +1,4 @@
+define LIB_MAP ( $LIB_MAP \
+, ../../../../../course_cont/w4/PDKdata/verilog/tcbn65gplus.v => tcbn65gplus \
+, ../../../pnr/fullchip.pnr.v => fullchip \
+)
