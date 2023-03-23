@@ -87,7 +87,7 @@ module normalizer #(
   end
 
   wire div_sel = count[0];
-  logic div_sel_1, div_sel_2, div_sel_3, state_div_1, state_div_2;
+  logic div_sel_1, div_sel_2, div_sel_3, state_div_1, state_div_2, state_div_3;
   logic [1:0][BW_PSUM-1:0] div_in_1, div_in_2;
   logic [1:0][W_OUT  -1:0] div_out_1, div_out_2;
 
@@ -108,11 +108,11 @@ module normalizer #(
     div_out_2[1] <= (256 * div_in_2[1]) / sum;
 
     {div_sel_3, div_sel_2, div_sel_1} <= {div_sel_2, div_sel_1, div_sel};
-    {norm_valid, state_div_2, state_div_1} <=  {state_div_2, state_div_1, state==DIV};
+    {norm_valid, state_div_3, state_div_2, state_div_1} <=  {state_div_3, state_div_2, state_div_1, state==DIV};
   
-  end
   // Output mux
-  assign  psum_norm_1 = div_sel_3 ? div_out_1[1] : div_out_1[0];
-  assign  psum_norm_2 = div_sel_3 ? div_out_2[1] : div_out_2[0];
+    psum_norm_1 <= div_sel_3 ? div_out_1[1] : div_out_1[0];
+    psum_norm_2 <= div_sel_3 ? div_out_2[1] : div_out_2[0];
+  end
 
 endmodule

@@ -3,31 +3,30 @@
 Report : area
 Design : dualcore
 Version: Q-2019.12-SP5-3
-Date   : Wed Mar 22 02:04:39 2023
+Date   : Thu Mar 23 03:19:42 2023
 ****************************************
 
 Information: Updating design information... (UID-85)
-Warning: Design 'dualcore' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
 Library(s) Used:
 
     tcbn65gplustc (File: /home/linux/ieng6/ee260bwi23/public/PDKdata/db/tcbn65gplustc.db)
 
-Number of ports:                        11541
-Number of nets:                         51152
-Number of cells:                        38349
-Number of combinational cells:          27883
-Number of sequential cells:             10270
+Number of ports:                        12882
+Number of nets:                         50819
+Number of cells:                        37037
+Number of combinational cells:          25876
+Number of sequential cells:             10629
 Number of macros/black boxes:               0
-Number of buf/inv:                       4772
-Number of references:                       4
+Number of buf/inv:                       4985
+Number of references:                       5
 
-Combinational area:              70103.160972
-Buf/Inv area:                     5465.520209
-Noncombinational area:           88931.157835
+Combinational area:              66578.760839
+Buf/Inv area:                     5899.680221
+Noncombinational area:           72763.201488
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                159034.318807
+Total cell area:                139341.962327
 Total area:                 undefined
 1
  
@@ -35,7 +34,7 @@ Total area:                 undefined
 Report : reference
 Design : dualcore
 Version: Q-2019.12-SP5-3
-Date   : Wed Mar 22 02:04:41 2023
+Date   : Thu Mar 23 03:19:44 2023
 ****************************************
 
 Attributes:
@@ -51,11 +50,12 @@ Attributes:
 
 Reference          Library       Unit Area   Count    Total Area   Attributes
 -----------------------------------------------------------------------------
-clk_gate                          9.720000       1      9.720000  h, n
-core_col8_bw4_pr8_bw_psum11_0 64871.999148       1  64871.999148  h, n
-core_col8_bw4_pr8_bw_psum11_1 64873.799149       1  64873.799149  h, n
+clk_gate_0                        7.200000       1      7.200000  h, n
+clk_gate_1                        7.200000       1      7.200000  h, n
+core_col8_bw4_pr8_bw_psum11_0 54572.760921       1  54572.760921  b, h, n
+core_col8_bw4_pr8_bw_psum11_1 54572.040921       1  54572.040921  b, h, n
 normalizer_BW_PSUM11_COL8_W_OUT11
-                              29278.800510       1  29278.800510  h, n
+                              30182.760486       1  30182.760486  b, h, n
 -----------------------------------------------------------------------------
-Total 4 references                                  159034.318807
+Total 5 references                                  139341.962327
 1

@@ -1,0 +1,178 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Wed Mar 22 15:10:57 2023                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v19.17-s077_1 (64bit) 12/01/2020 11:09 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 19.17-s077_1 NR201130-0207/19_17-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+#@(#)CDS: AAE 19.17-s018 (64bit) 12/01/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 19.17-s022_1 () Nov 18 2020 03:10:35 ( )
+#@(#)CDS: SYNTECH 19.17-s005_1 () Oct 28 2020 05:12:49 ( )
+#@(#)CDS: CPE v19.17-s044
+#@(#)CDS: IQuantus/TQuantus 19.1.3-s268 (64bit) Mon Aug 10 22:57:12 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+win
+zoomBox 0.05300 0.04300 0.09500 0.08200
+setMultiCpuUsage -localCpu 8
+set init_pwr_net VDD
+set init_gnd_net VSS
+set init_verilog ../dualcore.out.v
+set init_design_netlisttype Verilog
+set init_design_settop 1
+set init_top_cell dualcore
+set init_lef_file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef
+create_library_set -name WC_LIB -timing $worst_timing_lib
+create_library_set -name BC_LIB -timing $best_timing_lib
+create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+create_constraint_mode -name CON -sdc_file [list $sdc]
+create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+init_design -setup WC_VIEW -hold BC_VIEW
+set_interactive_constraint_modes {CON}
+setDesignMode -process 65
+set ptngSprNoRefreshPins 1
+setPtnPinStatus -cell dualcore -pin clk1 -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin clk2 -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[0]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[1]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[2]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[3]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[4]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[5]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[6]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[7]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[8]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[9]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[10]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[11]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[12]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[13]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[14]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[15]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core1[16]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[0]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[1]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[2]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[3]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[4]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[5]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[6]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[7]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[8]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[9]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[10]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[11]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[12]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[13]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[14]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[15]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {inst_core2[16]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[0]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[1]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[2]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[3]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[4]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[5]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[6]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[7]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[8]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[9]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[10]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[11]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[12]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[13]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[14]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[15]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[16]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[17]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[18]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[19]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[20]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[21]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[22]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[23]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[24]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[25]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[26]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[27]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[28]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[29]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[30]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core1[31]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[0]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[1]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[2]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[3]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[4]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[5]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[6]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[7]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[8]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[9]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[10]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[11]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[12]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[13]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[14]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[15]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[16]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[17]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[18]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[19]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[20]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[21]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[22]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[23]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[24]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[25]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[26]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[27]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[28]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[29]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[30]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin {mem_in_core2[31]} -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin rst1 -status unplaced -silent
+setPtnPinStatus -cell dualcore -pin rst2 -status unplaced -silent
+set ptngSprNoRefreshPins 0
+ptnSprRefreshPinsAndBlockages
+zoomBox -952.44100 -2330.44950 5516.88850 3653.47100
+zoomBox -98.17900 -155.31050 822.03100 695.85400
+zoomBox -35.89650 49.33300 311.16100 370.35000
+zoomBox -61.56800 -28.52800 503.55700 494.19450
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 1 -spreadType center -spacing 1.0 -pin {clk1 clk2 {inst_core1[0]} {inst_core1[1]} {inst_core1[2]} {inst_core1[3]} {inst_core1[4]} {inst_core1[5]} {inst_core1[6]} {inst_core1[7]} {inst_core1[8]} {inst_core1[9]} {inst_core1[10]} {inst_core1[11]} {inst_core1[12]} {inst_core1[13]} {inst_core1[14]} {inst_core1[15]} {inst_core1[16]} {inst_core2[0]} {inst_core2[1]} {inst_core2[2]} {inst_core2[3]} {inst_core2[4]} {inst_core2[5]} {inst_core2[6]} {inst_core2[7]} {inst_core2[8]} {inst_core2[9]} {inst_core2[10]} {inst_core2[11]} {inst_core2[12]} {inst_core2[13]} {inst_core2[14]} {inst_core2[15]} {inst_core2[16]} {mem_in_core1[0]} {mem_in_core1[1]} {mem_in_core1[2]} {mem_in_core1[3]} {mem_in_core1[4]} {mem_in_core1[5]} {mem_in_core1[6]} {mem_in_core1[7]} {mem_in_core1[8]} {mem_in_core1[9]} {mem_in_core1[10]} {mem_in_core1[11]} {mem_in_core1[12]} {mem_in_core1[13]} {mem_in_core1[14]} {mem_in_core1[15]} {mem_in_core1[16]} {mem_in_core1[17]} {mem_in_core1[18]} {mem_in_core1[19]} {mem_in_core1[20]} {mem_in_core1[21]} {mem_in_core1[22]} {mem_in_core1[23]} {mem_in_core1[24]} {mem_in_core1[25]} {mem_in_core1[26]} {mem_in_core1[27]} {mem_in_core1[28]} {mem_in_core1[29]} {mem_in_core1[30]} {mem_in_core1[31]} {mem_in_core2[0]} {mem_in_core2[1]} {mem_in_core2[2]} {mem_in_core2[3]} {mem_in_core2[4]} {mem_in_core2[5]} {mem_in_core2[6]} {mem_in_core2[7]} {mem_in_core2[8]} {mem_in_core2[9]} {mem_in_core2[10]} {mem_in_core2[11]} {mem_in_core2[12]} {mem_in_core2[13]} {mem_in_core2[14]} {mem_in_core2[15]} {mem_in_core2[16]} {mem_in_core2[17]} {mem_in_core2[18]} {mem_in_core2[19]} {mem_in_core2[20]} {mem_in_core2[21]} {mem_in_core2[22]} {mem_in_core2[23]} {mem_in_core2[24]} {mem_in_core2[25]} {mem_in_core2[26]} {mem_in_core2[27]} {mem_in_core2[28]} {mem_in_core2[29]} {mem_in_core2[30]} {mem_in_core2[31]} rst1 rst2}
+setPinAssignMode -pinEditInBatch false
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.1 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType center -spacing 0.8 -pin {norm_gate norm_valid {out_core1[0]} {out_core1[1]} {out_core1[2]} {out_core1[3]} {out_core1[4]} {out_core1[5]} {out_core1[6]} {out_core1[7]} {out_core1[8]} {out_core1[9]} {out_core1[10]} {out_core1[11]} {out_core1[12]} {out_core1[13]} {out_core1[14]} {out_core1[15]} {out_core1[16]} {out_core1[17]} {out_core1[18]} {out_core1[19]} {out_core1[20]} {out_core1[21]} {out_core1[22]} {out_core1[23]} {out_core1[24]} {out_core1[25]} {out_core1[26]} {out_core1[27]} {out_core1[28]} {out_core1[29]} {out_core1[30]} {out_core1[31]} {out_core1[32]} {out_core1[33]} {out_core1[34]} {out_core1[35]} {out_core1[36]} {out_core1[37]} {out_core1[38]} {out_core1[39]} {out_core1[40]} {out_core1[41]} {out_core1[42]} {out_core1[43]} {out_core1[44]} {out_core1[45]} {out_core1[46]} {out_core1[47]} {out_core1[48]} {out_core1[49]} {out_core1[50]} {out_core1[51]} {out_core1[52]} {out_core1[53]} {out_core1[54]} {out_core1[55]} {out_core1[56]} {out_core1[57]} {out_core1[58]} {out_core1[59]} {out_core1[60]} {out_core1[61]} {out_core1[62]} {out_core1[63]} {out_core1[64]} {out_core1[65]} {out_core1[66]} {out_core1[67]} {out_core1[68]} {out_core1[69]} {out_core1[70]} {out_core1[71]} {out_core1[72]} {out_core1[73]} {out_core1[74]} {out_core1[75]} {out_core1[76]} {out_core1[77]} {out_core1[78]} {out_core1[79]} {out_core1[80]} {out_core1[81]} {out_core1[82]} {out_core1[83]} {out_core1[84]} {out_core1[85]} {out_core1[86]} {out_core1[87]} {out_core2[0]} {out_core2[1]} {out_core2[2]} {out_core2[3]} {out_core2[4]} {out_core2[5]} {out_core2[6]} {out_core2[7]} {out_core2[8]} {out_core2[9]} {out_core2[10]} {out_core2[11]} {out_core2[12]} {out_core2[13]} {out_core2[14]} {out_core2[15]} {out_core2[16]} {out_core2[17]} {out_core2[18]} {out_core2[19]} {out_core2[20]} {out_core2[21]} {out_core2[22]} {out_core2[23]} {out_core2[24]} {out_core2[25]} {out_core2[26]} {out_core2[27]} {out_core2[28]} {out_core2[29]} {out_core2[30]} {out_core2[31]} {out_core2[32]} {out_core2[33]} {out_core2[34]} {out_core2[35]} {out_core2[36]} {out_core2[37]} {out_core2[38]} {out_core2[39]} {out_core2[40]} {out_core2[41]} {out_core2[42]} {out_core2[43]} {out_core2[44]} {out_core2[45]} {out_core2[46]} {out_core2[47]} {out_core2[48]} {out_core2[49]} {out_core2[50]} {out_core2[51]} {out_core2[52]} {out_core2[53]} {out_core2[54]} {out_core2[55]} {out_core2[56]} {out_core2[57]} {out_core2[58]} {out_core2[59]} {out_core2[60]} {out_core2[61]} {out_core2[62]} {out_core2[63]} {out_core2[64]} {out_core2[65]} {out_core2[66]} {out_core2[67]} {out_core2[68]} {out_core2[69]} {out_core2[70]} {out_core2[71]} {out_core2[72]} {out_core2[73]} {out_core2[74]} {out_core2[75]} {out_core2[76]} {out_core2[77]} {out_core2[78]} {out_core2[79]} {out_core2[80]} {out_core2[81]} {out_core2[82]} {out_core2[83]} {out_core2[84]} {out_core2[85]} {out_core2[86]} {out_core2[87]} {psum_norm_1[0]} {psum_norm_1[1]} {psum_norm_1[2]} {psum_norm_1[3]} {psum_norm_1[4]} {psum_norm_1[5]} {psum_norm_1[6]} {psum_norm_1[7]} {psum_norm_1[8]} {psum_norm_1[9]} {psum_norm_1[10]} {psum_norm_2[0]} {psum_norm_2[1]} {psum_norm_2[2]} {psum_norm_2[3]} {psum_norm_2[4]} {psum_norm_2[5]} {psum_norm_2[6]} {psum_norm_2[7]} {psum_norm_2[8]} {psum_norm_2[9]} {psum_norm_2[10]} s_valid1 s_valid2}
+setPinAssignMode -pinEditInBatch false
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.1 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType center -spacing -0.8 -pin {norm_gate norm_valid {out_core1[0]} {out_core1[1]} {out_core1[2]} {out_core1[3]} {out_core1[4]} {out_core1[5]} {out_core1[6]} {out_core1[7]} {out_core1[8]} {out_core1[9]} {out_core1[10]} {out_core1[11]} {out_core1[12]} {out_core1[13]} {out_core1[14]} {out_core1[15]} {out_core1[16]} {out_core1[17]} {out_core1[18]} {out_core1[19]} {out_core1[20]} {out_core1[21]} {out_core1[22]} {out_core1[23]} {out_core1[24]} {out_core1[25]} {out_core1[26]} {out_core1[27]} {out_core1[28]} {out_core1[29]} {out_core1[30]} {out_core1[31]} {out_core1[32]} {out_core1[33]} {out_core1[34]} {out_core1[35]} {out_core1[36]} {out_core1[37]} {out_core1[38]} {out_core1[39]} {out_core1[40]} {out_core1[41]} {out_core1[42]} {out_core1[43]} {out_core1[44]} {out_core1[45]} {out_core1[46]} {out_core1[47]} {out_core1[48]} {out_core1[49]} {out_core1[50]} {out_core1[51]} {out_core1[52]} {out_core1[53]} {out_core1[54]} {out_core1[55]} {out_core1[56]} {out_core1[57]} {out_core1[58]} {out_core1[59]} {out_core1[60]} {out_core1[61]} {out_core1[62]} {out_core1[63]} {out_core1[64]} {out_core1[65]} {out_core1[66]} {out_core1[67]} {out_core1[68]} {out_core1[69]} {out_core1[70]} {out_core1[71]} {out_core1[72]} {out_core1[73]} {out_core1[74]} {out_core1[75]} {out_core1[76]} {out_core1[77]} {out_core1[78]} {out_core1[79]} {out_core1[80]} {out_core1[81]} {out_core1[82]} {out_core1[83]} {out_core1[84]} {out_core1[85]} {out_core1[86]} {out_core1[87]} {out_core2[0]} {out_core2[1]} {out_core2[2]} {out_core2[3]} {out_core2[4]} {out_core2[5]} {out_core2[6]} {out_core2[7]} {out_core2[8]} {out_core2[9]} {out_core2[10]} {out_core2[11]} {out_core2[12]} {out_core2[13]} {out_core2[14]} {out_core2[15]} {out_core2[16]} {out_core2[17]} {out_core2[18]} {out_core2[19]} {out_core2[20]} {out_core2[21]} {out_core2[22]} {out_core2[23]} {out_core2[24]} {out_core2[25]} {out_core2[26]} {out_core2[27]} {out_core2[28]} {out_core2[29]} {out_core2[30]} {out_core2[31]} {out_core2[32]} {out_core2[33]} {out_core2[34]} {out_core2[35]} {out_core2[36]} {out_core2[37]} {out_core2[38]} {out_core2[39]} {out_core2[40]} {out_core2[41]} {out_core2[42]} {out_core2[43]} {out_core2[44]} {out_core2[45]} {out_core2[46]} {out_core2[47]} {out_core2[48]} {out_core2[49]} {out_core2[50]} {out_core2[51]} {out_core2[52]} {out_core2[53]} {out_core2[54]} {out_core2[55]} {out_core2[56]} {out_core2[57]} {out_core2[58]} {out_core2[59]} {out_core2[60]} {out_core2[61]} {out_core2[62]} {out_core2[63]} {out_core2[64]} {out_core2[65]} {out_core2[66]} {out_core2[67]} {out_core2[68]} {out_core2[69]} {out_core2[70]} {out_core2[71]} {out_core2[72]} {out_core2[73]} {out_core2[74]} {out_core2[75]} {out_core2[76]} {out_core2[77]} {out_core2[78]} {out_core2[79]} {out_core2[80]} {out_core2[81]} {out_core2[82]} {out_core2[83]} {out_core2[84]} {out_core2[85]} {out_core2[86]} {out_core2[87]} {psum_norm_1[0]} {psum_norm_1[1]} {psum_norm_1[2]} {psum_norm_1[3]} {psum_norm_1[4]} {psum_norm_1[5]} {psum_norm_1[6]} {psum_norm_1[7]} {psum_norm_1[8]} {psum_norm_1[9]} {psum_norm_1[10]} {psum_norm_2[0]} {psum_norm_2[1]} {psum_norm_2[2]} {psum_norm_2[3]} {psum_norm_2[4]} {psum_norm_2[5]} {psum_norm_2[6]} {psum_norm_2[7]} {psum_norm_2[8]} {psum_norm_2[9]} {psum_norm_2[10]} s_valid1 s_valid2}
+setPinAssignMode -pinEditInBatch false
+checkPinAssignment
+zoomBox -289.41200 -150.25950 630.80050 700.90750
+zoomBox 145.47850 -75.00550 276.37150 46.06650
+zoomBox 179.88600 -37.19350 229.25300 8.46950
+zoomBox 183.31050 -26.30150 213.62900 1.74200
+zoomBox 191.46900 -9.03050 202.90400 1.54650
+zoomBox 194.59200 -3.30900 198.90500 0.68050
+zoomBox 183.37400 -23.22950 213.70050 4.82150
+zoomBox 113.13150 -87.43500 244.06600 33.67500
+zoomBox 140.03400 -35.97650 189.41650 9.70050
+zoomBox 150.67250 -15.48550 169.29800 1.74250
+zoomBox 153.18200 -10.68800 164.62100 -0.10750
+zoomBox 129.08550 -56.73800 209.50950 17.65150
+zoomBox -164.40350 -617.62750 756.26700 233.96300
+zoomBox -1233.22200 -2654.48150 2741.75300 1022.24200
+zoomBox -2121.76400 -4312.01500 4350.82000 1674.91600
+zoomBox -384.60500 -965.15600 1114.55600 421.51950
+zoomBox -184.04250 -573.01150 736.63000 278.58100
