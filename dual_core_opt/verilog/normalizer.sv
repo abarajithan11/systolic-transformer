@@ -72,14 +72,17 @@ module normalizer #(
               end
       endcase
 
-  wire [BW_PSUM-1:0] data_1 = shift[0][0];
-  wire [BW_PSUM-1:0] data_2 = shift[1][0];
+  `define ABS(X) ($signed(X) > 0) ? X : -X
+
+  wire [BW_PSUM-1:0] data_1 = `ABS(shift[0][0]);
+  wire [BW_PSUM-1:0] data_2 = `ABS(shift[1][0]);
+
 
   logic sum_clear;
   logic [BW_PSUM + $clog2(COL) -1:0] sum;
   always_ff @(posedge clk) begin
     sum_clear <= state==IDLE;
-    if      (state==SUM)  sum <= $signed(sum) + $signed(data_1) + $signed(data_2);
+    if      (state==SUM)  sum <= sum + data_1 + data_2;
     else if (sum_clear )  sum <= 0;
   end
 
