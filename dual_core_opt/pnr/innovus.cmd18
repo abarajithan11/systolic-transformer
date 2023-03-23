@@ -58,3 +58,50 @@ saveDesign floorplan.enc
 setPlaceMode -timingDriven true -reorderScan false -congEffort medium -modulePlan false
 setOptMode -effort high -powerEffort high -leakageToDynamicRatio 0.5 -fixFanoutLoad true -restruct true -verbose true
 place_opt_design
+addFiller -cell {DCAP DCAP4 DCAP8 DCAP16 DCAP32} -merge true
+saveDesign placement.enc
+set_ccopt_property -update_io_latency false
+create_ccopt_clock_tree_spec -file ./constraints/dualcore.ccopt
+ccopt_design
+set_propagated_clock [all_clocks]
+optDesign -postCTS -hold
+saveDesign cts.enc
+setNanoRouteMode -quiet -drouteAllowMergedWireAtPin false
+setNanoRouteMode -quiet -drouteFixAntenna true
+setNanoRouteMode -quiet -routeWithTimingDriven true
+setNanoRouteMode -quiet -routeWithSiDriven true
+setNanoRouteMode -quiet -routeSiEffort medium
+setNanoRouteMode -quiet -routeWithSiPostRouteFix false
+setNanoRouteMode -quiet -drouteAutoStop true
+setNanoRouteMode -quiet -routeSelectedNetOnly false
+setNanoRouteMode -quiet -drouteStartIteration default
+routeDesign
+setExtractRCMode -engine postRoute
+extractRC
+setAnalysisMode -analysisType onChipVariation -cppr both
+optDesign -postRoute -setup -hold
+optDesign -postRoute -drv
+optDesign -postRoute -inc
+report_timing -max_paths 5
+report_timing -max_paths 100 > ${design}.post_route.timing.rpt
+zoomBox -249.80450 -136.12250 611.14800 660.23050
+zoomBox -584.32100 -329.97450 817.59650 966.75400
+zoomBox -249.10550 -130.52500 611.84800 665.82900
+zoomBox -35.07500 -7.17850 493.65850 481.88300
+zoomBox -215.58350 -124.93850 645.37150 671.41700
+zoomBox -27.58600 256.60700 297.12350 556.95300
+zoomBox 43.31700 400.50750 165.78150 513.78300
+zoomBox 16.34000 345.75700 215.75350 530.20800
+zoomBox -27.58700 256.60550 297.12450 556.95300
+zoomBox -99.11500 111.43750 429.62350 600.50350
+zoomBox -215.58700 -124.94450 645.37550 671.41800
+zoomBox -405.24200 -509.85300 996.69150 786.89000
+zoomBox -174.29750 -155.73800 686.66550 640.62500
+zoomBox 29.42100 -85.25350 558.16000 403.81300
+zoomBox 188.31400 -44.07850 513.02600 256.26950
+zoomBox 286.21800 -18.79250 485.63250 165.65950
+zoomBox 347.53800 2.90900 470.00350 116.18550
+zoomBox 23.77750 -112.72000 552.52050 376.35000
+zoomBox -240.97250 -207.27350 619.99700 589.09550
+zoomBox -672.07350 -361.23800 729.87200 935.51600
+zoomBox -240.97250 -207.27350 619.99700 589.09550

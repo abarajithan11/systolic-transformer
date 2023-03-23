@@ -3,7 +3,7 @@
 Report : area
 Design : dualcore
 Version: Q-2019.12-SP5-3
-Date   : Thu Mar 23 03:19:42 2023
+Date   : Thu Mar 23 05:35:24 2023
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -12,21 +12,21 @@ Library(s) Used:
     tcbn65gplustc (File: /home/linux/ieng6/ee260bwi23/public/PDKdata/db/tcbn65gplustc.db)
 
 Number of ports:                        12882
-Number of nets:                         50819
-Number of cells:                        37037
-Number of combinational cells:          25876
+Number of nets:                         54047
+Number of cells:                        40186
+Number of combinational cells:          29025
 Number of sequential cells:             10629
 Number of macros/black boxes:               0
-Number of buf/inv:                       4985
+Number of buf/inv:                       5394
 Number of references:                       5
 
-Combinational area:              66578.760839
-Buf/Inv area:                     5899.680221
-Noncombinational area:           72763.201488
+Combinational area:              76655.520945
+Buf/Inv area:                     6962.040237
+Noncombinational area:           72777.601490
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                139341.962327
+Total cell area:                149433.122435
 Total area:                 undefined
 1
  
@@ -34,7 +34,7 @@ Total area:                 undefined
 Report : reference
 Design : dualcore
 Version: Q-2019.12-SP5-3
-Date   : Thu Mar 23 03:19:44 2023
+Date   : Thu Mar 23 05:35:26 2023
 ****************************************
 
 Attributes:
@@ -52,10 +52,10 @@ Reference          Library       Unit Area   Count    Total Area   Attributes
 -----------------------------------------------------------------------------
 clk_gate_0                        7.200000       1      7.200000  h, n
 clk_gate_1                        7.200000       1      7.200000  h, n
-core_col8_bw4_pr8_bw_psum11_0 54572.760921       1  54572.760921  b, h, n
-core_col8_bw4_pr8_bw_psum11_1 54572.040921       1  54572.040921  b, h, n
+core_col8_bw4_pr8_bw_psum11_0 54615.600932       1  54615.600932  b, h, n
+core_col8_bw4_pr8_bw_psum11_1 54612.000932       1  54612.000932  b, h, n
 normalizer_BW_PSUM11_COL8_W_OUT11
-                              30182.760486       1  30182.760486  b, h, n
+                              40191.120571       1  40191.120571  b, h, n
 -----------------------------------------------------------------------------
-Total 5 references                                  139341.962327
+Total 5 references                                  149433.122435
 1

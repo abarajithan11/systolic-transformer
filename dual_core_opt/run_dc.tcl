@@ -1,5 +1,5 @@
 set top_module dualcore
-set rtlPath "/home/linux/ieng6/ee260bwi23/kevijayakumar/systolic-transformer/dual_core_opt/verilog"
+set rtlPath "verilog"
 
 set_host_options -max_cores 8
 

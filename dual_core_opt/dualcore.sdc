@@ -27,9 +27,9 @@ set_output_delay -clock [get_clocks clk2] -add_delay -max $io_delay [get_ports {
 
 
 
-set_multicycle_path -setup 2 -from normalizer_inst/sum* -to normalizer_inst/div_out*
-set_multicycle_path -hold  1 -from normalizer_inst/sum* -to normalizer_inst/div_out*
+set_multicycle_path -setup 2 -from normalizer_inst/sum*/Q -to normalizer_inst/div_out*/D
+set_multicycle_path -hold  1 -from normalizer_inst/sum*/Q -to normalizer_inst/div_out*/D
  
-set_multicycle_path -setup 2 -from normalizer_inst/div_in* -to normalizer_inst/div_out*
-set_multicycle_path -hold  1 -from normalizer_inst/div_in* -to normalizer_inst/div_out*
+set_multicycle_path -setup 2 -from normalizer_inst/div_in*/Q -to normalizer_inst/div_out*/D
+set_multicycle_path -hold  1 -from normalizer_inst/div_in*/Q -to normalizer_inst/div_out*/D
  

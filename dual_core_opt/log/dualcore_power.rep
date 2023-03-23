@@ -7,7 +7,7 @@ Report : power
         -analysis_effort low
 Design : dualcore
 Version: Q-2019.12-SP5-3
-Date   : Thu Mar 23 03:19:47 2023
+Date   : Thu Mar 23 05:35:29 2023
 ****************************************
 
 
@@ -1077,12 +1077,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =  13.3997 mW   (85%)
-  Net Switching Power  =   2.4037 mW   (15%)
+  Cell Internal Power  =  13.6583 mW   (84%)
+  Net Switching Power  =   2.6081 mW   (16%)
                          ---------
-Total Dynamic Power    =  15.8034 mW  (100%)
+Total Dynamic Power    =  16.2664 mW  (100%)
 
-Cell Leakage Power     = 751.5146 uW
+Cell Leakage Power     = 832.2556 uW
 
 
                  Internal         Switching           Leakage            Total
@@ -1091,10 +1091,10 @@ Power Group      Power            Power               Power              Power  
 io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
-clock_network      1.1387            1.3619        9.6697e+03            2.5102  (  15.16%)
-register          11.2430            0.1381        4.0296e+05           11.7841  (  71.18%)
+clock_network      1.1387            1.3620        9.6697e+03            2.5104  (  14.68%)
+register          11.2473            0.1383        4.0317e+05           11.7888  (  68.95%)
 sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
-combinational      1.0180            0.9037        3.3881e+05            2.2605  (  13.65%)
+combinational      1.2723            1.1077        4.1935e+05            2.7994  (  16.37%)
 --------------------------------------------------------------------------------------------------
-Total             13.3997 mW         2.4037 mW     7.5145e+05 nW        16.5548 mW
+Total             13.6583 mW         2.6081 mW     8.3219e+05 nW        17.0986 mW
 1
