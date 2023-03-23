@@ -1,0 +1,909 @@
+[03/22 15:16:09      0s] 
+[03/22 15:16:09      0s] Cadence Innovus(TM) Implementation System.
+[03/22 15:16:09      0s] Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+[03/22 15:16:09      0s] 
+[03/22 15:16:09      0s] Version:	v19.17-s077_1, built Tue Dec 1 11:09:44 PST 2020
+[03/22 15:16:09      0s] Options:	
+[03/22 15:16:09      0s] Date:		Wed Mar 22 15:16:09 2023
+[03/22 15:16:09      0s] Host:		ieng6-ece-03.ucsd.edu (x86_64 w/Linux 3.10.0-1160.80.1.el7.x86_64) (4cores*8cpus*Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz 20480KB)
+[03/22 15:16:09      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[03/22 15:16:09      0s] 
+[03/22 15:16:09      0s] License:
+[03/22 15:16:09      0s] 		invs	Innovus Implementation System	19.1	checkout succeeded
+[03/22 15:16:09      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[03/22 15:16:25     14s] @(#)CDS: Innovus v19.17-s077_1 (64bit) 12/01/2020 11:09 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/22 15:16:25     14s] @(#)CDS: NanoRoute 19.17-s077_1 NR201130-0207/19_17-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+[03/22 15:16:25     14s] @(#)CDS: AAE 19.17-s018 (64bit) 12/01/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/22 15:16:25     14s] @(#)CDS: CTE 19.17-s022_1 () Nov 18 2020 03:10:35 ( )
+[03/22 15:16:25     14s] @(#)CDS: SYNTECH 19.17-s005_1 () Oct 28 2020 05:12:49 ( )
+[03/22 15:16:25     14s] @(#)CDS: CPE v19.17-s044
+[03/22 15:16:25     14s] @(#)CDS: IQuantus/TQuantus 19.1.3-s268 (64bit) Mon Aug 10 22:57:12 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+[03/22 15:16:25     14s] @(#)CDS: OA 22.60-s011 Tue Jun 16 12:27:00 2020
+[03/22 15:16:25     14s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[03/22 15:16:25     14s] @(#)CDS: RCDB 11.14.18
+[03/22 15:16:25     14s] @(#)CDS: STYLUS 19.10-s021_1 (10/28/2020 08:51 PDT)
+[03/22 15:16:25     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_5761_ieng6-ece-03.ucsd.edu_agnaneswaran_ikzsht.
+
+[03/22 15:16:25     14s] Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+[03/22 15:16:26     15s] 
+[03/22 15:16:26     15s] **INFO:  MMMC transition support version v31-84 
+[03/22 15:16:26     15s] 
+[03/22 15:16:26     15s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[03/22 15:16:26     15s] <CMD> suppressMessage ENCEXT-2799
+[03/22 15:16:26     15s] <CMD> win
+[03/22 15:16:35     16s] <CMD> setMultiCpuUsage -localCpu 8
+[03/22 15:16:35     16s] <CMD> set init_pwr_net VDD
+[03/22 15:16:35     16s] <CMD> set init_gnd_net VSS
+[03/22 15:16:35     16s] <CMD> set init_verilog ../dualcore.out.v
+[03/22 15:16:35     16s] <CMD> set init_design_netlisttype Verilog
+[03/22 15:16:35     16s] <CMD> set init_design_settop 1
+[03/22 15:16:35     16s] <CMD> set init_top_cell dualcore
+[03/22 15:16:35     16s] <CMD> set init_lef_file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef
+[03/22 15:16:35     16s] <CMD> create_library_set -name WC_LIB -timing $worst_timing_lib
+[03/22 15:16:35     16s] <CMD> create_library_set -name BC_LIB -timing $best_timing_lib
+[03/22 15:16:35     16s] <CMD> create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+[03/22 15:16:35     16s] <CMD> create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+[03/22 15:16:35     16s] <CMD> create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+[03/22 15:16:35     16s] <CMD> create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+[03/22 15:16:35     16s] <CMD> create_constraint_mode -name CON -sdc_file [list $sdc]
+[03/22 15:16:35     16s] <CMD> create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+[03/22 15:16:35     16s] <CMD> create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+[03/22 15:16:35     16s] <CMD> init_design -setup WC_VIEW -hold BC_VIEW
+[03/22 15:16:35     16s] 
+[03/22 15:16:35     16s] Loading LEF file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef ...
+[03/22 15:16:35     16s] WARNING (LEFPARS-2007): NAMESCASESENSITIVE statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 28.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 867.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 877.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1014.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1024.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1161.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1171.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1308.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1318.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1372.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1383.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1604.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1614.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1769.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1771.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2021): turn-via is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1772.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1776.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1778.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2021): turn-via is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1779.
+[03/22 15:16:35     16s] WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+[03/22 15:16:35     16s] The LEF parser will ignore this statement.
+[03/22 15:16:35     16s] To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1783.
+[03/22 15:16:35     16s] Set DBUPerIGU to M2 pitch 400.
+[03/22 15:16:35     17s] **WARN: (IMPLF-200):	Pin 'I' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[03/22 15:16:35     17s] Type 'man IMPLF-200' for more detail.
+[03/22 15:16:35     17s] 
+[03/22 15:16:35     17s] viaInitial starts at Wed Mar 22 15:16:35 2023
+viaInitial ends at Wed Mar 22 15:16:35 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[03/22 15:16:35     17s] Starting library reading in 'Multi-threaded flow' (with '8' threads)
+[03/22 15:16:36     19s] Reading WC_LIB timing library /home/linux/ieng6/ee260bwi23/public/PDKdata/lib/tcbn65gpluswc.lib.
+[03/22 15:16:36     19s] Read 811 cells in library tcbn65gpluswc.
+[03/22 15:16:36     19s] Library reading multithread flow ended.
+[03/22 15:16:36     19s] Starting library reading in 'Multi-threaded flow' (with '8' threads)
+[03/22 15:16:36     21s] Reading BC_LIB timing library /home/linux/ieng6/ee260bwi23/public/PDKdata/lib/tcbn65gplusbc.lib.
+[03/22 15:16:36     21s] Read 811 cells in library tcbn65gplusbc.
+[03/22 15:16:36     21s] Library reading multithread flow ended.
+[03/22 15:16:36     22s] Ending "PreSetAnalysisView" (total cpu=0:00:05.0, real=0:00:01.0, peak res=691.8M, current mem=522.7M)
+[03/22 15:16:36     22s] *** End library_loading (cpu=0.08min, real=0.02min, mem=71.0M, fe_cpu=0.37min, fe_real=0.45min, fe_mem=785.2M) ***
+[03/22 15:16:36     22s] #% Begin Load netlist data ... (date=03/22 15:16:36, mem=522.7M)
+[03/22 15:16:36     22s] *** Begin netlist parsing (mem=785.2M) ***
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D4' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D4' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D2' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D2' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D1' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D1' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D0' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D0' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D4' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D4' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D2' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D2' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D1' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D1' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D0' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D0' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2D4' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2D4' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2D2' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2D2' is defined in LEF but not in the timing library.
+[03/22 15:16:36     22s] Type 'man IMPVL-159' for more detail.
+[03/22 15:16:36     22s] **WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+[03/22 15:16:36     22s] To increase the message display limit, refer to the product command reference manual.
+[03/22 15:16:36     22s] Created 811 new cells from 2 timing libraries.
+[03/22 15:16:36     22s] Reading netlist ...
+[03/22 15:16:36     22s] Backslashed names will retain backslash and a trailing blank character.
+[03/22 15:16:36     22s] Reading verilog netlist '../dualcore.out.v'
+[03/22 15:16:37     22s] 
+[03/22 15:16:37     22s] *** Memory Usage v#1 (Current mem = 785.180M, initial mem = 291.785M) ***
+[03/22 15:16:37     22s] *** End netlist parsing (cpu=0:00:00.3, real=0:00:01.0, mem=785.2M) ***
+[03/22 15:16:37     22s] #% End Load netlist data ... (date=03/22 15:16:37, total cpu=0:00:00.3, real=0:00:01.0, peak res=552.1M, current mem=552.1M)
+[03/22 15:16:37     22s] Set top cell to dualcore.
+[03/22 15:16:37     22s] Hooked 1622 DB cells to tlib cells.
+[03/22 15:16:37     22s] Ending "BindLib:" (total cpu=0:00:00.3, real=0:00:00.0, peak res=583.3M, current mem=583.3M)
+[03/22 15:16:37     22s] Starting recursive module instantiation check.
+[03/22 15:16:37     22s] No recursion found.
+[03/22 15:16:37     22s] Building hierarchical netlist for Cell dualcore ...
+[03/22 15:16:37     22s] *** Netlist is unique.
+[03/22 15:16:37     22s] Setting Std. cell height to 3600 DBU (smallest netlist inst).
+[03/22 15:16:37     22s] ** info: there are 1851 modules.
+[03/22 15:16:37     22s] ** info: there are 38153 stdCell insts.
+[03/22 15:16:37     23s] 
+[03/22 15:16:37     23s] *** Memory Usage v#1 (Current mem = 829.094M, initial mem = 291.785M) ***
+[03/22 15:16:37     23s] **WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[03/22 15:16:37     23s] Type 'man IMPFP-3961' for more detail.
+[03/22 15:16:37     23s] **WARN: (IMPFP-3961):	The techSite 'ccore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+[03/22 15:16:37     23s] Type 'man IMPFP-3961' for more detail.
+[03/22 15:16:37     23s] Set Default Net Delay as 1000 ps.
+[03/22 15:16:37     23s] Set Default Net Load as 0.5 pF. 
+[03/22 15:16:37     23s] Set Default Input Pin Transition as 0.1 ps.
+[03/22 15:16:38     23s] Extraction setup Started 
+[03/22 15:16:38     23s] Initializing multi-corner RC extraction with 2 active RC Corners ...
+[03/22 15:16:38     23s] Reading Capacitance Table File /home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cworst.captable ...
+[03/22 15:16:38     23s] **WARN: (IMPEXT-2760):	Layer M9 specified in the cap table is ignored because it is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+[03/22 15:16:38     23s] **WARN: (IMPEXT-2771):	Via VIA_8 specified in the cap table is ignored because its top layer, M9, is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+[03/22 15:16:38     23s] **WARN: (IMPEXT-2801):	Resistance values are not provided in the Cap Table. Sheet resistance defined in the LEF file will be used.
+[03/22 15:16:38     23s] **WARN: (IMPEXT-2710):	Basic Cap table for layer M9 is ignored because the layer is not specified in the technology LEF file.
+[03/22 15:16:38     23s] Reading Capacitance Table File /home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cbest.captable ...
+[03/22 15:16:38     23s] **WARN: (IMPEXT-2760):	Layer M9 specified in the cap table is ignored because it is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+[03/22 15:16:38     23s] **WARN: (IMPEXT-2771):	Via VIA_8 specified in the cap table is ignored because its top layer, M9, is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+[03/22 15:16:38     23s] **WARN: (IMPEXT-2801):	Resistance values are not provided in the Cap Table. Sheet resistance defined in the LEF file will be used.
+[03/22 15:16:38     23s] **WARN: (IMPEXT-2710):	Basic Cap table for layer M9 is ignored because the layer is not specified in the technology LEF file.
+[03/22 15:16:38     23s] Importing multi-corner RC tables ... 
+[03/22 15:16:38     23s] Summary of Active RC-Corners : 
+[03/22 15:16:38     23s]  
+[03/22 15:16:38     23s]  Analysis View: WC_VIEW
+[03/22 15:16:38     23s]     RC-Corner Name        : Cmax
+[03/22 15:16:38     23s]     RC-Corner Index       : 0
+[03/22 15:16:38     23s]     RC-Corner Temperature : 125 Celsius
+[03/22 15:16:38     23s]     RC-Corner Cap Table   : '/home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cworst.captable'
+[03/22 15:16:38     23s]     RC-Corner PreRoute Res Factor         : 1
+[03/22 15:16:38     23s]     RC-Corner PreRoute Cap Factor         : 1
+[03/22 15:16:38     23s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[03/22 15:16:38     23s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[03/22 15:16:38     23s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[03/22 15:16:38     23s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[03/22 15:16:38     23s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[03/22 15:16:38     23s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[03/22 15:16:38     23s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[03/22 15:16:38     23s]  
+[03/22 15:16:38     23s]  Analysis View: BC_VIEW
+[03/22 15:16:38     23s]     RC-Corner Name        : Cmin
+[03/22 15:16:38     23s]     RC-Corner Index       : 1
+[03/22 15:16:38     23s]     RC-Corner Temperature : -40 Celsius
+[03/22 15:16:38     23s]     RC-Corner Cap Table   : '/home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cbest.captable'
+[03/22 15:16:38     23s]     RC-Corner PreRoute Res Factor         : 1
+[03/22 15:16:38     23s]     RC-Corner PreRoute Cap Factor         : 1
+[03/22 15:16:38     23s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[03/22 15:16:38     23s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[03/22 15:16:38     23s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[03/22 15:16:38     23s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[03/22 15:16:38     23s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[03/22 15:16:38     23s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[03/22 15:16:38     23s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[03/22 15:16:38     23s] LayerId::1 widthSet size::4
+[03/22 15:16:38     23s] LayerId::2 widthSet size::4
+[03/22 15:16:38     23s] LayerId::3 widthSet size::4
+[03/22 15:16:38     23s] LayerId::4 widthSet size::4
+[03/22 15:16:38     23s] LayerId::5 widthSet size::4
+[03/22 15:16:38     23s] LayerId::6 widthSet size::4
+[03/22 15:16:38     23s] LayerId::7 widthSet size::4
+[03/22 15:16:38     23s] LayerId::8 widthSet size::4
+[03/22 15:16:38     23s] Updating RC grid for preRoute extraction ...
+[03/22 15:16:38     23s] Initializing multi-corner capacitance tables ... 
+[03/22 15:16:38     23s] Initializing multi-corner resistance tables ...
+[03/22 15:16:38     23s] Preroute length aware model : LLS: 2-3 ; HLS: 3-5 ; rDens: 0.000000 ; uaWl: 0.000000 ; uaWlH: 0.000000 ; aWlH: 0.000000 ; Pmax: 0.850000 ; wcR: 0.000000 ; newSi: 0.000000 ; pMod: 82 ; 
+[03/22 15:16:38     23s] *Info: initialize multi-corner CTS.
+[03/22 15:16:38     23s] Ending "SetAnalysisView" (total cpu=0:00:00.3, real=0:00:00.0, peak res=782.5M, current mem=596.8M)
+[03/22 15:16:38     23s] Reading timing constraints file '../dualcore.sdc' ...
+[03/22 15:16:38     23s] Current (total cpu=0:00:24.0, real=0:00:29.0, peak res=793.6M, current mem=793.6M)
+[03/22 15:16:38     24s] **WARN: (TCLNL-330):	set_input_delay on clock root 'clk2' is not supported. You should use the -source option to set_clock_latency to provide this offset. You can also use the global timing_allow_input_delay_on_clock_source to allow set_input_delay assertion to have an effect on clock source paths beginning at this clock root. (File ../dualcore.sdc, Line 15).
+[03/22 15:16:38     24s] 
+[03/22 15:16:38     24s] INFO (CTE): Reading of timing constraints file ../dualcore.sdc completed, with 1 WARNING
+[03/22 15:16:38     24s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=837.6M, current mem=837.6M)
+[03/22 15:16:38     24s] Current (total cpu=0:00:24.1, real=0:00:29.0, peak res=837.6M, current mem=837.6M)
+[03/22 15:16:38     24s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[03/22 15:16:38     24s] Creating Cell Server ...(0, 1, 1, 1)
+[03/22 15:16:38     24s] Summary for sequential cells identification: 
+[03/22 15:16:38     24s]   Identified SBFF number: 199
+[03/22 15:16:38     24s]   Identified MBFF number: 0
+[03/22 15:16:38     24s]   Identified SB Latch number: 0
+[03/22 15:16:38     24s]   Identified MB Latch number: 0
+[03/22 15:16:38     24s]   Not identified SBFF number: 0
+[03/22 15:16:38     24s]   Not identified MBFF number: 0
+[03/22 15:16:38     24s]   Not identified SB Latch number: 0
+[03/22 15:16:38     24s]   Not identified MB Latch number: 0
+[03/22 15:16:38     24s]   Number of sequential cells which are not FFs: 104
+[03/22 15:16:38     24s] Total number of combinational cells: 497
+[03/22 15:16:38     24s] Total number of sequential cells: 303
+[03/22 15:16:38     24s] Total number of tristate cells: 11
+[03/22 15:16:38     24s] Total number of level shifter cells: 0
+[03/22 15:16:38     24s] Total number of power gating cells: 0
+[03/22 15:16:38     24s] Total number of isolation cells: 0
+[03/22 15:16:38     24s] Total number of power switch cells: 0
+[03/22 15:16:38     24s] Total number of pulse generator cells: 0
+[03/22 15:16:38     24s] Total number of always on buffers: 0
+[03/22 15:16:38     24s] Total number of retention cells: 0
+[03/22 15:16:38     24s] List of usable buffers: BUFFD1 BUFFD0 BUFFD2 BUFFD3 BUFFD4 BUFFD6 BUFFD8 BUFFD12 BUFFD16 CKBD1 CKBD0 CKBD2 CKBD3 CKBD4 CKBD6 CKBD8 CKBD12 CKBD16
+[03/22 15:16:38     24s] Total number of usable buffers: 18
+[03/22 15:16:39     24s] List of unusable buffers: BUFFD20 BUFFD24 CKBD20 CKBD24 GBUFFD1 GBUFFD3 GBUFFD2 GBUFFD4 GBUFFD8
+[03/22 15:16:39     24s] Total number of unusable buffers: 9
+[03/22 15:16:39     24s] List of usable inverters: CKND1 CKND0 CKND2 CKND3 CKND4 CKND6 CKND8 CKND12 CKND16 INVD1 INVD0 INVD2 INVD3 INVD4 INVD6 INVD8 INVD12 INVD16
+[03/22 15:16:39     24s] Total number of usable inverters: 18
+[03/22 15:16:39     24s] List of unusable inverters: CKND20 CKND24 GINVD2 GINVD1 GINVD4 GINVD3 GINVD8 INVD20 INVD24
+[03/22 15:16:39     24s] Total number of unusable inverters: 9
+[03/22 15:16:39     24s] List of identified usable delay cells:
+[03/22 15:16:39     24s] Total number of identified usable delay cells: 0
+[03/22 15:16:39     24s] List of identified unusable delay cells: DEL0 DEL005 DEL01 DEL015 DEL02 DEL1 DEL2 DEL3 DEL4
+[03/22 15:16:39     24s] Total number of identified unusable delay cells: 9
+[03/22 15:16:39     24s] Creating Cell Server, finished. 
+[03/22 15:16:39     24s] 
+[03/22 15:16:39     24s] All delay cells are dont_use. Buffers will be used to fix hold violations.
+[03/22 15:16:39     24s] Deleting Cell Server ...
+[03/22 15:16:39     24s] 
+[03/22 15:16:39     24s] *** Summary of all messages that are not suppressed in this session:
+[03/22 15:16:39     24s] Severity  ID               Count  Summary                                  
+[03/22 15:16:39     24s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[03/22 15:16:39     24s] WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+[03/22 15:16:39     24s] WARNING   IMPEXT-2710          2  Basic Cap table for layer M%d is ignored...
+[03/22 15:16:39     24s] WARNING   IMPEXT-2760          2  Layer M%d specified in the cap table is ...
+[03/22 15:16:39     24s] WARNING   IMPEXT-2771          2  Via %s specified in the cap table is ign...
+[03/22 15:16:39     24s] WARNING   IMPEXT-2801          2  Resistance values are not provided in th...
+[03/22 15:16:39     24s] WARNING   IMPVL-159         1622  Pin '%s' of cell '%s' is defined in LEF ...
+[03/22 15:16:39     24s] WARNING   TCLNL-330            1  set_input_delay on clock root '%s' is no...
+[03/22 15:16:39     24s] *** Message Summary: 1634 warning(s), 0 error(s)
+[03/22 15:16:39     24s] 
+[03/22 15:16:39     24s] <CMD> set_interactive_constraint_modes {CON}
+[03/22 15:16:39     24s] <CMD> setDesignMode -process 65
+[03/22 15:16:39     24s] ##  Process: 65            (User Set)               
+[03/22 15:16:39     24s] ##     Node: (not set)                           
+[03/22 15:16:39     24s] 
+##  Check design process and node:  
+##  Design tech node is not set.
+
+[03/22 15:16:39     24s] Applying the recommended capacitance filtering threshold values for 65nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+[03/22 15:16:39     24s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[03/22 15:16:39     24s] 	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+[03/22 15:16:39     24s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+[03/22 15:16:39     24s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+[03/22 15:17:48     37s] <CMD> getPinAssignMode -pinEditInBatch -quiet
+[03/22 15:17:48     37s] <CMD> setPinAssignMode -pinEditInBatch true
+[03/22 15:17:48     37s] <CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 3 -spreadType center -spacing 0.8 -pin {clk1 clk2 {inst_core1[0]} {inst_core1[1]} {inst_core1[2]} {inst_core1[3]} {inst_core1[4]} {inst_core1[5]} {inst_core1[6]} {inst_core1[7]} {inst_core1[8]} {inst_core1[9]} {inst_core1[10]} {inst_core1[11]} {inst_core1[12]} {inst_core1[13]} {inst_core1[14]} {inst_core1[15]} {inst_core1[16]} {inst_core2[0]} {inst_core2[1]} {inst_core2[2]} {inst_core2[3]} {inst_core2[4]} {inst_core2[5]} {inst_core2[6]} {inst_core2[7]} {inst_core2[8]} {inst_core2[9]} {inst_core2[10]} {inst_core2[11]} {inst_core2[12]} {inst_core2[13]} {inst_core2[14]} {inst_core2[15]} {inst_core2[16]} {mem_in_core1[0]} {mem_in_core1[1]} {mem_in_core1[2]} {mem_in_core1[3]} {mem_in_core1[4]} {mem_in_core1[5]} {mem_in_core1[6]} {mem_in_core1[7]} {mem_in_core1[8]} {mem_in_core1[9]} {mem_in_core1[10]} {mem_in_core1[11]} {mem_in_core1[12]} {mem_in_core1[13]} {mem_in_core1[14]} {mem_in_core1[15]} {mem_in_core1[16]} {mem_in_core1[17]} {mem_in_core1[18]} {mem_in_core1[19]} {mem_in_core1[20]} {mem_in_core1[21]} {mem_in_core1[22]} {mem_in_core1[23]} {mem_in_core1[24]} {mem_in_core1[25]} {mem_in_core1[26]} {mem_in_core1[27]} {mem_in_core1[28]} {mem_in_core1[29]} {mem_in_core1[30]} {mem_in_core1[31]} {mem_in_core2[0]} {mem_in_core2[1]} {mem_in_core2[2]} {mem_in_core2[3]} {mem_in_core2[4]} {mem_in_core2[5]} {mem_in_core2[6]} {mem_in_core2[7]} {mem_in_core2[8]} {mem_in_core2[9]} {mem_in_core2[10]} {mem_in_core2[11]} {mem_in_core2[12]} {mem_in_core2[13]} {mem_in_core2[14]} {mem_in_core2[15]} {mem_in_core2[16]} {mem_in_core2[17]} {mem_in_core2[18]} {mem_in_core2[19]} {mem_in_core2[20]} {mem_in_core2[21]} {mem_in_core2[22]} {mem_in_core2[23]} {mem_in_core2[24]} {mem_in_core2[25]} {mem_in_core2[26]} {mem_in_core2[27]} {mem_in_core2[28]} {mem_in_core2[29]} {mem_in_core2[30]} {mem_in_core2[31]} rst1 rst2}
+[03/22 15:17:49     38s] Successfully spread [102] pins.
+[03/22 15:17:49     38s] editPin : finished (cpu = 0:00:01.0 real = 0:00:01.0, mem = 1171.6M).
+[03/22 15:17:49     38s] <CMD> setPinAssignMode -pinEditInBatch false
+[03/22 15:17:59     40s] <CMD> checkPinAssignment
+[03/22 15:17:59     40s] #% Begin checkPinAssignment (date=03/22 15:17:59, mem=908.7M)
+[03/22 15:17:59     40s] Checking pins of top cell dualcore ... completed
+[03/22 15:17:59     40s] 
+[03/22 15:17:59     40s] ===========================================================================================================================
+[03/22 15:17:59     40s]                                                 checkPinAssignment Summary
+[03/22 15:17:59     40s] ===========================================================================================================================
+[03/22 15:17:59     40s] Partition   | pads  | pins   | legal  | illegal | internal | internal illegal | FT     | FT illegal | constant | unplaced |
+[03/22 15:17:59     40s] ===========================================================================================================================
+[03/22 15:17:59     40s] dualcore    |     0 |    304 |    102 |       0 |        0 |                0 |      0 |          0 |        0 |      202 |
+[03/22 15:17:59     40s] ===========================================================================================================================
+[03/22 15:17:59     40s] TOTAL       |     0 |    304 |    102 |       0 |        0 |                0 |      0 |          0 |        0 |      202 |
+[03/22 15:17:59     40s] ===========================================================================================================================
+[03/22 15:17:59     40s] #% End checkPinAssignment (date=03/22 15:17:59, total cpu=0:00:00.0, real=0:00:00.0, peak res=910.2M, current mem=910.2M)
+[03/22 15:18:36     47s] <CMD> getPinAssignMode -pinEditInBatch -quiet
+[03/22 15:18:36     47s] <CMD> setPinAssignMode -pinEditInBatch true
+[03/22 15:18:36     47s] <CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType center -spacing 0.8 -pin {norm_gate norm_valid {out_core1[0]} {out_core1[1]} {out_core1[2]} {out_core1[3]} {out_core1[4]} {out_core1[5]} {out_core1[6]} {out_core1[7]} {out_core1[8]} {out_core1[9]} {out_core1[10]} {out_core1[11]} {out_core1[12]} {out_core1[13]} {out_core1[14]} {out_core1[15]} {out_core1[16]} {out_core1[17]} {out_core1[18]} {out_core1[19]} {out_core1[20]} {out_core1[21]} {out_core1[22]} {out_core1[23]} {out_core1[24]} {out_core1[25]} {out_core1[26]} {out_core1[27]} {out_core1[28]} {out_core1[29]} {out_core1[30]} {out_core1[31]} {out_core1[32]} {out_core1[33]} {out_core1[34]} {out_core1[35]} {out_core1[36]} {out_core1[37]} {out_core1[38]} {out_core1[39]} {out_core1[40]} {out_core1[41]} {out_core1[42]} {out_core1[43]} {out_core1[44]} {out_core1[45]} {out_core1[46]} {out_core1[47]} {out_core1[48]} {out_core1[49]} {out_core1[50]} {out_core1[51]} {out_core1[52]} {out_core1[53]} {out_core1[54]} {out_core1[55]} {out_core1[56]} {out_core1[57]} {out_core1[58]} {out_core1[59]} {out_core1[60]} {out_core1[61]} {out_core1[62]} {out_core1[63]} {out_core1[64]} {out_core1[65]} {out_core1[66]} {out_core1[67]} {out_core1[68]} {out_core1[69]} {out_core1[70]} {out_core1[71]} {out_core1[72]} {out_core1[73]} {out_core1[74]} {out_core1[75]} {out_core1[76]} {out_core1[77]} {out_core1[78]} {out_core1[79]} {out_core1[80]} {out_core1[81]} {out_core1[82]} {out_core1[83]} {out_core1[84]} {out_core1[85]} {out_core1[86]} {out_core1[87]} {out_core2[0]} {out_core2[1]} {out_core2[2]} {out_core2[3]} {out_core2[4]} {out_core2[5]} {out_core2[6]} {out_core2[7]} {out_core2[8]} {out_core2[9]} {out_core2[10]} {out_core2[11]} {out_core2[12]} {out_core2[13]} {out_core2[14]} {out_core2[15]} {out_core2[16]} {out_core2[17]} {out_core2[18]} {out_core2[19]} {out_core2[20]} {out_core2[21]} {out_core2[22]} {out_core2[23]} {out_core2[24]} {out_core2[25]} {out_core2[26]} {out_core2[27]} {out_core2[28]} {out_core2[29]} {out_core2[30]} {out_core2[31]} {out_core2[32]} {out_core2[33]} {out_core2[34]} {out_core2[35]} {out_core2[36]} {out_core2[37]} {out_core2[38]} {out_core2[39]} {out_core2[40]} {out_core2[41]} {out_core2[42]} {out_core2[43]} {out_core2[44]} {out_core2[45]} {out_core2[46]} {out_core2[47]} {out_core2[48]} {out_core2[49]} {out_core2[50]} {out_core2[51]} {out_core2[52]} {out_core2[53]} {out_core2[54]} {out_core2[55]} {out_core2[56]} {out_core2[57]} {out_core2[58]} {out_core2[59]} {out_core2[60]} {out_core2[61]} {out_core2[62]} {out_core2[63]} {out_core2[64]} {out_core2[65]} {out_core2[66]} {out_core2[67]} {out_core2[68]} {out_core2[69]} {out_core2[70]} {out_core2[71]} {out_core2[72]} {out_core2[73]} {out_core2[74]} {out_core2[75]} {out_core2[76]} {out_core2[77]} {out_core2[78]} {out_core2[79]} {out_core2[80]} {out_core2[81]} {out_core2[82]} {out_core2[83]} {out_core2[84]} {out_core2[85]} {out_core2[86]} {out_core2[87]} {psum_norm_1[0]} {psum_norm_1[1]} {psum_norm_1[2]} {psum_norm_1[3]} {psum_norm_1[4]} {psum_norm_1[5]} {psum_norm_1[6]} {psum_norm_1[7]} {psum_norm_1[8]} {psum_norm_1[9]} {psum_norm_1[10]} {psum_norm_2[0]} {psum_norm_2[1]} {psum_norm_2[2]} {psum_norm_2[3]} {psum_norm_2[4]} {psum_norm_2[5]} {psum_norm_2[6]} {psum_norm_2[7]} {psum_norm_2[8]} {psum_norm_2[9]} {psum_norm_2[10]} s_valid1 s_valid2}
+[03/22 15:18:36     47s] Successfully spread [202] pins.
+[03/22 15:18:36     47s] editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1174.0M).
+[03/22 15:18:36     47s] <CMD> setPinAssignMode -pinEditInBatch false
+[03/22 15:18:42     48s] <CMD> checkPinAssignment
+[03/22 15:18:42     48s] #% Begin checkPinAssignment (date=03/22 15:18:42, mem=909.6M)
+[03/22 15:18:42     48s] Checking pins of top cell dualcore ... completed
+[03/22 15:18:42     48s] 
+[03/22 15:18:42     48s] ===========================================================================================================================
+[03/22 15:18:42     48s]                                                 checkPinAssignment Summary
+[03/22 15:18:42     48s] ===========================================================================================================================
+[03/22 15:18:42     48s] Partition   | pads  | pins   | legal  | illegal | internal | internal illegal | FT     | FT illegal | constant | unplaced |
+[03/22 15:18:42     48s] ===========================================================================================================================
+[03/22 15:18:42     48s] dualcore    |     0 |    304 |    102 |     202 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:18:42     48s] ===========================================================================================================================
+[03/22 15:18:42     48s] TOTAL       |     0 |    304 |    102 |     202 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:18:42     48s] ===========================================================================================================================
+[03/22 15:18:43     48s] #% End checkPinAssignment (date=03/22 15:18:42, total cpu=0:00:00.1, real=0:00:01.0, peak res=910.0M, current mem=910.0M)
+[03/22 15:19:08     53s] <CMD> getPinAssignMode -pinEditInBatch -quiet
+[03/22 15:19:08     53s] <CMD> setPinAssignMode -pinEditInBatch true
+[03/22 15:19:08     53s] <CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Bottom -layer 3 -spreadType center -spacing 0.8 -pin {norm_gate norm_valid {out_core1[0]} {out_core1[1]} {out_core1[2]} {out_core1[3]} {out_core1[4]} {out_core1[5]} {out_core1[6]} {out_core1[7]} {out_core1[8]} {out_core1[9]} {out_core1[10]} {out_core1[11]} {out_core1[12]} {out_core1[13]} {out_core1[14]} {out_core1[15]} {out_core1[16]} {out_core1[17]} {out_core1[18]} {out_core1[19]} {out_core1[20]} {out_core1[21]} {out_core1[22]} {out_core1[23]} {out_core1[24]} {out_core1[25]} {out_core1[26]} {out_core1[27]} {out_core1[28]} {out_core1[29]} {out_core1[30]} {out_core1[31]} {out_core1[32]} {out_core1[33]} {out_core1[34]} {out_core1[35]} {out_core1[36]} {out_core1[37]} {out_core1[38]} {out_core1[39]} {out_core1[40]} {out_core1[41]} {out_core1[42]} {out_core1[43]} {out_core1[44]} {out_core1[45]} {out_core1[46]} {out_core1[47]} {out_core1[48]} {out_core1[49]} {out_core1[50]} {out_core1[51]} {out_core1[52]} {out_core1[53]} {out_core1[54]} {out_core1[55]} {out_core1[56]} {out_core1[57]} {out_core1[58]} {out_core1[59]} {out_core1[60]} {out_core1[61]} {out_core1[62]} {out_core1[63]} {out_core1[64]} {out_core1[65]} {out_core1[66]} {out_core1[67]} {out_core1[68]} {out_core1[69]} {out_core1[70]} {out_core1[71]} {out_core1[72]} {out_core1[73]} {out_core1[74]} {out_core1[75]} {out_core1[76]} {out_core1[77]} {out_core1[78]} {out_core1[79]} {out_core1[80]} {out_core1[81]} {out_core1[82]} {out_core1[83]} {out_core1[84]} {out_core1[85]} {out_core1[86]} {out_core1[87]} {out_core2[0]} {out_core2[1]} {out_core2[2]} {out_core2[3]} {out_core2[4]} {out_core2[5]} {out_core2[6]} {out_core2[7]} {out_core2[8]} {out_core2[9]} {out_core2[10]} {out_core2[11]} {out_core2[12]} {out_core2[13]} {out_core2[14]} {out_core2[15]} {out_core2[16]} {out_core2[17]} {out_core2[18]} {out_core2[19]} {out_core2[20]} {out_core2[21]} {out_core2[22]} {out_core2[23]} {out_core2[24]} {out_core2[25]} {out_core2[26]} {out_core2[27]} {out_core2[28]} {out_core2[29]} {out_core2[30]} {out_core2[31]} {out_core2[32]} {out_core2[33]} {out_core2[34]} {out_core2[35]} {out_core2[36]} {out_core2[37]} {out_core2[38]} {out_core2[39]} {out_core2[40]} {out_core2[41]} {out_core2[42]} {out_core2[43]} {out_core2[44]} {out_core2[45]} {out_core2[46]} {out_core2[47]} {out_core2[48]} {out_core2[49]} {out_core2[50]} {out_core2[51]} {out_core2[52]} {out_core2[53]} {out_core2[54]} {out_core2[55]} {out_core2[56]} {out_core2[57]} {out_core2[58]} {out_core2[59]} {out_core2[60]} {out_core2[61]} {out_core2[62]} {out_core2[63]} {out_core2[64]} {out_core2[65]} {out_core2[66]} {out_core2[67]} {out_core2[68]} {out_core2[69]} {out_core2[70]} {out_core2[71]} {out_core2[72]} {out_core2[73]} {out_core2[74]} {out_core2[75]} {out_core2[76]} {out_core2[77]} {out_core2[78]} {out_core2[79]} {out_core2[80]} {out_core2[81]} {out_core2[82]} {out_core2[83]} {out_core2[84]} {out_core2[85]} {out_core2[86]} {out_core2[87]} {psum_norm_1[0]} {psum_norm_1[1]} {psum_norm_1[2]} {psum_norm_1[3]} {psum_norm_1[4]} {psum_norm_1[5]} {psum_norm_1[6]} {psum_norm_1[7]} {psum_norm_1[8]} {psum_norm_1[9]} {psum_norm_1[10]} {psum_norm_2[0]} {psum_norm_2[1]} {psum_norm_2[2]} {psum_norm_2[3]} {psum_norm_2[4]} {psum_norm_2[5]} {psum_norm_2[6]} {psum_norm_2[7]} {psum_norm_2[8]} {psum_norm_2[9]} {psum_norm_2[10]} s_valid1 s_valid2}
+[03/22 15:19:08     53s] Successfully spread [202] pins.
+[03/22 15:19:08     53s] editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1174.1M).
+[03/22 15:19:08     53s] <CMD> setPinAssignMode -pinEditInBatch false
+[03/22 15:19:12     54s] <CMD> checkPinAssignment
+[03/22 15:19:13     54s] #% Begin checkPinAssignment (date=03/22 15:19:12, mem=910.2M)
+[03/22 15:19:13     54s] Checking pins of top cell dualcore ... completed
+[03/22 15:19:13     54s] 
+[03/22 15:19:13     54s] ===========================================================================================================================
+[03/22 15:19:13     54s]                                                 checkPinAssignment Summary
+[03/22 15:19:13     54s] ===========================================================================================================================
+[03/22 15:19:13     54s] Partition   | pads  | pins   | legal  | illegal | internal | internal illegal | FT     | FT illegal | constant | unplaced |
+[03/22 15:19:13     54s] ===========================================================================================================================
+[03/22 15:19:13     54s] dualcore    |     0 |    304 |    102 |     202 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:19:13     54s] ===========================================================================================================================
+[03/22 15:19:13     54s] TOTAL       |     0 |    304 |    102 |     202 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:19:13     54s] ===========================================================================================================================
+[03/22 15:19:13     54s] #% End checkPinAssignment (date=03/22 15:19:13, total cpu=0:00:00.1, real=0:00:00.0, peak res=910.3M, current mem=910.3M)
+[03/22 15:19:20     55s] <CMD> zoomBox 81.74250 -20.65700 428.79850 300.35850
+[03/22 15:19:20     55s] <CMD> zoomBox 234.91450 -16.86250 315.29900 57.49050
+[03/22 15:19:21     55s] <CMD> zoomBox 205.44500 -23.33200 336.33850 97.74050
+[03/22 15:19:22     56s] <CMD> zoomBox 308.61050 -5.62600 320.04550 4.95100
+[03/22 15:19:23     56s] <CMD> zoomBox 302.52250 -7.05750 321.14250 10.16550
+[03/22 15:19:23     56s] <CMD> zoomBox 292.71500 -9.20700 323.03450 18.83750
+[03/22 15:19:30     57s] <CMD> pinAlignment -pinNames {norm_gate norm_valid out_core1[0] out_core1[1] out_core1[2] out_core1[3] out_core1[4] out_core1[5] out_core1[6] out_core1[7] out_core1[8] out_core1[9] out_core1[10] out_core1[11] out_core1[12] out_core1[13] out_core1[14] out_core1[15] out_core1[16] out_core1[17] out_core1[18] out_core1[19] out_core1[20] out_core1[21] out_core1[22] out_core1[23] out_core1[24] out_core1[25] out_core1[26] out_core1[27] out_core1[28] out_core1[29] out_core1[30] out_core1[31] out_core1[32] out_core1[33] out_core1[34] out_core1[35] out_core1[36] out_core1[37] out_core1[38] out_core1[39] out_core1[40] out_core1[41] out_core1[42] out_core1[43] out_core1[44] out_core1[45] out_core1[46] out_core1[47] out_core1[48] out_core1[49] out_core1[50] out_core1[51] out_core1[52] out_core1[53] out_core1[54] out_core1[55] out_core1[56] out_core1[57] out_core1[58] out_core1[59] out_core1[60] out_core1[61] out_core1[62] out_core1[63] out_core1[64] out_core1[65] out_core1[66] out_core1[67] out_core1[68] out_core1[69] out_core1[70] out_core1[71] out_core1[72] out_core1[73] out_core1[74] out_core1[75] out_core1[76] out_core1[77] out_core1[78] out_core1[79] out_core1[80] out_core1[81] out_core1[82] out_core1[83] out_core1[84] out_core1[85] out_core1[86] out_core1[87] out_core2[0] out_core2[1] out_core2[2] out_core2[3] out_core2[4] out_core2[5] out_core2[6] out_core2[7] out_core2[8] out_core2[9] out_core2[10] out_core2[11] out_core2[12] out_core2[13] out_core2[14] out_core2[15] out_core2[16] out_core2[17] out_core2[18] out_core2[19] out_core2[20] out_core2[21] out_core2[22] out_core2[23] out_core2[24] out_core2[25] out_core2[26] out_core2[27] out_core2[28] out_core2[29] out_core2[30] out_core2[31] out_core2[32] out_core2[33] out_core2[34] out_core2[35] out_core2[36] out_core2[37] out_core2[38] out_core2[39] out_core2[40] out_core2[41] out_core2[42] out_core2[43] out_core2[44] out_core2[45] out_core2[46] out_core2[47] out_core2[48] out_core2[49] out_core2[50] out_core2[51] out_core2[52] out_core2[53] out_core2[54] out_core2[55] out_core2[56] out_core2[57] out_core2[58] out_core2[59] out_core2[60] out_core2[61] out_core2[62] out_core2[63] out_core2[64] out_core2[65] out_core2[66] out_core2[67] out_core2[68] out_core2[69] out_core2[70] out_core2[71] out_core2[72] out_core2[73] out_core2[74] out_core2[75] out_core2[76] out_core2[77] out_core2[78] out_core2[79] out_core2[80] out_core2[81] out_core2[82] out_core2[83] out_core2[84] out_core2[85] out_core2[86] out_core2[87] psum_norm_1[0] psum_norm_1[1] psum_norm_1[2] psum_norm_1[3] psum_norm_1[4] psum_norm_1[5] psum_norm_1[6] psum_norm_1[7] psum_norm_1[8] psum_norm_1[9] psum_norm_1[10] psum_norm_2[0] psum_norm_2[1] psum_norm_2[2] psum_norm_2[3] psum_norm_2[4] psum_norm_2[5] psum_norm_2[6] psum_norm_2[7] psum_norm_2[8] psum_norm_2[9] psum_norm_2[10] s_valid1 s_valid2} -ptnInst dualcore -refObj {}
+[03/22 15:19:30     57s] Moving pin [norm_gate] of partition [dualcore] connected to pin [D] of instance [gclk_inst1/gate_en_reg] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [norm_valid] of partition [dualcore] connected to pin [Q] of instance [normalizer_inst/norm_valid_reg] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[0]] of partition [dualcore] connected to pin [A2] of instance [normalizer_inst/U12907] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[1]] of partition [dualcore] connected to pin [A2] of instance [normalizer_inst/U12913] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[2]] of partition [dualcore] connected to pin [A2] of instance [normalizer_inst/U12917] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[3]] of partition [dualcore] connected to pin [A2] of instance [normalizer_inst/U12915] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[4]] of partition [dualcore] connected to pin [A2] of instance [normalizer_inst/U12923] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[5]] of partition [dualcore] connected to pin [A2] of instance [normalizer_inst/U12909] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[6]] of partition [dualcore] connected to pin [A2] of instance [normalizer_inst/U12905] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[7]] of partition [dualcore] connected to pin [A2] of instance [normalizer_inst/U12919] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[8]] of partition [dualcore] connected to pin [A2] of instance [normalizer_inst/U12921] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[9]] of partition [dualcore] connected to pin [A2] of instance [normalizer_inst/U12911] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[10]] of partition [dualcore] connected to pin [A2] of instance [normalizer_inst/U8837] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[11]] of partition [dualcore] connected to pin [C2] of instance [normalizer_inst/U6917] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[12]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U5939] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[13]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U5940] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[14]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6868] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[15]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U5941] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[16]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U8850] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[17]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U5942] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[18]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U5943] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[19]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U5944] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[20]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U5945] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[21]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U5946] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[22]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6911] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[23]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6859] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[24]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6863] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[25]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U8849] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[26]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6871] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[27]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6877] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[28]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6883] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[29]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6889] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[30]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6895] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[31]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6900] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[32]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6906] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[33]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6912] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[34]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U8848] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[35]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6864] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[36]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6869] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[37]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6872] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[38]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6878] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[39]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6884] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[40]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6890] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[41]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6896] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[42]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6901] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[43]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6907] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[44]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6913] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[45]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6860] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[46]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6865] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[47]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12784] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[48]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6873] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[49]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6879] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[50]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6885] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[51]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6891] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[52]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6897] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[53]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6902] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[54]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6908] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[55]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6914] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[56]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12774] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[57]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12782] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[58]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12779] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[59]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12776] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[60]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12775] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[61]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12770] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[62]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12777] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[63]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12771] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[64]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12783] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[65]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12780] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[66]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12778] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[67]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12773] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[68]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12772] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[69]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U12781] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[70]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6874] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[71]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6880] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[72]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6886] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[73]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6892] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[74]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6898] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[75]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6903] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[76]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U8853] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[77]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6915] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[78]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6861] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[79]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6866] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[80]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6870] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[81]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6875] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[82]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6881] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[83]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6887] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[84]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6893] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[85]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U8852] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[86]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6904] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core1[87]] of partition [dualcore] connected to pin [C1] of instance [normalizer_inst/U6909] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[0]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__0_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[1]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__1_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[2]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__2_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[3]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__3_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[4]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__4_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[5]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__5_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[6]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__6_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[7]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__7_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[8]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__8_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[9]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__9_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[10]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__10_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[11]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__11_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[12]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__12_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[13]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__13_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[14]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__14_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[15]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__15_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[16]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__16_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[17]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__17_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[18]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__18_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[19]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__19_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[20]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__20_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[21]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__21_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[22]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__22_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[23]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__23_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[24]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__24_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[25]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__25_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[26]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__26_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[27]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__27_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[28]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__28_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[29]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__29_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[30]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__30_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[31]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__31_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[32]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__32_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[33]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__33_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[34]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__34_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[35]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__35_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[36]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__36_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[37]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__37_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[38]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__38_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[39]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__39_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[40]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__40_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[41]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__41_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[42]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__42_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[43]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__43_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[44]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__44_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[45]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__45_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[46]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__46_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[47]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__47_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[48]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__48_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[49]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__49_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[50]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__50_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[51]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__51_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[52]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__52_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[53]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__53_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[54]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__54_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[55]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__55_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[56]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__56_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[57]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__57_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[58]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__58_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[59]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__59_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[60]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__60_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[61]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__61_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[62]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__62_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[63]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__63_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[64]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__64_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[65]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__65_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[66]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__66_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[67]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__67_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[68]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__68_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[69]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__69_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[70]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__70_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[71]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__71_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[72]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__72_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[73]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__73_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[74]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__74_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[75]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__75_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[76]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__76_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[77]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__77_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[78]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__78_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[79]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__79_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[80]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__80_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[81]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__81_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[82]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__82_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[83]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__83_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[84]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__84_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[85]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__85_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[86]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__86_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [out_core2[87]] of partition [dualcore] connected to pin [D] of instance [normalizer_inst/AFIFO/fifo_mem_arr_reg_0__87_] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_1[0]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12808] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_1[1]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12787] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_1[2]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12804] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_1[3]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12802] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_1[4]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12826] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_1[5]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12790] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_1[6]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12798] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_1[7]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12824] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_1[8]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12818] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_1[9]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12814] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_1[10]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12820] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_2[0]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12800] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_2[1]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12799] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_2[2]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12822] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_2[3]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12796] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_2[4]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12794] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_2[5]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12816] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_2[6]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12806] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_2[7]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12812] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_2[8]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12789] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_2[9]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12792] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [psum_norm_2[10]] of partition [dualcore] connected to pin [ZN] of instance [normalizer_inst/U12810] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [s_valid1] of partition [dualcore] connected to pin [A1] of instance [normalizer_inst/U1018] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Moving pin [s_valid2] of partition [dualcore] connected to pin [C] of instance [normalizer_inst/AFIFO/U3] to ALIGNED but ILLEGAL location (   0.000    0.200 M1).
+[03/22 15:19:30     57s] Aligned 202 pin(s) of the partition [dualcore] successfully.
+[03/22 15:19:39     59s] <CMD> checkPinAssignment
+[03/22 15:19:39     59s] #% Begin checkPinAssignment (date=03/22 15:19:39, mem=912.2M)
+[03/22 15:19:39     59s] Checking pins of top cell dualcore ... completed
+[03/22 15:19:39     59s] 
+[03/22 15:19:39     59s] ===========================================================================================================================
+[03/22 15:19:39     59s]                                                 checkPinAssignment Summary
+[03/22 15:19:39     59s] ===========================================================================================================================
+[03/22 15:19:39     59s] Partition   | pads  | pins   | legal  | illegal | internal | internal illegal | FT     | FT illegal | constant | unplaced |
+[03/22 15:19:39     59s] ===========================================================================================================================
+[03/22 15:19:39     59s] dualcore    |     0 |    304 |    102 |     202 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:19:39     59s] ===========================================================================================================================
+[03/22 15:19:39     59s] TOTAL       |     0 |    304 |    102 |     202 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:19:39     59s] ===========================================================================================================================
+[03/22 15:19:39     59s] #% End checkPinAssignment (date=03/22 15:19:39, total cpu=0:00:00.1, real=0:00:00.0, peak res=912.3M, current mem=912.3M)
+[03/22 15:19:41     59s] <CMD> checkPinAssignment
+[03/22 15:19:41     59s] #% Begin checkPinAssignment (date=03/22 15:19:41, mem=912.3M)
+[03/22 15:19:41     59s] Checking pins of top cell dualcore ... completed
+[03/22 15:19:41     59s] 
+[03/22 15:19:41     59s] ===========================================================================================================================
+[03/22 15:19:41     59s]                                                 checkPinAssignment Summary
+[03/22 15:19:41     59s] ===========================================================================================================================
+[03/22 15:19:41     59s] Partition   | pads  | pins   | legal  | illegal | internal | internal illegal | FT     | FT illegal | constant | unplaced |
+[03/22 15:19:41     59s] ===========================================================================================================================
+[03/22 15:19:41     59s] dualcore    |     0 |    304 |    102 |     202 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:19:41     59s] ===========================================================================================================================
+[03/22 15:19:41     59s] TOTAL       |     0 |    304 |    102 |     202 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:19:41     59s] ===========================================================================================================================
+[03/22 15:19:41     59s] #% End checkPinAssignment (date=03/22 15:19:41, total cpu=0:00:00.1, real=0:00:00.0, peak res=912.4M, current mem=912.4M)
+[03/22 15:19:52     61s] <CMD> zoomBox 280.41650 -15.02350 329.78700 30.64250
+[03/22 15:19:52     61s] <CMD> zoomBox 173.24300 -73.63400 386.40000 123.52950
+[03/22 15:19:53     61s] <CMD> zoomBox -287.81850 -330.69350 632.48150 520.55400
+[03/22 15:19:53     62s] <CMD> zoomBox -1275.11300 -883.18800 1165.03500 1373.87000
+[03/22 15:19:54     62s] <CMD> zoomBox -17.16850 -93.97700 195.98950 103.18750
+[03/22 15:19:54     62s] <CMD> zoomBox 19.00950 -61.52350 149.91550 59.56050
+[03/22 15:19:55     62s] <CMD> zoomBox -3.64500 -155.77450 343.45000 165.27700
+[03/22 15:20:12     65s] <CMD> getPinAssignMode -pinEditInBatch -quiet
+[03/22 15:20:12     65s] <CMD> setPinAssignMode -pinEditInBatch true
+[03/22 15:20:12     65s] <CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Bottom -layer 3 -spreadType center -spacing 0.8 -pin {norm_gate norm_valid {out_core1[0]} {out_core1[1]} {out_core1[2]} {out_core1[3]} {out_core1[4]} {out_core1[5]} {out_core1[6]} {out_core1[7]} {out_core1[8]} {out_core1[9]} {out_core1[10]} {out_core1[11]} {out_core1[12]} {out_core1[13]} {out_core1[14]} {out_core1[15]} {out_core1[16]} {out_core1[17]} {out_core1[18]} {out_core1[19]} {out_core1[20]} {out_core1[21]} {out_core1[22]} {out_core1[23]} {out_core1[24]} {out_core1[25]} {out_core1[26]} {out_core1[27]} {out_core1[28]} {out_core1[29]} {out_core1[30]} {out_core1[31]} {out_core1[32]} {out_core1[33]} {out_core1[34]} {out_core1[35]} {out_core1[36]} {out_core1[37]} {out_core1[38]} {out_core1[39]} {out_core1[40]} {out_core1[41]} {out_core1[42]} {out_core1[43]} {out_core1[44]} {out_core1[45]} {out_core1[46]} {out_core1[47]} {out_core1[48]} {out_core1[49]} {out_core1[50]} {out_core1[51]} {out_core1[52]} {out_core1[53]} {out_core1[54]} {out_core1[55]} {out_core1[56]} {out_core1[57]} {out_core1[58]} {out_core1[59]} {out_core1[60]} {out_core1[61]} {out_core1[62]} {out_core1[63]} {out_core1[64]} {out_core1[65]} {out_core1[66]} {out_core1[67]} {out_core1[68]} {out_core1[69]} {out_core1[70]} {out_core1[71]} {out_core1[72]} {out_core1[73]} {out_core1[74]} {out_core1[75]} {out_core1[76]} {out_core1[77]} {out_core1[78]} {out_core1[79]} {out_core1[80]} {out_core1[81]} {out_core1[82]} {out_core1[83]} {out_core1[84]} {out_core1[85]} {out_core1[86]} {out_core1[87]} {out_core2[0]} {out_core2[1]} {out_core2[2]} {out_core2[3]} {out_core2[4]} {out_core2[5]} {out_core2[6]} {out_core2[7]} {out_core2[8]} {out_core2[9]} {out_core2[10]} {out_core2[11]} {out_core2[12]} {out_core2[13]} {out_core2[14]} {out_core2[15]} {out_core2[16]} {out_core2[17]} {out_core2[18]} {out_core2[19]} {out_core2[20]} {out_core2[21]} {out_core2[22]} {out_core2[23]} {out_core2[24]} {out_core2[25]} {out_core2[26]} {out_core2[27]} {out_core2[28]} {out_core2[29]} {out_core2[30]} {out_core2[31]} {out_core2[32]} {out_core2[33]} {out_core2[34]} {out_core2[35]} {out_core2[36]} {out_core2[37]} {out_core2[38]} {out_core2[39]} {out_core2[40]} {out_core2[41]} {out_core2[42]} {out_core2[43]} {out_core2[44]} {out_core2[45]} {out_core2[46]} {out_core2[47]} {out_core2[48]} {out_core2[49]} {out_core2[50]} {out_core2[51]} {out_core2[52]} {out_core2[53]} {out_core2[54]} {out_core2[55]} {out_core2[56]} {out_core2[57]} {out_core2[58]} {out_core2[59]} {out_core2[60]} {out_core2[61]} {out_core2[62]} {out_core2[63]} {out_core2[64]} {out_core2[65]} {out_core2[66]} {out_core2[67]} {out_core2[68]} {out_core2[69]} {out_core2[70]} {out_core2[71]} {out_core2[72]} {out_core2[73]} {out_core2[74]} {out_core2[75]} {out_core2[76]} {out_core2[77]} {out_core2[78]} {out_core2[79]} {out_core2[80]} {out_core2[81]} {out_core2[82]} {out_core2[83]} {out_core2[84]} {out_core2[85]} {out_core2[86]} {out_core2[87]} {psum_norm_1[0]} {psum_norm_1[1]} {psum_norm_1[2]} {psum_norm_1[3]} {psum_norm_1[4]} {psum_norm_1[5]} {psum_norm_1[6]} {psum_norm_1[7]} {psum_norm_1[8]} {psum_norm_1[9]} {psum_norm_1[10]} {psum_norm_2[0]} {psum_norm_2[1]} {psum_norm_2[2]} {psum_norm_2[3]} {psum_norm_2[4]} {psum_norm_2[5]} {psum_norm_2[6]} {psum_norm_2[7]} {psum_norm_2[8]} {psum_norm_2[9]} {psum_norm_2[10]} s_valid1 s_valid2}
+[03/22 15:20:13     65s] Successfully spread [202] pins.
+[03/22 15:20:13     65s] editPin : finished (cpu = 0:00:00.0 real = 0:00:01.0, mem = 1176.9M).
+[03/22 15:20:13     65s] <CMD> setPinAssignMode -pinEditInBatch false
+[03/22 15:20:18     66s] <CMD> checkPinAssignment
+[03/22 15:20:18     66s] #% Begin checkPinAssignment (date=03/22 15:20:18, mem=912.8M)
+[03/22 15:20:18     66s] Checking pins of top cell dualcore ... completed
+[03/22 15:20:18     66s] 
+[03/22 15:20:18     66s] ===========================================================================================================================
+[03/22 15:20:18     66s]                                                 checkPinAssignment Summary
+[03/22 15:20:18     66s] ===========================================================================================================================
+[03/22 15:20:18     66s] Partition   | pads  | pins   | legal  | illegal | internal | internal illegal | FT     | FT illegal | constant | unplaced |
+[03/22 15:20:18     66s] ===========================================================================================================================
+[03/22 15:20:18     66s] dualcore    |     0 |    304 |    102 |     202 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:20:18     66s] ===========================================================================================================================
+[03/22 15:20:18     66s] TOTAL       |     0 |    304 |    102 |     202 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:20:18     66s] ===========================================================================================================================
+[03/22 15:20:18     66s] #% End checkPinAssignment (date=03/22 15:20:18, total cpu=0:00:00.1, real=0:00:00.0, peak res=913.1M, current mem=913.1M)
+[03/22 15:20:29     68s] <CMD> legalizePin
+[03/22 15:20:29     68s] #% Begin legalizePin (date=03/22 15:20:29, mem=913.1M)
+[03/22 15:20:29     68s] 
+[03/22 15:20:29     68s] Start pin legalization for the partition [dualcore]:
+[03/22 15:20:29     68s] Moving Pin [out_core1[87]] to LEGAL location ( 229.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[86]] to LEGAL location ( 228.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[85]] to LEGAL location ( 228.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[84]] to LEGAL location ( 227.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[83]] to LEGAL location ( 226.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[82]] to LEGAL location ( 225.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[81]] to LEGAL location ( 224.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[80]] to LEGAL location ( 224.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[79]] to LEGAL location ( 223.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[78]] to LEGAL location ( 222.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[77]] to LEGAL location ( 221.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[76]] to LEGAL location ( 220.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[75]] to LEGAL location ( 220.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[74]] to LEGAL location ( 219.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[73]] to LEGAL location ( 218.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[72]] to LEGAL location ( 217.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[71]] to LEGAL location ( 216.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[70]] to LEGAL location ( 216.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[69]] to LEGAL location ( 215.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[68]] to LEGAL location ( 214.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[67]] to LEGAL location ( 213.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[66]] to LEGAL location ( 212.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[65]] to LEGAL location ( 212.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[64]] to LEGAL location ( 211.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[63]] to LEGAL location ( 210.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[62]] to LEGAL location ( 209.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[61]] to LEGAL location ( 208.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[60]] to LEGAL location ( 208.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[59]] to LEGAL location ( 207.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[58]] to LEGAL location ( 206.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[57]] to LEGAL location ( 205.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[56]] to LEGAL location ( 204.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[55]] to LEGAL location ( 204.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[54]] to LEGAL location ( 203.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[53]] to LEGAL location ( 202.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[52]] to LEGAL location ( 201.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[51]] to LEGAL location ( 200.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[50]] to LEGAL location ( 200.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[49]] to LEGAL location ( 199.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[48]] to LEGAL location ( 198.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[47]] to LEGAL location ( 197.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[46]] to LEGAL location ( 196.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[45]] to LEGAL location ( 196.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[44]] to LEGAL location ( 195.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[43]] to LEGAL location ( 194.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[42]] to LEGAL location ( 193.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[41]] to LEGAL location ( 192.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[40]] to LEGAL location ( 192.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[39]] to LEGAL location ( 191.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[38]] to LEGAL location ( 190.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[37]] to LEGAL location ( 189.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[36]] to LEGAL location ( 188.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[35]] to LEGAL location ( 188.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[34]] to LEGAL location ( 187.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[33]] to LEGAL location ( 186.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[32]] to LEGAL location ( 185.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[31]] to LEGAL location ( 184.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[30]] to LEGAL location ( 184.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[29]] to LEGAL location ( 183.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[28]] to LEGAL location ( 182.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[27]] to LEGAL location ( 181.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[26]] to LEGAL location ( 180.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[25]] to LEGAL location ( 180.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[24]] to LEGAL location ( 179.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[23]] to LEGAL location ( 178.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[22]] to LEGAL location ( 177.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[21]] to LEGAL location ( 176.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[20]] to LEGAL location ( 176.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[19]] to LEGAL location ( 175.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[18]] to LEGAL location ( 174.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[17]] to LEGAL location ( 173.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[16]] to LEGAL location ( 172.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[15]] to LEGAL location ( 172.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[14]] to LEGAL location ( 171.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[13]] to LEGAL location ( 170.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[12]] to LEGAL location ( 169.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[11]] to LEGAL location ( 168.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[10]] to LEGAL location ( 168.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[9]] to LEGAL location ( 167.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[8]] to LEGAL location ( 166.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[7]] to LEGAL location ( 165.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[6]] to LEGAL location ( 164.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[5]] to LEGAL location ( 164.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[4]] to LEGAL location ( 163.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[3]] to LEGAL location ( 162.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[2]] to LEGAL location ( 161.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[1]] to LEGAL location ( 160.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core1[0]] to LEGAL location ( 160.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[87]] to LEGAL location ( 300.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[86]] to LEGAL location ( 299.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[85]] to LEGAL location ( 298.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[84]] to LEGAL location ( 297.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[83]] to LEGAL location ( 296.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[82]] to LEGAL location ( 296.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[81]] to LEGAL location ( 295.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[80]] to LEGAL location ( 294.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[79]] to LEGAL location ( 293.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[78]] to LEGAL location ( 292.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[77]] to LEGAL location ( 292.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[76]] to LEGAL location ( 291.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[75]] to LEGAL location ( 290.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[74]] to LEGAL location ( 289.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[73]] to LEGAL location ( 288.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[72]] to LEGAL location ( 288.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[71]] to LEGAL location ( 287.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[70]] to LEGAL location ( 286.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[69]] to LEGAL location ( 285.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[68]] to LEGAL location ( 284.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[67]] to LEGAL location ( 284.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[66]] to LEGAL location ( 283.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[65]] to LEGAL location ( 282.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[64]] to LEGAL location ( 281.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[63]] to LEGAL location ( 280.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[62]] to LEGAL location ( 280.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[61]] to LEGAL location ( 279.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[60]] to LEGAL location ( 278.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[59]] to LEGAL location ( 277.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[58]] to LEGAL location ( 276.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[57]] to LEGAL location ( 276.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[56]] to LEGAL location ( 275.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[55]] to LEGAL location ( 274.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[54]] to LEGAL location ( 273.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[53]] to LEGAL location ( 272.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[52]] to LEGAL location ( 272.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[51]] to LEGAL location ( 271.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[50]] to LEGAL location ( 270.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[49]] to LEGAL location ( 269.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[48]] to LEGAL location ( 268.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[47]] to LEGAL location ( 268.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[46]] to LEGAL location ( 267.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[45]] to LEGAL location ( 266.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[44]] to LEGAL location ( 265.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[43]] to LEGAL location ( 264.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[42]] to LEGAL location ( 264.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[41]] to LEGAL location ( 263.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[40]] to LEGAL location ( 262.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[39]] to LEGAL location ( 261.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[38]] to LEGAL location ( 260.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[37]] to LEGAL location ( 260.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[36]] to LEGAL location ( 259.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[35]] to LEGAL location ( 258.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[34]] to LEGAL location ( 257.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[33]] to LEGAL location ( 256.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[32]] to LEGAL location ( 256.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[31]] to LEGAL location ( 255.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[30]] to LEGAL location ( 254.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[29]] to LEGAL location ( 253.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[28]] to LEGAL location ( 252.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[27]] to LEGAL location ( 252.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[26]] to LEGAL location ( 251.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[25]] to LEGAL location ( 250.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[24]] to LEGAL location ( 249.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[23]] to LEGAL location ( 248.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[22]] to LEGAL location ( 248.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[21]] to LEGAL location ( 247.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[20]] to LEGAL location ( 246.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[19]] to LEGAL location ( 245.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[18]] to LEGAL location ( 244.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[17]] to LEGAL location ( 244.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[16]] to LEGAL location ( 243.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[15]] to LEGAL location ( 242.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[14]] to LEGAL location ( 241.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[13]] to LEGAL location ( 240.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[12]] to LEGAL location ( 240.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[11]] to LEGAL location ( 239.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[10]] to LEGAL location ( 238.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[9]] to LEGAL location ( 237.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[8]] to LEGAL location ( 236.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[7]] to LEGAL location ( 236.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[6]] to LEGAL location ( 235.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[5]] to LEGAL location ( 234.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[4]] to LEGAL location ( 233.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[3]] to LEGAL location ( 232.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[2]] to LEGAL location ( 232.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[1]] to LEGAL location ( 231.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [out_core2[0]] to LEGAL location ( 230.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [norm_gate] to LEGAL location ( 158.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [s_valid1] to LEGAL location ( 318.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [s_valid2] to LEGAL location ( 319.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_1[10]] to LEGAL location ( 308.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_1[9]] to LEGAL location ( 308.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_1[8]] to LEGAL location ( 307.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_1[7]] to LEGAL location ( 306.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_1[6]] to LEGAL location ( 305.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_1[5]] to LEGAL location ( 304.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_1[4]] to LEGAL location ( 304.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_1[3]] to LEGAL location ( 303.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_1[2]] to LEGAL location ( 302.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_1[1]] to LEGAL location ( 301.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_1[0]] to LEGAL location ( 300.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_2[10]] to LEGAL location ( 317.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_2[9]] to LEGAL location ( 316.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_2[8]] to LEGAL location ( 316.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_2[7]] to LEGAL location ( 315.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_2[6]] to LEGAL location ( 314.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_2[5]] to LEGAL location ( 313.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_2[4]] to LEGAL location ( 312.900    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_2[3]] to LEGAL location ( 312.100    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_2[2]] to LEGAL location ( 311.300    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_2[1]] to LEGAL location ( 310.500    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [psum_norm_2[0]] to LEGAL location ( 309.700    0.000 2 )
+[03/22 15:20:29     68s] Moving Pin [norm_valid] to LEGAL location ( 159.300    0.000 2 )
+[03/22 15:20:29     68s] Summary report for top level: [dualcore] 
+[03/22 15:20:29     68s] 	Total Pads                         : 0
+[03/22 15:20:29     68s] 	Total Pins                         : 304
+[03/22 15:20:29     68s] 	Legally Assigned Pins              : 304
+[03/22 15:20:29     68s] 	Illegally Assigned Pins            : 0
+[03/22 15:20:29     68s] 	Unplaced Pins                      : 0
+[03/22 15:20:29     68s] 	Constant/Spl Net Pins              : 0
+[03/22 15:20:29     68s] 	Internal Pins                      : 0
+[03/22 15:20:29     68s] 	Legally Assigned Feedthrough Pins  : 0
+[03/22 15:20:29     68s] 	Illegally Assigned Feedthrough Pins: 0
+[03/22 15:20:29     68s] End of Summary report
+[03/22 15:20:29     68s] 202 pin(s) of the Partition dualcore were legalized.
+[03/22 15:20:29     68s] End pin legalization for the partition [dualcore].
+[03/22 15:20:29     68s] 
+[03/22 15:20:29     68s] #% End legalizePin (date=03/22 15:20:29, total cpu=0:00:00.1, real=0:00:00.0, peak res=913.3M, current mem=913.3M)
+[03/22 15:20:34     69s] <CMD> checkPinAssignment
+[03/22 15:20:34     69s] #% Begin checkPinAssignment (date=03/22 15:20:34, mem=913.3M)
+[03/22 15:20:34     69s] Checking pins of top cell dualcore ... completed
+[03/22 15:20:34     69s] 
+[03/22 15:20:34     69s] ===========================================================================================================================
+[03/22 15:20:34     69s]                                                 checkPinAssignment Summary
+[03/22 15:20:34     69s] ===========================================================================================================================
+[03/22 15:20:34     69s] Partition   | pads  | pins   | legal  | illegal | internal | internal illegal | FT     | FT illegal | constant | unplaced |
+[03/22 15:20:34     69s] ===========================================================================================================================
+[03/22 15:20:34     69s] dualcore    |     0 |    304 |    304 |       0 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:20:34     69s] ===========================================================================================================================
+[03/22 15:20:34     69s] TOTAL       |     0 |    304 |    304 |       0 |        0 |                0 |      0 |          0 |        0 |        0 |
+[03/22 15:20:34     69s] ===========================================================================================================================
+[03/22 15:20:34     69s] #% End checkPinAssignment (date=03/22 15:20:34, total cpu=0:00:00.1, real=0:00:00.0, peak res=913.4M, current mem=913.4M)
+[03/22 15:21:52     82s] 
+[03/22 15:21:52     82s] *** Memory Usage v#1 (Current mem = 1172.980M, initial mem = 291.785M) ***
+[03/22 15:21:52     82s] 
+[03/22 15:21:52     82s] *** Summary of all messages that are not suppressed in this session:
+[03/22 15:21:52     82s] Severity  ID               Count  Summary                                  
+[03/22 15:21:52     82s] WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[03/22 15:21:52     82s] WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+[03/22 15:21:52     82s] WARNING   IMPEXT-2710          2  Basic Cap table for layer M%d is ignored...
+[03/22 15:21:52     82s] WARNING   IMPEXT-2760          2  Layer M%d specified in the cap table is ...
+[03/22 15:21:52     82s] WARNING   IMPEXT-2771          2  Via %s specified in the cap table is ign...
+[03/22 15:21:52     82s] WARNING   IMPEXT-2801          2  Resistance values are not provided in th...
+[03/22 15:21:52     82s] WARNING   IMPVL-159         1622  Pin '%s' of cell '%s' is defined in LEF ...
+[03/22 15:21:52     82s] WARNING   TCLNL-330            1  set_input_delay on clock root '%s' is no...
+[03/22 15:21:52     82s] *** Message Summary: 1634 warning(s), 0 error(s)
+[03/22 15:21:52     82s] 
+[03/22 15:21:52     82s] --- Ending "Innovus" (totcpu=0:01:22, real=0:05:43, mem=1173.0M) ---

@@ -22,12 +22,4 @@ set_input_delay -clock [get_clocks clk2] -add_delay -max $io_delay [get_ports {m
 set_input_delay -clock [get_clocks clk2] -add_delay -max $io_delay [get_ports {inst_core2[*]}]
 set_input_delay -clock [get_clocks clk2] -add_delay -max $io_delay [get_ports {s_valid2}]
 set_output_delay -clock [get_clocks clk2] -add_delay -max $io_delay [get_ports {out_core2[*]}]
-
-
-
-set_multicycle_path -setup 2 -from normalizer_inst/sum* -to normalizer_inst/div_out*
-set_multicycle_path -hold  1 -from normalizer_inst/sum* -to normalizer_inst/div_out*
- 
-set_multicycle_path -setup 2 -from normalizer_inst/div_in* -to normalizer_inst/div_out*
-set_multicycle_path -hold  1 -from normalizer_inst/div_in* -to normalizer_inst/div_out*
  
