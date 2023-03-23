@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="dualcore_tb_snapshot.wdb" id="1">
+         <top_modules>
+            <top_module name="dualcore_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="322233fs"></ZoomStartTime>
+      <ZoomEndTime time="538308fs"></ZoomEndTime>
+      <Cursor1Time time="411000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="184"></NameColumnWidth>
+      <ValueColumnWidth column_width="198"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="83" />
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/clk1">
+      <obj_property name="ElementShortName">clk1</obj_property>
+      <obj_property name="ObjectShortName">clk1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/rst1">
+      <obj_property name="ElementShortName">rst1</obj_property>
+      <obj_property name="ObjectShortName">rst1</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/mem_in_core1">
+      <obj_property name="ElementShortName">mem_in_core1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_in_core1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/Q">
+      <obj_property name="ElementShortName">Q[7:0][7:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[7:0][7:0][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[7]">
+         <obj_property name="ElementShortName">[7][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][7:0][31:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[6]">
+         <obj_property name="ElementShortName">[6][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[5]">
+         <obj_property name="ElementShortName">[5][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[4]">
+         <obj_property name="ElementShortName">[4][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[3]">
+         <obj_property name="ElementShortName">[3][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[2]">
+         <obj_property name="ElementShortName">[2][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[1]">
+         <obj_property name="ElementShortName">[1][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[0]">
+         <obj_property name="ElementShortName">[0][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[7]">
+         <obj_property name="ElementShortName">[7][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[6]">
+         <obj_property name="ElementShortName">[6][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[5]">
+         <obj_property name="ElementShortName">[5][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[4]">
+         <obj_property name="ElementShortName">[4][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[3]">
+         <obj_property name="ElementShortName">[3][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[2]">
+         <obj_property name="ElementShortName">[2][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[1]">
+         <obj_property name="ElementShortName">[1][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][7:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/dualcore_tb/Q[0]">
+         <obj_property name="ElementShortName">[0][7:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][7:0][31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/qkmem_add_core1">
+      <obj_property name="ElementShortName">qkmem_add_core1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">qkmem_add_core1[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/qmem_wr_core1">
+      <obj_property name="ElementShortName">qmem_wr_core1</obj_property>
+      <obj_property name="ObjectShortName">qmem_wr_core1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/kmem_wr_core1">
+      <obj_property name="ElementShortName">kmem_wr_core1</obj_property>
+      <obj_property name="ObjectShortName">kmem_wr_core1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/execute_core1">
+      <obj_property name="ElementShortName">execute_core1</obj_property>
+      <obj_property name="ObjectShortName">execute_core1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/pmem_wr_core2">
+      <obj_property name="ElementShortName">pmem_wr_core2</obj_property>
+      <obj_property name="ObjectShortName">pmem_wr_core2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/inst_core1">
+      <obj_property name="ElementShortName">inst_core1[16:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_core1[16:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/out_core1">
+      <obj_property name="ElementShortName">out_core1[87:0]</obj_property>
+      <obj_property name="ObjectShortName">out_core1[87:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider92" type="divider">
+      <obj_property name="label">PMEM1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/rst1">
+      <obj_property name="ElementShortName">rst1</obj_property>
+      <obj_property name="ObjectShortName">rst1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/WEN">
+      <obj_property name="ElementShortName">WEN</obj_property>
+      <obj_property name="ObjectShortName">WEN</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/CEN">
+      <obj_property name="ElementShortName">CEN</obj_property>
+      <obj_property name="ObjectShortName">CEN</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/D">
+      <obj_property name="ElementShortName">D[87:0]</obj_property>
+      <obj_property name="ObjectShortName">D[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/A">
+      <obj_property name="ElementShortName">A[3:0]</obj_property>
+      <obj_property name="ObjectShortName">A[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/Q">
+      <obj_property name="ElementShortName">Q[87:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory0">
+      <obj_property name="ElementShortName">memory0[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory0[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory1">
+      <obj_property name="ElementShortName">memory1[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory1[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory2">
+      <obj_property name="ElementShortName">memory2[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory2[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory3">
+      <obj_property name="ElementShortName">memory3[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory3[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory4">
+      <obj_property name="ElementShortName">memory4[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory4[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory5">
+      <obj_property name="ElementShortName">memory5[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory5[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory6">
+      <obj_property name="ElementShortName">memory6[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory6[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory7">
+      <obj_property name="ElementShortName">memory7[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory7[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory8">
+      <obj_property name="ElementShortName">memory8[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory8[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory9">
+      <obj_property name="ElementShortName">memory9[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory9[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory10">
+      <obj_property name="ElementShortName">memory10[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory10[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory11">
+      <obj_property name="ElementShortName">memory11[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory11[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory12">
+      <obj_property name="ElementShortName">memory12[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory12[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory13">
+      <obj_property name="ElementShortName">memory13[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory13[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory14">
+      <obj_property name="ElementShortName">memory14[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory14[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/memory15">
+      <obj_property name="ElementShortName">memory15[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory15[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core1_inst/psum_mem_instance/sram_bit">
+      <obj_property name="ElementShortName">sram_bit[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sram_bit[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider93" type="divider">
+      <obj_property name="label">PMEM2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/WEN">
+      <obj_property name="ElementShortName">WEN</obj_property>
+      <obj_property name="ObjectShortName">WEN</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/CEN">
+      <obj_property name="ElementShortName">CEN</obj_property>
+      <obj_property name="ObjectShortName">CEN</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/D">
+      <obj_property name="ElementShortName">D[87:0]</obj_property>
+      <obj_property name="ObjectShortName">D[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/A">
+      <obj_property name="ElementShortName">A[3:0]</obj_property>
+      <obj_property name="ObjectShortName">A[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/Q">
+      <obj_property name="ElementShortName">Q[87:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory0">
+      <obj_property name="ElementShortName">memory0[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory0[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory1">
+      <obj_property name="ElementShortName">memory1[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory1[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory2">
+      <obj_property name="ElementShortName">memory2[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory2[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory3">
+      <obj_property name="ElementShortName">memory3[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory3[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory4">
+      <obj_property name="ElementShortName">memory4[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory4[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory5">
+      <obj_property name="ElementShortName">memory5[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory5[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory6">
+      <obj_property name="ElementShortName">memory6[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory6[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory7">
+      <obj_property name="ElementShortName">memory7[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory7[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory8">
+      <obj_property name="ElementShortName">memory8[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory8[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory9">
+      <obj_property name="ElementShortName">memory9[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory9[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory10">
+      <obj_property name="ElementShortName">memory10[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory10[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory11">
+      <obj_property name="ElementShortName">memory11[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory11[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory12">
+      <obj_property name="ElementShortName">memory12[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory12[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory13">
+      <obj_property name="ElementShortName">memory13[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory13[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory14">
+      <obj_property name="ElementShortName">memory14[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory14[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/memory15">
+      <obj_property name="ElementShortName">memory15[87:0]</obj_property>
+      <obj_property name="ObjectShortName">memory15[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/core2_inst/psum_mem_instance/sram_bit">
+      <obj_property name="ElementShortName">sram_bit[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sram_bit[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/clk2">
+      <obj_property name="ElementShortName">clk2</obj_property>
+      <obj_property name="ObjectShortName">clk2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/rst2">
+      <obj_property name="ElementShortName">rst2</obj_property>
+      <obj_property name="ObjectShortName">rst2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/mem_in_core2">
+      <obj_property name="ElementShortName">mem_in_core2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_in_core2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/inst_core2">
+      <obj_property name="ElementShortName">inst_core2[16:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_core2[16:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/out_core2">
+      <obj_property name="ElementShortName">out_core2[87:0]</obj_property>
+      <obj_property name="ObjectShortName">out_core2[87:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/s_valid1">
+      <obj_property name="ElementShortName">s_valid1</obj_property>
+      <obj_property name="ObjectShortName">s_valid1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/s_valid2">
+      <obj_property name="ElementShortName">s_valid2</obj_property>
+      <obj_property name="ObjectShortName">s_valid2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/psum_norm_1">
+      <obj_property name="ElementShortName">psum_norm_1[10:0]</obj_property>
+      <obj_property name="ObjectShortName">psum_norm_1[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/psum_norm_2">
+      <obj_property name="ElementShortName">psum_norm_2[10:0]</obj_property>
+      <obj_property name="ObjectShortName">psum_norm_2[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/norm_valid">
+      <obj_property name="ElementShortName">norm_valid</obj_property>
+      <obj_property name="ObjectShortName">norm_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/col">
+      <obj_property name="ElementShortName">col[31:0]</obj_property>
+      <obj_property name="ObjectShortName">col[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/bw">
+      <obj_property name="ElementShortName">bw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bw[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/bw_psum">
+      <obj_property name="ElementShortName">bw_psum[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bw_psum[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/dut/pr">
+      <obj_property name="ElementShortName">pr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/N">
+      <obj_property name="ElementShortName">N[15:0][7:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">N[15:0][7:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/V">
+      <obj_property name="ElementShortName">V[7:0][7:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">V[7:0][7:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/dualcore_tb/core0_8x4_mult_prod">
+      <obj_property name="ElementShortName">core0_8x4_mult_prod[59:0]</obj_property>
+      <obj_property name="ObjectShortName">core0_8x4_mult_prod[59:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider100" type="divider">
+      <obj_property name="label">GCLK</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/gclk_inst1/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/gclk_inst1/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/gclk_inst1/gate">
+      <obj_property name="ElementShortName">gate</obj_property>
+      <obj_property name="ObjectShortName">gate</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/gclk_inst1/gclk">
+      <obj_property name="ElementShortName">gclk</obj_property>
+      <obj_property name="ObjectShortName">gclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/dualcore_tb/dut/gclk_inst1/gate_en">
+      <obj_property name="ElementShortName">gate_en</obj_property>
+      <obj_property name="ObjectShortName">gate_en</obj_property>
+   </wvobject>
+</wave_config>

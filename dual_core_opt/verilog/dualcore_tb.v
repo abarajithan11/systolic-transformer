@@ -2,6 +2,7 @@
 
 module dualcore_tb;
    localparam total_cycle = 8;
+   localparam numcores = 2;
    localparam bw = 4;
    localparam pr = 8;
    localparam col = 2 * 8;
@@ -13,12 +14,13 @@ module dualcore_tb;
 
    integer captured_data;
    integer weight [col * pr - 1 : 0];
-   integer K [col-1:0][pr-1:0];
-   integer N [col-1:0][pr-1:0];
-   integer V [total_cycle-1:0][pr-1:0];
-   integer Q [total_cycle-1:0][pr-1:0];
+   reg signed [bw - 1 : 0] K [col-1:0][pr-1:0];
+   reg signed [bw - 1 : 0] V [total_cycle-1:0][pr-1:0];
+   reg signed [bw - 1 : 0] Q [total_cycle-1:0][pr-1:0];
+   reg signed [(2 * bw) - 1 : 0] N [col-1:0][pr-1:0];
    integer sum [total_cycle-1:0];  
    integer result [total_cycle-1:0][col-1:0];
+   integer norm_result [numcores * total_cycle-1:0];
 
    reg rst1 = 1;
    reg rst2 = 1;
@@ -65,6 +67,8 @@ module dualcore_tb;
    reg core0_exec_done = 0;
    reg core1_exec_done = 0;
    reg norm_start = 0;
+   reg core0_norm_done = 0;
+   reg core1_norm_done = 0;
 
    assign inst_core1[16] = ofifo_rd_core1;
    assign inst_core1[15:12] = qkmem_add_core1;
@@ -124,7 +128,8 @@ module dualcore_tb;
       for (i=0; i<total_cycle; i=i+1) begin
          for (j=0; j<pr; j=j+1) begin
             qk_scan_file = $fscanf(qk_file, "%d\n", captured_data);
-            Q[i][j] = captured_data;
+            //Q[i][j] = captured_data;
+            Q[i][j] = $urandom_range(0, 2**4 - 1); //2 ** 4);
             //$display("%d\n", K[q][j]);
          end
       end
@@ -134,7 +139,8 @@ module dualcore_tb;
       for (i=0; i<col; i=i+1) begin
          for (j=0; j<pr; j=j+1) begin
             qk_scan_file = $fscanf(qk_file, "%d\n", captured_data);
-            K[i][j] = captured_data;
+            //K[i][j] = captured_data;
+            K[i][j] = $urandom_range(0, 2**4 - 1); //2 ** 4);
             //$display("##### %d\n", K[q][j]);
          end
       end
@@ -143,7 +149,8 @@ module dualcore_tb;
       for (i=0; i<col; i=i+1) begin
          for (j=0; j<pr; j=j+1) begin
             qk_scan_file = $fscanf(qk_file, "%d\n", captured_data);
-            K[i + 8][j] = captured_data;
+            //K[i + 8][j] = captured_data;
+            K[i + 8][j] = $urandom_range(0, 2**4 - 1); //2 ** 4);
             //$display("##### %d\n", K[q][j]);
          end
       end
@@ -153,7 +160,8 @@ module dualcore_tb;
       for (i=0; i<total_cycle; i=i+1) begin
          for (j=0; j<pr; j=j+1) begin
             qk_scan_file = $fscanf(qk_file, "%d\n", captured_data);
-            V[i][j] = captured_data;
+            //V[i][j] = captured_data;
+            V[i][j] = $urandom_range(0, 2 ** 4);
             //$display("%d\n", K[q][j]);
          end
       end
@@ -164,6 +172,7 @@ module dualcore_tb;
          for (j=0; j<pr; j=j+1) begin
             qk_scan_file = $fscanf(qk_file, "%d\n", captured_data);
             N[i][j] = captured_data;
+            ///N[i][j] = $urandom_range(0, 2 ** 4);
             //$display("##### %d\n", K[q][j]);
          end
       end
@@ -172,7 +181,8 @@ module dualcore_tb;
       for (i=0; i<col; i=i+1) begin
          for (j=0; j<pr; j=j+1) begin
             qk_scan_file = $fscanf(qk_file, "%d\n", captured_data);
-            N[i + 8][j] = captured_data;
+            //N[i + 8][j] = captured_data;
+            N[i + 8][j] = $urandom_range(0, 2 ** 4);
             //$display("##### %d\n", K[q][j]);
          end
       end
@@ -238,11 +248,11 @@ module dualcore_tb;
       // repeat (2) @(posedge clk1);
 
       $display("##### K data loading to core0 #####");
-      for (i = 0; i < col + 1; i = i + 1) begin
+      for (i = 0; i < col + 2; i = i + 1) begin
          @(posedge clk1);
          #1 load_core1 = 1;
-         if (i == 1) kmem_rd_core1 = 1;
-         if (i > 1)  qkmem_add_core1 = qkmem_add_core1 + 1; 
+         if (i == 2) kmem_rd_core1 = 1;
+         if (i > 2)  qkmem_add_core1 = qkmem_add_core1 + 1; 
       end
 
       @(posedge clk1);
@@ -255,10 +265,13 @@ module dualcore_tb;
 
       $display("##### core0 execute #####");
 
-      for (i = 0; i < total_cycle; i = i + 1) begin
-         @(posedge clk1);
-         #1 execute_core1 = 1; qmem_rd_core1 = 1;
-         if (i > 0) qkmem_add_core1 = qkmem_add_core1 + 1;
+      for (i = 0; i < total_cycle + 1; i = i + 1) begin
+         @(posedge clk1) #1;
+         execute_core1 = 1; 
+         qmem_rd_core1 = 1;
+         if (i > 1) begin
+            qkmem_add_core1 = qkmem_add_core1 + 1;
+         end
       end
 
       @(posedge clk1);
@@ -297,6 +310,16 @@ module dualcore_tb;
 
       repeat (10) @(posedge clk1);
 
+      core0_norm_done = 1;
+
+      wait (core1_norm_done == 1);
+
+      @(posedge clk1) #1;
+      rst1 = 1;
+      repeat (10) @(posedge clk1) #1;
+      rst1 = 0; 
+      @(posedge clk1);
+
       // 8bit x 4bit MULTIPLICATION
 
       $display("##### Qmem writing core0 (V) #####");
@@ -326,11 +349,11 @@ module dualcore_tb;
       // repeat (2) @(posedge clk1);
 
       $display("##### N data loading to core0 #####");
-      for (i = 0; i < col + 1; i = i + 1) begin
+      for (i = 0; i < col + 2; i = i + 1) begin
          @(posedge clk1);
          #1 load_core1 = 1;
-         if (i == 1) kmem_rd_core1 = 1;
-         if (i > 1)  qkmem_add_core1 = qkmem_add_core1 + 1; 
+         if (i == 2) kmem_rd_core1 = 1;
+         if (i > 2)  qkmem_add_core1 = qkmem_add_core1 + 1; 
       end
 
       @(posedge clk1);
@@ -343,10 +366,13 @@ module dualcore_tb;
 
       $display("##### core0 execute #####");
 
-      for (i = 0; i < total_cycle; i = i + 1) begin
-         @(posedge clk1);
-         #1 execute_core1 = 1; qmem_rd_core1 = 1;
-         if (i > 0) qkmem_add_core1 = qkmem_add_core1 + 1;
+      for (i = 0; i < total_cycle + 1; i = i + 1) begin
+         @(posedge clk1) #1;
+         execute_core1 = 1;
+         qmem_rd_core1 = 1;
+         if (i > 1) begin
+            qkmem_add_core1 = qkmem_add_core1 + 1;
+         end 
       end
 
       @(posedge clk1);
@@ -421,11 +447,11 @@ module dualcore_tb;
       // repeat (2) @(posedge clk2);
 
       $display("##### K data loading to core1 #####");
-      for (i = 0; i < col + 1; i = i + 1) begin
+      for (i = 0; i < col + 2; i = i + 1) begin
          @(posedge clk2);
          #1 load_core2 = 1;
-         if (i == 1) kmem_rd_core2 = 1;
-         if (i > 1)  qkmem_add_core2 = qkmem_add_core2 + 1; 
+         if (i == 2) kmem_rd_core2 = 1;
+         if (i > 2)  qkmem_add_core2 = qkmem_add_core2 + 1; 
       end
 
       @(posedge clk2);
@@ -438,10 +464,13 @@ module dualcore_tb;
 
       $display("##### core1 execute #####");
 
-      for (i = 0; i < total_cycle; i = i + 1) begin
-         @(posedge clk2);
-         #1 execute_core2 = 1; qmem_rd_core2 = 1;
-         if (i > 0) qkmem_add_core2 = qkmem_add_core2 + 1;
+      for (i = 0; i < total_cycle + 1; i = i + 1) begin
+         @(posedge clk2) #1;
+         qmem_rd_core2 = 1;
+         execute_core2 = 1; 
+         if (i > 1) begin
+            qkmem_add_core2 = qkmem_add_core2 + 1;
+         end
       end
 
       @(posedge clk2);
@@ -479,9 +508,19 @@ module dualcore_tb;
       end
 
       @(posedge clk2);
-      #1 pmem_wr_core2 = 0; pmem_add_core2 = 0; ofifo_rd_core2 = 0;
+      #1 pmem_wr_core2 = 0; pmem_add_core2 = 0; ofifo_rd_core2 = 0; core_en = 1;
 
       repeat (10) @(posedge clk2);
+
+      core1_norm_done = 1;
+
+      wait (core0_norm_done == 1);
+
+      @(posedge clk2) #1;
+      rst2 = 1;
+      repeat (10) @(posedge clk2) #1;
+      rst2 = 0; 
+      @(posedge clk2);
 
       // 8bit x 4bit MULTIPLICATION
 
@@ -512,11 +551,11 @@ module dualcore_tb;
       // repeat (2) @(posedge clk2);
 
       $display("##### K data loading to core1 #####");
-      for (i = 0; i < col + 1; i = i + 1) begin
+      for (i = 0; i < col + 2; i = i + 1) begin
          @(posedge clk2);
          #1 load_core2 = 1;
-         if (i == 1) kmem_rd_core2 = 1;
-         if (i > 1)  qkmem_add_core2 = qkmem_add_core2 + 1; 
+         if (i == 2) kmem_rd_core2 = 1;
+         if (i > 2)  qkmem_add_core2 = qkmem_add_core2 + 1; 
       end
 
       @(posedge clk2);
@@ -529,10 +568,13 @@ module dualcore_tb;
 
       $display("##### core1 execute #####");
 
-      for (i = 0; i < total_cycle; i = i + 1) begin
-         @(posedge clk2);
-         #1 execute_core2 = 1; qmem_rd_core2 = 1;
-         if (i > 0) qkmem_add_core2 = qkmem_add_core2 + 1;
+      for (i = 0; i < total_cycle + 1; i = i + 1) begin
+         @(posedge clk2) #1;
+         execute_core2 = 1; 
+         qmem_rd_core2 = 1;
+         if (i > 1) begin
+            qkmem_add_core2 = qkmem_add_core2 + 1;
+         end 
       end
 
       @(posedge clk2);
