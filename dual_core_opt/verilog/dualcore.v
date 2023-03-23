@@ -13,36 +13,42 @@ module dualcore #(
    input [pr*bw-1:0] mem_in_core2, 
    input [16:0] inst_core2, 
    output [bw_psum*(col/2)-1:0] out_core2,
-   input norm_gate,
+   input core_gate1, core_gate2,
    input s_valid1, s_valid2, 
    output [bw_psum-1:0] psum_norm_1,
    output [bw_psum-1:0] psum_norm_2,
    output norm_valid);
 
-   wire gclk;
+   wire gclk1, gclk2;
 
    clk_gate gclk_inst1 (
       .clk (clk1),
       .rst (rst1),
-      .gate (norm_gate),
-      .gclk (gclk));
+      .gate (core_gate1),
+      .gclk (gclk1));
+
+   clk_gate gclk_inst2 (
+      .clk (clk2),
+      .rst (rst2),
+      .gate (core_gate2),
+      .gclk (gclk2));
 
    core #(.bw(bw), .bw_psum(bw_psum), .col(col / 2), .pr(pr)) core1_inst (
          .reset(rst1),
-         .clk(clk1), 
+         .clk(gclk1),
          .mem_in(mem_in_core1), 
          .inst(inst_core1),
          .out(out_core1));
 
    core #(.bw(bw), .bw_psum(bw_psum), .col(col / 2), .pr(pr)) core2_inst (
       .reset(rst2),
-      .clk(clk2), 
+      .clk(gclk2), 
       .mem_in(mem_in_core2), 
       .inst(inst_core2),
       .out(out_core2));
 
    normalizer #(.BW_PSUM(bw_psum), .COL(col / 2), .W_OUT(bw_psum)) normalizer_inst (
-      .clk(gclk),
+      .clk(clk1),
       .clk_2(clk2),
       .reset(rst1),
       .reset_2(rst2),
