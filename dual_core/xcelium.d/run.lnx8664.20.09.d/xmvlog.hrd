@@ -1,0 +1,10 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-VFILE
+./pnr/dualcore.pnr.v
+-VFILE
+/home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v
+-DEFINE
+INITIALIZE_MEMORY

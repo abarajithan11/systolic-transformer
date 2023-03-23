@@ -74,7 +74,7 @@ assign out =
 	+	{{(5){product7[2*bw-1]}},product7	};
                 
 
-always @ (posedge clk) begin
+always @ (posedge clk or posedge reset) begin
   if (reset) begin
     cnt_q <= 0;
     load_ready_q <= 1;

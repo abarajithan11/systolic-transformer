@@ -1,0 +1,221 @@
+
+#
+# Preferences
+#
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set plugin-enable-groupscope 0
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 1165x500+261+33}] != ""} {
+    window geometry "Design Browser 1" 1165x500+261+33
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope  simulator::fullchip_tb.fullchip_instance.core_instance 
+browser set \
+    -signalsort name
+browser yview see  simulator::fullchip_tb.fullchip_instance.core_instance 
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 2" -geometry 1536x642+-1+27}] != ""} {
+    window geometry "Waveform 2" 1536x642+-1+27
+}
+window target "Waveform 2" on
+waveform using {Waveform 2}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.K[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.Q[7:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.bw
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.bw_psum
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.captured_data
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.clk
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.col
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.execute
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.i
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.inst[16:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.j
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.k
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.kmem_rd
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.kmem_wr
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.load
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.m
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.mem_in[31:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.ofifo_rd
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.p
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.pmem_add[3:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.pmem_rd
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.pmem_wr
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.pr
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.q
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.qk_file
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.qk_scan_file
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.qkmem_add[3:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.qmem_rd
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.qmem_wr
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.reset
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.result[7:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.s
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.sum[7:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.t
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.temp5b[10:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.temp16b[87:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.temp_sum[14:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.total_cycle
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.u
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.weight[63:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.fullchip_instance.clk
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.fullchip_instance.inst[16:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.fullchip_instance.mem_in[31:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::fullchip_tb.fullchip_instance.out[87:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::fullchip_tb.fullchip_instance.reset
+	} ]
+
+waveform xview limits 0 81000ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Source Browser windows
+#
+if {[catch {window new SrcBrowser -name "Source Browser 2" -geometry 700x525+28+58}] != ""} {
+    window geometry "Source Browser 2" 700x525+28+58
+}
+window target "Source Browser 2" on
+srcbrowser using {Source Browser 2}
+srcbrowser set \
+    -primarycursor TimeA \
+    -units ps \
+    -radix default \
+    -showstrength 0 \
+    -showcallstack 0 \
+    -displayvalues 0
+
+srcbrowser show -scope fullchip_tb -file /home/linux/ieng6/ee260bwi23/vsureshkumar/systolic-transformer/vanilla/verilog/fullchip_tb.v -line 30
+
+srcbrowser sidebar visibility partial
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+261+564
+
+#
+# Layout selection
+#

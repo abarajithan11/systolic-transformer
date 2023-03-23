@@ -3,3 +3,4 @@
 // Do not modify this file
 
 s1::(22Mar2023:23:21:56):( xrun +gui +access+rwc +xm64bit +xmstatus +xmtimescale+1ns/1ps +xmoveride_timescale +xmseq_udp_delay+20ps -v ./pnr/fullchip.pnr.v -v /home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v ./verilog/fullchip_tb.v )
+s2::(23Mar2023:04:33:20):( xrun +gui +access+rwc +xm64bit +xmstatus +xmtimescale+1ns/1ps +xmoveride_timescale +xmseq_udp_delay+20ps -v ./pnr/fullchip.pnr.v -v /home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v ./verilog/fullchip_tb.v )

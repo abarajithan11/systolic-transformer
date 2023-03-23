@@ -90,7 +90,7 @@ module dualcore_tb;
    assign inst_core2[1] = pmem_rd_core2;
    assign inst_core2[0] = pmem_wr_core2;
 
-   dualcore #(.bw(bw), .bw_psum(bw_psum), .col(col), .pr(pr)) dut (
+   dualcore dut (
       .rst1(rst1),
       .clk1(clk1), 
       .mem_in_core1(mem_in_core1), 
@@ -101,7 +101,6 @@ module dualcore_tb;
       .mem_in_core2(mem_in_core2), 
       .inst_core2(inst_core2),
       .out_core2(out_core2),
-      .norm_gate(norm_en),
       .s_valid1(s_valid1),
       .s_valid2(s_valid2),
       .psum_norm_1(psum_norm_1),

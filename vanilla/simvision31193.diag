@@ -1,0 +1,72 @@
+*** Message Type: info ***
+When: Thu Mar 23 04:33:28 PDT 2023
+SimVision started.
+Version: TOOL:  simvision(64)   20.09-s017
+User: vsureshkumar
+Host: ieng6-ece-20.ucsd.edu
+Platform: Linux/x86_64/3.10.0-1160.80.1.el7.x86_64
+Started: Thu Mar 23 04:33:28 PDT 2023
+Command: /software/ECE/XCELIUM-2009/tools.lnx86/simvision/bin/64bit/simvision.exe -connect dc:ieng6-ece-20.ucsd.edu:37110 -64BIT -nocopyright
+Work Directory: /home/linux/ieng6/ee260bwi23/vsureshkumar/systolic-transformer/vanilla
+ 
+*** Message Type: info ***
+When: Thu Mar 23 04:33:29 PDT 2023
+Create browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Thu Mar 23 04:33:32 PDT 2023
+Create console window: "Console"
+ 
+*** Message Type: info ***
+When: Thu Mar 23 04:33:34 PDT 2023
+Connect to Simulator
+      Design: worklib.fullchip_tb:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:      xmsim(64)       20.09-s017
+        User: vsureshkumar
+        Host: ieng6-ece-20.ucsd.edu
+Time Started: Thu Mar 23 04:33:25 PDT 2023
+  Process ID: 31084
+   Directory: /home/linux/ieng6/ee260bwi23/vsureshkumar/systolic-transformer/vanilla
+     Command: xrun +gui +access+rwc +xm64bit +xmstatus +xmtimescale+1ns/1ps +xmoveride_timescale +xmseq_udp_delay+20ps -v ./pnr/fullchip.pnr.v -v /home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v ./verilog/fullchip_tb.v
+
+ 
+*** Message Type: info ***
+When: Thu Mar 23 04:33:34 PDT 2023
+Create utility window: "Properties"
+ 
+*** Message Type: info ***
+When: Thu Mar 23 04:34:06 PDT 2023
+Create waveform window: "Waveform 1"
+ 
+*** Message Type: info ***
+When: Thu Mar 23 04:43:01 PDT 2023
+Delete browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Thu Mar 23 04:43:02 PDT 2023
+Exit XM-Sim: user
+      Design: worklib.fullchip_tb:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:      xmsim(64)       20.09-s017
+        User: vsureshkumar
+        Host: ieng6-ece-20.ucsd.edu
+Time Started: Thu Mar 23 04:33:25 PDT 2023
+  Process ID: 31084
+   Directory: /home/linux/ieng6/ee260bwi23/vsureshkumar/systolic-transformer/vanilla
+     Command: xrun +gui +access+rwc +xm64bit +xmstatus +xmtimescale+1ns/1ps +xmoveride_timescale +xmseq_udp_delay+20ps -v ./pnr/fullchip.pnr.v -v /home/linux/ieng6/ee260bwi23/vsureshkumar/course_cont/w4/PDKdata/verilog/tcbn65gplus.v ./verilog/fullchip_tb.v
+
+ 
+*** Message Type: error ***
+When: Thu Mar 23 04:43:02 PDT 2023
+invalid command name ".watchList0.bottom.statusbar.indicator-autosave.autosave"
+    while executing
+".watchList0.bottom.statusbar.indicator-autosave.autosave configure -image image273"
+    ("after" script)
+ 
+*** Message Type: info ***
+When: Thu Mar 23 04:43:04 PDT 2023
+SimVision Exit.
+ 

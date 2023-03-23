@@ -2,7 +2,7 @@
 *	Innovus 19.17-s077_1 (64bit) 12/01/2020 11:09 (Linux 2.6.32-431.11.2.el6.x86_64)
 *	
 *
-* 	Date & Time:	2023-Mar-23 01:02:20 (2023-Mar-23 08:02:20 GMT)
+* 	Date & Time:	2023-Mar-23 04:27:06 (2023-Mar-23 11:27:06 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -43,41 +43,41 @@
 
 Total Power 
 -----------------------------------------------------------------------------------------
-Total Internal Power:      108.33247411 	   64.7863%
-Total Switching Power:      56.74910876 	   33.9378%
-Total Leakage Power:         2.13353421 	    1.2759%
-Total Power:               167.21511707 
+Total Internal Power:      108.16367315 	   64.5775%
+Total Switching Power:      57.19979498 	   34.1503%
+Total Leakage Power:         2.13092612 	    1.2722%
+Total Power:               167.49439417 
 -----------------------------------------------------------------------------------------
 
 
 Group                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-Sequential                         69.11       2.067      0.5202        71.7       42.88 
+Sequential                         69.12       2.146      0.5203       71.79       42.86 
 Macro                                  0           0           0           0           0 
 IO                                     0           0           0           0           0 
-Physical-Only                          0           0      0.5733      0.5733      0.3428 
-Combinational                      33.83       42.47       1.004       77.31       46.23 
-Clock (Combinational)              5.387       12.21     0.03637       17.63       10.55 
+Physical-Only                          0           0      0.5733      0.5733      0.3423 
+Combinational                      33.81       42.88       1.002       77.69       46.39 
+Clock (Combinational)              5.225       12.18     0.03495       17.44       10.41 
 Clock (Sequential)                     0           0           0           0           0 
 -----------------------------------------------------------------------------------------
-Total                              108.3       56.75       2.134       167.2         100 
+Total                              108.2        57.2       2.131       167.5         100 
 -----------------------------------------------------------------------------------------
 
 
 Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-VDD                       0.9      108.3       56.75       2.134       167.2         100 
+VDD                       0.9      108.2        57.2       2.131       167.5         100 
 
 
 Clock                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-clk2                                2.28       5.747      0.0155       8.043        4.81 
-clk1                               3.107       6.463     0.02087       9.591       5.736 
+clk2                               2.251       5.708     0.01515       7.974       4.761 
+clk1                               2.974       6.471      0.0198       9.465       5.651 
 -----------------------------------------------------------------------------------------
-Total (excluding duplicates)       5.387       12.21     0.03637       17.63       10.55 
+Total (excluding duplicates)       5.225       12.18     0.03495       17.44       10.41 
 -----------------------------------------------------------------------------------------
 Clock: clk2
 Clock Period: 0.001000 usec 
@@ -93,10 +93,10 @@ Clock Static Probability:  0.5000
 
 -----------------------------------------------------------------------------------------
 *	Power Distribution Summary: 
-*                Highest Average Power:       CTS_ccl_a_buf_00381 (CKBD16):            0.176 
+*                Highest Average Power:       CTS_ccl_a_buf_00381 (CKBD16):           0.1813 
 *                Highest Leakage Power:     normalizer_inst/U8005 (ND3D8):        0.0003011 
-*          Total Cap:      2.80764e-10 F
-*          Total instances in design: 78151
+*          Total Cap:      2.8297e-10 F
+*          Total instances in design: 78022
 *          Total instances in design with no power:     0
 *          Total instances in design with no activity:     0
 *          Total Fillers and Decap: 32396
