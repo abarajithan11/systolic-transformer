@@ -2,7 +2,7 @@
 // File created by:  xrun
 // Do not modify this file
 //
--ncinitialize
+-xminitialize
 0
 -define
 INITIALIZE_MEMORY
