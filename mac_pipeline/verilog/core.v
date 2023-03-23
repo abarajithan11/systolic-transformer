@@ -78,19 +78,31 @@ ofifo #(.bw(bw_psum), .col(col))  ofifo_inst (
 
 
 //(2*bw_psum-(bw_psum + 4);
-for (i=1; i <= (col/2) ; i=i+1) begin : mux_idx
+for (i=1; i < col ; i=i+2) begin : mux_idx
    
-   assign pre_mux_in1[ (bw_psum+4)*i-1 : (bw_psum+4)*(i-1) ] = { fifo_out[(i)*bw_psum-1: (i-1)*bw_psum ], 4'b0000 } + { { (4){ fifo_out[(i+1)*bw_psum-1] } },fifo_out[(i+1)*bw_psum-1: (i)*bw_psum ]};
+   assign pre_mux_in1[ (bw_psum+4)*((i+1)/2) -1 : (bw_psum+4)*(((i+1)/2)-1) ] = { fifo_out[(i)*bw_psum-1: (i-1)*bw_psum ], 4'b0000 } + { { (4){ fifo_out[(i+1)*bw_psum-1] } },fifo_out[(i+1)*bw_psum-1: (i)*bw_psum ]};
 
    fifo_mux_2_1 #( .bw(2*bw_psum), .simd(1) )  fifo_mux_2_1_inst(
-        .in0(fifo_out[(2*i)*bw_psum-1: 2*(i-1)*bw_psum ]),
-        .in1({{(2*bw_psum-(bw_psum + 4)){ pre_mux_in1[(bw_psum+4)*i-1] }},pre_mux_in1[(bw_psum+4)*i-1 : (bw_psum+4)*(i-1)]}),
+        .in0(fifo_out[(2*((i+1)/2))*bw_psum-1: 2*(((i+1)/2)-1)*bw_psum ]),
+        .in1({{(2*bw_psum-(bw_psum + 4)){ pre_mux_in1[(bw_psum+4)*((i+1)/2)-1] }},pre_mux_in1[(bw_psum+4)*((i+1)/2)-1 : (bw_psum+4)*(((i+1)/2)-1)]}),
         .sel(mode),
-        .out(mux_out[(2*i)*bw_psum-1: 2*(i-1)*bw_psum ])
+        .out(mux_out[(2*((i+1)/2))*bw_psum-1: 2*(((i+1)/2)-1)*bw_psum ])
    );
 end 
 
+/*
+for (i=1; i < col ; i=i+2) begin : mux_idx
+   
+   assign pre_mux_in1[ (bw_psum+4)*((i+1)/2) -1 : (bw_psum+4)*(((i+1)/2)-1) ] = { fifo_out[(i)*bw_psum-1: (i-1)*bw_psum ], 4'b0000 } + { { 4'b000 },fifo_out[(i+1)*bw_psum-1: (i)*bw_psum ]};
 
+   fifo_mux_2_1 #( .bw(2*bw_psum), .simd(1) )  fifo_mux_2_1_inst(
+        .in0(fifo_out[(2*((i+1)/2))*bw_psum-1: 2*(((i+1)/2)-1)*bw_psum ]),
+        .in1({7'b0000000,pre_mux_in1[(bw_psum+4)*((i+1)/2)-1 : (bw_psum+4)*(((i+1)/2)-1)]}),
+        .sel(mode),
+        .out(mux_out[(2*((i+1)/2))*bw_psum-1: 2*(((i+1)/2)-1)*bw_psum ])
+   );
+end 
+*/
 sram_w16 #(.sram_bit(pr*bw)) qmem_instance (
         .CLK(clk),
         .D(mem_in),

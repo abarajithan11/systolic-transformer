@@ -25,7 +25,13 @@ integer  weight [col*pr-1:0];
 integer  K[col-1:0][pr-1:0];
 integer  Q[total_cycle-1:0][pr-1:0];
 integer  result[total_cycle-1:0][col-1:0];
-integer result_new_array[total_cycle-1:0][(col/2)-1:0];
+integer  result_new_array[total_cycle-1:0][(col/2)-1:0];
+
+//integer unsigned[pr-1:0]K[col-1:0];
+//integer signed[pr-1:0]Q[col-1:0];
+//integer unsigned[pr-1:0]result[col-1:0];
+//integer unsigned[pr-1:0]K[col-1:0];
+
 integer  sum[total_cycle-1:0];
 
 integer i,j,k,t,p,q,s,u, m;
@@ -48,7 +54,7 @@ reg load = 0;
 reg [3:0] qkmem_add = 0;
 reg [3:0] pmem_add = 0;
 reg [21:0]result_temp;
-wire mode = 1;
+reg mode;
 
 assign inst[16] = ofifo_rd;
 assign inst[15:12] = qkmem_add;
@@ -70,7 +76,7 @@ reg [bw_psum*col-1:0] temp16b;
 
 reg [2*bw_psum -1:0] temp5b_new;
 reg [bw_psum*col-1:0] temp16b_new;
-reg [8*(bw_psum-3)-1:0]result_new;
+reg [8*(bw_psum)-1:0]result_new;
 
 wire [bw_psum*col-1:0] out;
 
@@ -89,14 +95,17 @@ initial begin
   $dumpfile("fullchip_tb.vcd");
   $dumpvars(0,fullchip_tb);
 
-
+mode =1 ; // 1 is 8 bit mode and 0 is 4 bits mode. 
 
 ///// Q data txt reading /////
 
 $display("##### Q data txt reading #####");
 
 
-  qk_file = $fopen("qdata.txt", "r");
+  if ( mode == 0)
+    qk_file = $fopen("qdata.txt", "r"); 
+  else
+    qk_file = $fopen("vdata.txt", "r"); 
 
   //// To get rid of first 3 lines in data file ////
   //qk_scan_file = $fscanf(qk_file, "%s\n", captured_data);
@@ -155,6 +164,7 @@ $display("##### K data txt reading #####");
   end
 /////////////////////////////////
 
+///// K data txt reading /////
 
 
 
@@ -163,8 +173,8 @@ $display("##### K data txt reading #####");
 
 
 /////////////// Estimated result printing /////////////////
-
-
+if ( mode == 0)begin
+// 4 bit Mode ( set mode = 0 initially)
 $display("##### Estimated multiplication result #####");
 
   for (t=0; t<total_cycle; t=t+1) begin
@@ -183,16 +193,20 @@ $display("##### Estimated multiplication result #####");
          temp16b = {temp16b[76:0], temp5b};
      end
 
-     $display("%d %d %d %d %d %d %d %d", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);
+     //$display("%d %d %d %d %d %d %d %d", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);
      $display("prd @cycle%2d: %40h", t, temp16b);
   end
-
+end
 //////////////////////////////////////////////
 
 
+
+
 /////////////// Estimated result printing /////////////////
+// 8 bit Mode ( set mode = 1 initially)
 
-
+if ( mode == 1) begin
+result_new = 0;
 $display("##### Estimated multiplication result #####");
 
   for (t=0; t<total_cycle; t=t+1) begin
@@ -207,28 +221,24 @@ $display("##### Estimated multiplication result #####");
             result[t][q] = result[t][q] + Q[t][k] * K[q][k];
          end
      end
-     $display("%h %h %h %h %h %h %h %h", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);
+     //$display("%h %h %h %h %h %h %h %h", result[t][0], result[t][1], result[t][2], result[t][3], result[t][4], result[t][5], result[t][6], result[t][7]);
      //$display("prd @cycle%2d: %40h", result[t][q]);
      
      for (q=0; q<(col); q=q+2) begin
 
-          result_temp = result[t][q]*16 + result[t][q+1];
+          result_temp = result[t][q] + result[t][q+1]*16;
           result_new_array[t][q/2] = result_temp;
           //$display( "%x,%x,%x \n",result[t][q]*16, result[t][q+1], result_temp );
           result_new = {result_new[65:0], result_temp};
      end
     
-    $display("%h , %h , %h , %h ", result_new_array[t][0], result_new_array[t][1], result_new_array[t][2], result_new_array[t][3] );
+    //$display("%h , %h , %h , %h ", result_new_array[t][0], result_new_array[t][1], result_new_array[t][2], result_new_array[t][3] );
     
-    $display("%h\n", result_new);
-     //result_new[t][] = result_new[t][0]*4 + result_new[t][0] ;
-    
-     //$display("prd @cycle%2d: %40h", t, temp16b);
-    //$display("%x\n", result_new);
+    $display("prd @cycle%2d: %40h", t, result_new);
+     
   end
 //////////////////////////////////////////////
-
-
+end
 
 
 ///// Qmem writing  /////
