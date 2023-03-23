@@ -18906,3 +18906,10 @@ Total number of fetched objects 48484
 AAE_INFO-618: Total number of nets in the design is 48589,  3.7 percent of the nets selected for SI analysis
 End delay calculation. (MEM=5906.18 CPU=0:00:01.8 REAL=0:00:00.0)
 End delay calculation (fullDC). (MEM=5906.18 CPU=0:00:02.0 REAL=0:00:00.0)
+**INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...
+Innovus terminated by user interrupt.
+
+*** Memory Usage v#1 (Current mem = 5674.000M, initial mem = 283.785M) ***
+*** Message Summary: 2645 warning(s), 2 error(s)
+
+--- Ending "Innovus" (totcpu=5:03:18, real=9:39:48, mem=5674.0M) ---
