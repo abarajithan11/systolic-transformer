@@ -1,0 +1,142 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Thu Mar 23 17:43:49 2023                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v19.17-s077_1 (64bit) 12/01/2020 11:09 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 19.17-s077_1 NR201130-0207/19_17-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+#@(#)CDS: AAE 19.17-s018 (64bit) 12/01/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 19.17-s022_1 () Nov 18 2020 03:10:35 ( )
+#@(#)CDS: SYNTECH 19.17-s005_1 () Oct 28 2020 05:12:49 ( )
+#@(#)CDS: CPE v19.17-s044
+#@(#)CDS: IQuantus/TQuantus 19.1.3-s268 (64bit) Mon Aug 10 22:57:12 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+win
+setMultiCpuUsage -localCpu 8
+set init_pwr_net VDD
+set init_gnd_net VSS
+set init_verilog ../dualcore.out.v
+set init_design_netlisttype Verilog
+set init_design_settop 1
+set init_top_cell dualcore
+set init_lef_file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef
+create_library_set -name WC_LIB -timing $worst_timing_lib
+create_library_set -name BC_LIB -timing $best_timing_lib
+create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+create_constraint_mode -name CON -sdc_file [list $sdc]
+create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+init_design -setup WC_VIEW -hold BC_VIEW
+set_interactive_constraint_modes {CON}
+setDesignMode -process 65
+floorPlan -site core -r 0.5 0.50 10.0 10.0 10.0 10.0
+timeDesign -preplace -prefix preplace
+globalNetConnect VDD -type pgpin -pin VDD -inst * -verbose
+globalNetConnect VSS -type pgpin -pin VSS -inst * -verbose
+addRing -spacing {top 2 bottom 2 left 2 right 2} -width {top 3 bottom 3 left 3 right 3} -layer {top M1 bottom M1 left M2 right M2} -center 1 -type core_rings -nets {VSS  VDD}
+setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe -nets {VSS VDD} -layer M4 -direction vertical -width 1.8 -spacing 1.8 -number_of_sets 20 -start_from left -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit M8 -padcore_ring_bottom_layer_limit M1 -block_ring_top_layer_limit M8 -block_ring_bottom_layer_limit M1 -use_wire_group 0 -snap_wire_center_to_grid None
+sroute
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 3 -spreadType center -spacing 0.8 -pin {clk1 core_gate1 rst1 inst_core1* mem_in_core1*}
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Right -layer 3 -spreadType center -spacing 0.8 -pin {clk2 core_gate2 rst2 inst_core2* mem_in_core2*}
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Bottom -layer 3 -spreadType center -spacing 0.8 -pin {out_core1* s_valid1 norm_valid psum_norm_1* psum_norm_2* s_valid2 out_core2* }
+setPinAssignMode -pinEditInBatch false
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+setPinAssignMode -pinEditInBatch false
+legalizePin
+checkPinAssignment
+saveDesign floorplan.enc
+setPlaceMode -timingDriven true -reorderScan false -congEffort medium -modulePlan false
+setOptMode -effort high -powerEffort high -leakageToDynamicRatio 0.5 -fixFanoutLoad true -restruct true -verbose true
+place_opt_design
+addFiller -cell {DCAP DCAP4 DCAP8 DCAP16 DCAP32} -merge true
+saveDesign placement.enc
+set_ccopt_property -update_io_latency false
+create_ccopt_clock_tree_spec -file ./constraints/dualcore.ccopt
+ccopt_design
+set_propagated_clock [all_clocks]
+optDesign -postCTS -hold
+saveDesign cts.enc
+setNanoRouteMode -quiet -drouteAllowMergedWireAtPin false
+setNanoRouteMode -quiet -drouteFixAntenna true
+setNanoRouteMode -quiet -routeWithTimingDriven true
+setNanoRouteMode -quiet -routeWithSiDriven true
+setNanoRouteMode -quiet -routeSiEffort medium
+setNanoRouteMode -quiet -routeWithSiPostRouteFix false
+setNanoRouteMode -quiet -drouteAutoStop true
+setNanoRouteMode -quiet -routeSelectedNetOnly false
+setNanoRouteMode -quiet -drouteStartIteration default
+routeDesign
+setExtractRCMode -engine postRoute
+extractRC
+setAnalysisMode -analysisType onChipVariation -cppr both
+optDesign -postRoute -setup -hold
+optDesign -postRoute -drv
+optDesign -postRoute -inc
+saveDesign route.enc
+verifyGeometry
+verifyConnectivity
+report_timing -max_paths 5 > ${design}.post_route.timing.rpt
+report_power -outfile dualcore.post_route.power.rpt
+summaryReport -nohtml -outfile dualcore.post_route.summary.rpt
+streamOut dualcore.gds2
+write_lef_abstract dualcore.lef
+defOut -netlist -routing dualcore.def
+saveNetlist dualcore.pnr.v
+setAnalysisMode -setup
+set_analysis_view -setup WC_VIEW -hold WC_VIEW
+do_extract_model -view WC_VIEW -format dotlib ${design}_WC.lib
+write_sdf -view WC_VIEW ${design}_WC.sdf
+setAnalysisMode -hold
+set_analysis_view -setup BC_VIEW -hold BC_VIEW
+do_extract_model -view BC_VIEW -format dotlib ${design}_BC.lib
+write_sdf -view BC_VIEW ${design}_BC.sdf
+zoomBox -1127.86950 -926.68150 1164.16100 1193.37250
+zoomBox -227.76550 -204.83550 636.67300 594.74200
+zoomBox -381.64750 -512.60050 1025.94650 789.37850
+zoomBox -85.12650 -294.77700 779.31300 504.80150
+zoomBox -351.43450 -574.43500 1056.16050 727.54500
+zoomBox 71.56600 -303.91100 936.00550 495.66750
+zoomBox -351.43500 -574.43550 1056.16050 727.54500
+zoomBox -117.45000 -309.53300 746.99000 490.04600
+zoomBox -77.31950 -126.56850 453.55550 364.47350
+zoomBox -37.53850 55.22750 162.68150 240.42450
+zoomBox -77.32150 -126.57050 453.55700 364.47500
+zoomBox -241.77900 -616.54050 1165.82850 685.45100
+zoomBox 21.72100 -337.58200 886.16800 462.00350
+zoomBox 183.54300 -166.26700 714.42150 324.77850
+zoomBox 21.72050 -337.58300 886.16850 462.00350
+zoomBox -241.78000 -616.54250 1165.83000 685.45100
+zoomBox 21.72000 -338.28700 886.16850 461.30000
+report_timing -max_paths 1000 > ${design}.post_route.timing.rpt
+report_timing -max_paths 1000 > ${design}.post_route.timing.rpt
+zoomBox -432.20350 -550.49250 975.40700 751.50150
+zoomBox 70.57550 -102.27750 601.45600 388.77000
+zoomBox -144.75650 -299.48550 719.69450 500.10350
+zoomBox 54.60850 -75.52350 585.49000 415.52450
+zoomBox 189.76400 56.18700 515.79200 357.75250
+zoomBox 272.76600 137.07350 472.98850 322.27300
+zoomBox 189.76300 56.18600 515.79200 357.75250
+zoomBox 54.60500 -75.52600 585.49000 415.52550
+zoomBox -165.47550 -289.99650 698.98250 509.59900
+zoomBox -521.02900 -638.52350 886.59650 663.48450
+zoomBox -27.04900 -340.58950 837.40900 459.00600
+zoomBox 300.05050 -123.09850 830.93600 367.95350
+zoomBox 623.27750 91.47600 823.50100 276.67650
+zoomBox 500.56200 10.26250 826.59350 311.83100
+zoomBox 300.74050 -121.98000 831.62900 369.07450
+zoomBox -538.57500 -652.79000 869.05800 649.22500
+zoomBox -1385.27850 -1188.27250 906.81600 931.84100
+zoomBox -538.57500 -652.79000 869.05800 649.22500
+zoomBox 300.74000 -121.98050 831.62900 369.07450
+zoomBox -12.12150 -319.19150 852.34250 480.40950

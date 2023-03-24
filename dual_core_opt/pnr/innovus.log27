@@ -1,0 +1,836 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v19.17-s077_1, built Tue Dec 1 11:09:44 PST 2020
+Options:	
+Date:		Thu Mar 23 17:27:28 2023
+Host:		ieng6-ece-03.ucsd.edu (x86_64 w/Linux 3.10.0-1160.80.1.el7.x86_64) (4cores*8cpus*Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz 20480KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		invs	Innovus Implementation System	19.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> set init_verilog ../dualcore.out.v
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_design_settop 1
+<CMD> set init_top_cell dualcore
+<CMD> set init_lef_file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef
+<CMD> create_library_set -name WC_LIB -timing $worst_timing_lib
+<CMD> create_library_set -name BC_LIB -timing $best_timing_lib
+<CMD> create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+<CMD> create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+<CMD> create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+<CMD> create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+<CMD> create_constraint_mode -name CON -sdc_file [list $sdc]
+<CMD> create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+<CMD> create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+<CMD> init_design -setup WC_VIEW -hold BC_VIEW
+
+Loading LEF file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef ...
+WARNING (LEFPARS-2007): NAMESCASESENSITIVE statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 28.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 867.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 877.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1014.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1024.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1161.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1171.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1308.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1318.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1372.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1383.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1604.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1614.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1769.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1771.
+WARNING (LEFPARS-2021): turn-via is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1772.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1776.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1778.
+WARNING (LEFPARS-2021): turn-via is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1779.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1783.
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'I' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+viaInitial starts at Thu Mar 23 17:27:59 2023
+viaInitial ends at Thu Mar 23 17:27:59 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Reading WC_LIB timing library '/home/linux/ieng6/ee260bwi23/public/PDKdata/lib/tcbn65gpluswc.lib' ...
+Read 811 cells in library 'tcbn65gpluswc' 
+Reading BC_LIB timing library '/home/linux/ieng6/ee260bwi23/public/PDKdata/lib/tcbn65gplusbc.lib' ...
+Read 811 cells in library 'tcbn65gplusbc' 
+*** End library_loading (cpu=0.04min, real=0.03min, mem=30.0M, fe_cpu=0.34min, fe_real=0.55min, fe_mem=735.6M) ***
+#% Begin Load netlist data ... (date=03/23 17:28:01, mem=512.4M)
+*** Begin netlist parsing (mem=735.6M) ***
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Created 811 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../dualcore.out.v'
+
+*** Memory Usage v#1 (Current mem = 752.566M, initial mem = 283.785M) ***
+*** End netlist parsing (cpu=0:00:00.3, real=0:00:00.0, mem=752.6M) ***
+#% End Load netlist data ... (date=03/23 17:28:01, total cpu=0:00:00.3, real=0:00:00.0, peak res=545.3M, current mem=545.3M)
+Set top cell to dualcore.
+Hooked 1622 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell dualcore ...
+*** Netlist is unique.
+** info: there are 2186 modules.
+** info: there are 39654 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 832.492M, initial mem = 283.785M) ***
+**WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'ccore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+WC_VIEW BC_VIEW
+Extraction setup Started 
+Initializing multi-corner RC extraction with 2 active RC Corners ...
+Reading Capacitance Table File /home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cworst.captable ...
+**WARN: (IMPEXT-2760):	Layer M9 specified in the cap table is ignored because it is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2771):	Via VIA_8 specified in the cap table is ignored because its top layer, M9, is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2801):	Resistance values are not provided in the Cap Table. Sheet resistance defined in the LEF file will be used.
+**WARN: (IMPEXT-2710):	Basic Cap table for layer M9 is ignored because the layer is not specified in the technology LEF file.
+Reading Capacitance Table File /home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cbest.captable ...
+**WARN: (IMPEXT-2760):	Layer M9 specified in the cap table is ignored because it is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2771):	Via VIA_8 specified in the cap table is ignored because its top layer, M9, is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2801):	Resistance values are not provided in the Cap Table. Sheet resistance defined in the LEF file will be used.
+**WARN: (IMPEXT-2710):	Basic Cap table for layer M9 is ignored because the layer is not specified in the technology LEF file.
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: WC_VIEW
+    RC-Corner Name        : Cmax
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 125 Celsius
+    RC-Corner Cap Table   : '/home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cworst.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+ 
+ Analysis View: BC_VIEW
+    RC-Corner Name        : Cmin
+    RC-Corner Index       : 1
+    RC-Corner Temperature : -40 Celsius
+    RC-Corner Cap Table   : '/home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cbest.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+*Info: initialize multi-corner CTS.
+Reading timing constraints file './dualcore.sdc' ...
+Current (total cpu=0:00:21.8, real=0:00:35.0, peak res=787.7M, current mem=787.7M)
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=832.0M, current mem=832.0M)
+Current (total cpu=0:00:21.9, real=0:00:35.0, peak res=832.0M, current mem=832.0M)
+Total number of combinational cells: 497
+Total number of sequential cells: 303
+Total number of tristate cells: 11
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFFD1 BUFFD0 BUFFD2 BUFFD3 BUFFD4 BUFFD6 BUFFD8 BUFFD12 BUFFD16 CKBD1 CKBD0 CKBD2 CKBD3 CKBD4 CKBD6 CKBD8 CKBD12 CKBD16
+Total number of usable buffers: 18
+List of unusable buffers: BUFFD20 BUFFD24 CKBD20 CKBD24 GBUFFD1 GBUFFD3 GBUFFD2 GBUFFD4 GBUFFD8
+Total number of unusable buffers: 9
+List of usable inverters: CKND1 CKND0 CKND2 CKND3 CKND4 CKND6 CKND8 CKND12 CKND16 INVD1 INVD0 INVD2 INVD3 INVD4 INVD6 INVD8 INVD12 INVD16
+Total number of usable inverters: 18
+List of unusable inverters: CKND20 CKND24 GINVD2 GINVD1 GINVD4 GINVD3 GINVD8 INVD20 INVD24
+Total number of unusable inverters: 9
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells: DEL0 DEL005 DEL01 DEL015 DEL02 DEL1 DEL2 DEL3 DEL4
+Total number of identified unusable delay cells: 9
+All delay cells are dont_use. Buffers will be used to fix hold violations.
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPEXT-2710          2  Basic Cap table for layer M%d is ignored...
+WARNING   IMPEXT-2760          2  Layer M%d specified in the cap table is ...
+WARNING   IMPEXT-2771          2  Via %s specified in the cap table is ign...
+WARNING   IMPEXT-2801          2  Resistance values are not provided in th...
+WARNING   IMPVL-159         1622  Pin '%s' of cell '%s' is defined in LEF ...
+*** Message Summary: 1633 warning(s), 0 error(s)
+
+<CMD> set_interactive_constraint_modes {CON}
+<CMD> setDesignMode -process 65
+##  Process: 65            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 65nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+<CMD> floorPlan -site core -r 2 0.50 10.0 10.0 10.0 10.0
+**WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'ccore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+<CMD> zoomBox -2199.32100 -1228.27100 1653.26200 2335.24350
+<CMD> zoomBox -1230.04050 -689.78250 1135.92750 1498.66150
+<CMD> zoomBox -634.78050 -359.08250 818.21950 984.89550
+<CMD> floorPlan -site core -r 0.5 0.50 10.0 10.0 10.0 10.0
+**WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'ccore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+<CMD> zoomBox -1619.40300 -956.71800 2233.18100 2606.79750
+<CMD> zoomBox -473.18950 -525.92650 1892.77850 1662.51750
+<CMD> zoomBox -24.38250 -310.97150 1428.61750 1033.00650
+<CMD> zoomBox -425.94700 -576.71300 1940.02150 1611.73150
+<CMD> zoomBox -169.65500 -305.06700 1283.34550 1038.91150
+<CMD> zoomBox -12.25900 -138.24250 880.06500 687.12850
+<CMD> zoomBox -321.24800 -318.84850 1131.75300 1025.13050
+<CMD> floorPlan -site core -r 0.5 0.50 10.0 10.0 10.0 10.0
+**WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'ccore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+<CMD> timeDesign -preplace -prefix preplace
+Setting timing_disable_library_data_to_data_checks to 'true'.
+Setting timing_disable_user_data_to_data_checks to 'true'.
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Setting High Fanout Nets ( > 100 ) as ideal temporarily for -prePlace option
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+Starting delay calculation for Setup views
+AAE DB initialization (MEM=1157.42 CPU=0:00:00.3 REAL=0:00:00.0) 
+#################################################################################
+# Design Stage: PreRoute
+# Design Name: dualcore
+# Design Mode: 65nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in BcWc mode...
+Start delay calculation (fullDC) (1 T). (MEM=1163.48)
+Total number of fetched objects 41949
+End delay calculation. (MEM=1310.39 CPU=0:00:04.2 REAL=0:00:04.0)
+End delay calculation (fullDC). (MEM=1283.32 CPU=0:00:05.5 REAL=0:00:05.0)
+*** Done Building Timing Graph (cpu=0:00:07.6 real=0:00:08.0 totSessionCpu=0:00:48.3 mem=1283.3M)
+
+------------------------------------------------------------
+          timeDesign Summary                             
+------------------------------------------------------------
+
+Setup views included:
+ WC_VIEW 
+
++--------------------+---------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg |reg2cgate| default |
++--------------------+---------+---------+---------+---------+
+|           WNS (ns):| -0.760  | -0.760  |  0.233  | -0.033  |
+|           TNS (ns):| -81.800 | -78.073 |  0.000  | -3.727  |
+|    Violating Paths:|   776   |   600   |    0    |   176   |
+|          All Paths:|  10842  |  8269   |   218   |  2870   |
++--------------------+---------+---------+---------+---------+
+
+Density: 49.992%
+------------------------------------------------------------
+Set Using Default Delay Limit as 1000.
+Resetting back High Fanout Nets as non-ideal
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Reported timing to dir ./timingReports
+Total CPU time: 10.14 sec
+Total Real time: 11.0 sec
+Total Memory Usage: 1215.792969 Mbytes
+<CMD> globalNetConnect VDD -type pgpin -pin VDD -inst * -verbose
+39654 new pwr-pin connections were made to global net 'VDD'.
+<CMD> globalNetConnect VSS -type pgpin -pin VSS -inst * -verbose
+39654 new gnd-pin connections were made to global net 'VSS'.
+<CMD> addRing -spacing {top 2 bottom 2 left 2 right 2} -width {top 3 bottom 3 left 3 right 3} -layer {top M1 bottom M1 left M2 right M2} -center 1 -type core_rings -nets {VSS  VDD}
+#% Begin addRing (date=03/23 17:29:48, mem=919.9M)
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Ring generation is complete.
+vias are now being generated.
+addRing created 8 wires.
+ViaGen created 8 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   M1   |        4       |       NA       |
+|  VIA1  |        8       |        0       |
+|   M2   |        4       |       NA       |
++--------+----------------+----------------+
+#% End addRing (date=03/23 17:29:48, total cpu=0:00:00.0, real=0:00:00.0, peak res=920.4M, current mem=920.4M)
+<CMD> setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe will allow jog to connect padcore ring and block ring.
+
+Stripes will stop at the boundary of the specified area.
+When breaking rings, the power planner will consider the existence of blocks.
+Stripes will not extend to closest target.
+The power planner will set stripe antenna targets to none (no trimming allowed).
+Stripes will not be created over regions without power planning wires.
+The entire stripe set will break at the domain if one of the nets is not in the domain.
+addStripe will break automatically at non-default domains when generating global stripes over the core area or default domain.
+Offset for stripe breaking is set to 0.
+<CMD> addStripe -nets {VSS VDD} -layer M4 -direction vertical -width 1.8 -spacing 1.8 -number_of_sets 20 -start_from left -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit M8 -padcore_ring_bottom_layer_limit M1 -block_ring_top_layer_limit M8 -block_ring_bottom_layer_limit M1 -use_wire_group 0 -snap_wire_center_to_grid None
+#% Begin addStripe (date=03/23 17:29:48, mem=920.4M)
+
+Initialize fgc environment(mem: 1215.8M) ...  fail and won't use fgc to check drc(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Loading wires (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Loading via instances (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Starting stripe generation ...
+Non-Default Mode Option Settings :
+  NONE
+Completing 10% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Completing 20% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Completing 30% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Completing 40% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Completing 50% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Completing 60% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Completing 70% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Completing 80% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Completing 90% stripe generation(cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1215.8M)
+Stripe generation is complete.
+vias are now being generated.
+addStripe created 40 wires.
+ViaGen created 240 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|  VIA1  |       80       |        0       |
+|  VIA2  |       80       |        0       |
+|  VIA3  |       80       |        0       |
+|   M4   |       40       |       NA       |
++--------+----------------+----------------+
+#% End addStripe (date=03/23 17:29:48, total cpu=0:00:00.1, real=0:00:00.0, peak res=921.8M, current mem=921.8M)
+<CMD> sroute
+#% Begin sroute (date=03/23 17:29:48, mem=921.8M)
+*** Begin SPECIAL ROUTE on Thu Mar 23 17:29:48 2023 ***
+SPECIAL ROUTE ran on directory: /home/linux/ieng6/oce/1b/agnaneswaran/systolic-transformer/dual_core_opt/pnr
+SPECIAL ROUTE ran on machine: ieng6-ece-03.ucsd.edu (Linux 3.10.0-1160.80.1.el7.x86_64 Xeon 2.00Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSpecial set to true
+srouteConnectConverterPin set to false
+srouteFollowCorePinEnd set to 3
+srouteJogControl set to "preferWithChanges differentLayer"
+sroutePadPinAllPorts set to true
+sroutePreserveExistingRoutes set to true
+srouteRoutePowerBarPortOnBothDir set to true
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 2256.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+Read in 17 layers, 8 routing layers, 1 overlap layer
+Read in 846 macros, 202 used
+Read in 202 components
+  202 core components: 202 unplaced, 0 placed, 0 fixed
+Read in 305 logical pins
+Read in 305 nets
+Read in 2 special nets, 2 routed
+Read in 404 terminals
+Begin power routing ...
+**WARN: (IMPSR-1254):	Unable to connect the specified objects, since block pins of the VDD net were not found in the design. Check netlist or change the parameter value to include block pins in the design.
+**WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the VDD net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net VDD. Check net list, or change port class in the technology file, or change option to include pin in given range.
+**WARN: (IMPSR-1254):	Unable to connect the specified objects, since block pins of the VSS net were not found in the design. Check netlist or change the parameter value to include block pins in the design.
+**WARN: (IMPSR-1256):	Unable to find any CORE class pad pin of the VSS net due to unavailability of the pin or check netlist in the routing area or layer. Change routing area or layer to include the expected pin or check netlist. Alternatively, change port class in the technology file.
+Type 'man IMPSR-1256' for more detail.
+Cannot find any AREAIO class pad pin of net VSS. Check net list, or change port class in the technology file, or change option to include pin in given range.
+CPU time for FollowPin 0 seconds
+CPU time for FollowPin 0 seconds
+  Number of IO ports routed: 0
+  Number of Block ports routed: 0
+  Number of Stripe ports routed: 0
+  Number of Core ports routed: 430
+  Number of Pad ports routed: 0
+  Number of Power Bump ports routed: 0
+  Number of Followpin connections: 215
+End power routing: cpu: 0:00:01, real: 0:00:01, peak: 2272.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 0 via definition ...Extracting standard cell pins and blockage ...... 
+Pin and blockage extraction finished
+
+sroute created 645 wires.
+ViaGen created 13330 vias, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   M1   |       645      |       NA       |
+|  VIA1  |      4730      |        0       |
+|  VIA2  |      4300      |        0       |
+|  VIA3  |      4300      |        0       |
++--------+----------------+----------------+
+#% End sroute (date=03/23 17:29:49, total cpu=0:00:01.2, real=0:00:01.0, peak res=936.4M, current mem=936.4M)
+<CMD> zoomBox -97.63200 -85.86650 450.36700 421.01500
+<CMD> zoomBox -20.28200 -0.07200 106.64550 117.33200
+<CMD> zoomBox -35.03650 -15.96150 171.64500 175.21200
+<CMD> zoomBox -59.06100 -41.83400 277.48550 269.46050
+<CMD> zoomBox -98.18050 -83.96300 449.82950 422.92850
+<CMD> zoomBox -161.88000 -152.56300 730.46350 672.82600
+<CMD> zoomBox -265.60450 -264.26600 1187.42850 1079.74250
+<CMD> zoomBox 104.97600 -134.42350 652.98750 372.46950
+<CMD> zoomBox 237.10650 -79.16400 573.65450 232.13200
+<CMD> zoomBox 126.31250 -133.60400 674.32550 373.29050
+<CMD> zoomBox -43.85150 -220.91300 848.49750 604.48100
+<CMD> zoomBox -317.30750 -360.90550 1135.73500 983.11200
+<CMD> zoomBox -91.72500 -234.69500 800.62450 590.69950
+<CMD> zoomBox -411.60300 -347.12450 1041.43950 996.89300
+<CMD> zoomBox -91.72550 -234.69650 800.62500 590.69900
+<CMD> zoomBox -468.18100 -415.30800 984.86350 928.71100
+<CMD> zoomBox -45.30350 -225.26700 847.04700 600.12850
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 3 -spreadType center -spacing 0.8 -pin {clk1 core_gate1 rst1 inst_core1* mem_in_core1*}
+Successfully spread [52] pins.
+editPin : finished (cpu = 0:00:01.1 real = 0:00:00.0, mem = 1262.4M).
+<CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Right -layer 3 -spreadType center -spacing 0.8 -pin {clk2 core_gate2 rst2 inst_core2* mem_in_core2*}
+Successfully spread [52] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1262.4M).
+<CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Bottom -layer 3 -spreadType center -spacing 0.8 -pin {out_core1* s_valid1 norm_valid psum_norm_1* psum_norm_2* s_valid2 out_core2* }
+Successfully spread [201] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1262.4M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> legalizePin
+#% Begin legalizePin (date=03/23 17:41:54, mem=963.9M)
+
+Start pin legalization for the partition [dualcore]:
+Moving Pin [out_core1[87]] to LEGAL location ( 317.900    0.000 2 )
+Moving Pin [out_core1[86]] to LEGAL location ( 318.700    0.000 2 )
+Moving Pin [out_core1[85]] to LEGAL location ( 319.500    0.000 2 )
+Moving Pin [out_core1[84]] to LEGAL location ( 320.300    0.000 2 )
+Moving Pin [out_core1[83]] to LEGAL location ( 321.100    0.000 2 )
+Moving Pin [out_core1[82]] to LEGAL location ( 321.900    0.000 2 )
+Moving Pin [out_core1[81]] to LEGAL location ( 322.700    0.000 2 )
+Moving Pin [out_core1[80]] to LEGAL location ( 323.500    0.000 2 )
+Moving Pin [out_core1[79]] to LEGAL location ( 324.300    0.000 2 )
+Moving Pin [out_core1[78]] to LEGAL location ( 325.100    0.000 2 )
+Moving Pin [out_core1[77]] to LEGAL location ( 325.900    0.000 2 )
+Moving Pin [out_core1[76]] to LEGAL location ( 326.700    0.000 2 )
+Moving Pin [out_core1[75]] to LEGAL location ( 327.500    0.000 2 )
+Moving Pin [out_core1[74]] to LEGAL location ( 328.300    0.000 2 )
+Moving Pin [out_core1[73]] to LEGAL location ( 329.100    0.000 2 )
+Moving Pin [out_core1[72]] to LEGAL location ( 329.900    0.000 2 )
+Moving Pin [out_core1[71]] to LEGAL location ( 330.700    0.000 2 )
+Moving Pin [out_core1[70]] to LEGAL location ( 331.500    0.000 2 )
+Moving Pin [out_core1[69]] to LEGAL location ( 332.300    0.000 2 )
+Moving Pin [out_core1[68]] to LEGAL location ( 333.100    0.000 2 )
+Moving Pin [out_core1[67]] to LEGAL location ( 333.900    0.000 2 )
+Moving Pin [out_core1[66]] to LEGAL location ( 334.700    0.000 2 )
+Moving Pin [out_core1[65]] to LEGAL location ( 335.500    0.000 2 )
+Moving Pin [out_core1[64]] to LEGAL location ( 336.300    0.000 2 )
+Moving Pin [out_core1[63]] to LEGAL location ( 337.100    0.000 2 )
+Moving Pin [out_core1[62]] to LEGAL location ( 337.900    0.000 2 )
+Moving Pin [out_core1[61]] to LEGAL location ( 338.700    0.000 2 )
+Moving Pin [out_core1[60]] to LEGAL location ( 339.500    0.000 2 )
+Moving Pin [out_core1[59]] to LEGAL location ( 340.300    0.000 2 )
+Moving Pin [out_core1[58]] to LEGAL location ( 341.100    0.000 2 )
+Moving Pin [out_core1[57]] to LEGAL location ( 341.900    0.000 2 )
+Moving Pin [out_core1[56]] to LEGAL location ( 342.700    0.000 2 )
+Moving Pin [out_core1[55]] to LEGAL location ( 343.500    0.000 2 )
+Moving Pin [out_core1[54]] to LEGAL location ( 344.300    0.000 2 )
+Moving Pin [out_core1[53]] to LEGAL location ( 345.100    0.000 2 )
+Moving Pin [out_core1[52]] to LEGAL location ( 345.900    0.000 2 )
+Moving Pin [out_core1[51]] to LEGAL location ( 346.700    0.000 2 )
+Moving Pin [out_core1[50]] to LEGAL location ( 347.500    0.000 2 )
+Moving Pin [out_core1[49]] to LEGAL location ( 348.300    0.000 2 )
+Moving Pin [out_core1[48]] to LEGAL location ( 349.100    0.000 2 )
+Moving Pin [out_core1[47]] to LEGAL location ( 349.900    0.000 2 )
+Moving Pin [out_core1[46]] to LEGAL location ( 350.700    0.000 2 )
+Moving Pin [out_core1[45]] to LEGAL location ( 351.500    0.000 2 )
+Moving Pin [out_core1[44]] to LEGAL location ( 352.300    0.000 2 )
+Moving Pin [out_core1[43]] to LEGAL location ( 353.100    0.000 2 )
+Moving Pin [out_core1[42]] to LEGAL location ( 353.900    0.000 2 )
+Moving Pin [out_core1[41]] to LEGAL location ( 354.700    0.000 2 )
+Moving Pin [out_core1[40]] to LEGAL location ( 355.500    0.000 2 )
+Moving Pin [out_core1[39]] to LEGAL location ( 356.300    0.000 2 )
+Moving Pin [out_core1[38]] to LEGAL location ( 357.100    0.000 2 )
+Moving Pin [out_core1[37]] to LEGAL location ( 357.900    0.000 2 )
+Moving Pin [out_core1[36]] to LEGAL location ( 358.700    0.000 2 )
+Moving Pin [out_core1[35]] to LEGAL location ( 359.500    0.000 2 )
+Moving Pin [out_core1[34]] to LEGAL location ( 360.300    0.000 2 )
+Moving Pin [out_core1[33]] to LEGAL location ( 361.100    0.000 2 )
+Moving Pin [out_core1[32]] to LEGAL location ( 361.900    0.000 2 )
+Moving Pin [out_core1[31]] to LEGAL location ( 362.700    0.000 2 )
+Moving Pin [out_core1[30]] to LEGAL location ( 363.500    0.000 2 )
+Moving Pin [out_core1[29]] to LEGAL location ( 364.300    0.000 2 )
+Moving Pin [out_core1[28]] to LEGAL location ( 365.100    0.000 2 )
+Moving Pin [out_core1[27]] to LEGAL location ( 365.900    0.000 2 )
+Moving Pin [out_core1[26]] to LEGAL location ( 366.700    0.000 2 )
+Moving Pin [out_core1[25]] to LEGAL location ( 367.500    0.000 2 )
+Moving Pin [out_core1[24]] to LEGAL location ( 368.300    0.000 2 )
+Moving Pin [out_core1[23]] to LEGAL location ( 369.100    0.000 2 )
+Moving Pin [out_core1[22]] to LEGAL location ( 369.900    0.000 2 )
+Moving Pin [out_core1[21]] to LEGAL location ( 370.700    0.000 2 )
+Moving Pin [out_core1[20]] to LEGAL location ( 371.500    0.000 2 )
+Moving Pin [out_core1[19]] to LEGAL location ( 372.300    0.000 2 )
+Moving Pin [out_core1[18]] to LEGAL location ( 373.100    0.000 2 )
+Moving Pin [out_core1[17]] to LEGAL location ( 373.900    0.000 2 )
+Moving Pin [out_core1[16]] to LEGAL location ( 374.700    0.000 2 )
+Moving Pin [out_core1[15]] to LEGAL location ( 375.500    0.000 2 )
+Moving Pin [out_core1[14]] to LEGAL location ( 376.300    0.000 2 )
+Moving Pin [out_core1[13]] to LEGAL location ( 377.100    0.000 2 )
+Moving Pin [out_core1[12]] to LEGAL location ( 377.900    0.000 2 )
+Moving Pin [out_core1[11]] to LEGAL location ( 378.700    0.000 2 )
+Moving Pin [out_core1[10]] to LEGAL location ( 379.500    0.000 2 )
+Moving Pin [out_core1[9]] to LEGAL location ( 380.300    0.000 2 )
+Moving Pin [out_core1[8]] to LEGAL location ( 381.100    0.000 2 )
+Moving Pin [out_core1[7]] to LEGAL location ( 381.900    0.000 2 )
+Moving Pin [out_core1[6]] to LEGAL location ( 382.700    0.000 2 )
+Moving Pin [out_core1[5]] to LEGAL location ( 383.500    0.000 2 )
+Moving Pin [out_core1[4]] to LEGAL location ( 384.300    0.000 2 )
+Moving Pin [out_core1[3]] to LEGAL location ( 385.100    0.000 2 )
+Moving Pin [out_core1[2]] to LEGAL location ( 385.900    0.000 2 )
+Moving Pin [out_core1[1]] to LEGAL location ( 386.700    0.000 2 )
+Moving Pin [out_core1[0]] to LEGAL location ( 387.500    0.000 2 )
+Moving Pin [out_core2[87]] to LEGAL location ( 408.300    0.000 2 )
+Moving Pin [out_core2[86]] to LEGAL location ( 409.100    0.000 2 )
+Moving Pin [out_core2[85]] to LEGAL location ( 409.900    0.000 2 )
+Moving Pin [out_core2[84]] to LEGAL location ( 410.700    0.000 2 )
+Moving Pin [out_core2[83]] to LEGAL location ( 411.500    0.000 2 )
+Moving Pin [out_core2[82]] to LEGAL location ( 412.300    0.000 2 )
+Moving Pin [out_core2[81]] to LEGAL location ( 413.100    0.000 2 )
+Moving Pin [out_core2[80]] to LEGAL location ( 413.900    0.000 2 )
+Moving Pin [out_core2[79]] to LEGAL location ( 414.700    0.000 2 )
+Moving Pin [out_core2[78]] to LEGAL location ( 415.500    0.000 2 )
+Moving Pin [out_core2[77]] to LEGAL location ( 416.300    0.000 2 )
+Moving Pin [out_core2[76]] to LEGAL location ( 417.100    0.000 2 )
+Moving Pin [out_core2[75]] to LEGAL location ( 417.900    0.000 2 )
+Moving Pin [out_core2[74]] to LEGAL location ( 418.700    0.000 2 )
+Moving Pin [out_core2[73]] to LEGAL location ( 419.500    0.000 2 )
+Moving Pin [out_core2[72]] to LEGAL location ( 420.300    0.000 2 )
+Moving Pin [out_core2[71]] to LEGAL location ( 421.100    0.000 2 )
+Moving Pin [out_core2[70]] to LEGAL location ( 421.900    0.000 2 )
+Moving Pin [out_core2[69]] to LEGAL location ( 422.700    0.000 2 )
+Moving Pin [out_core2[68]] to LEGAL location ( 423.500    0.000 2 )
+Moving Pin [out_core2[67]] to LEGAL location ( 424.300    0.000 2 )
+Moving Pin [out_core2[66]] to LEGAL location ( 425.100    0.000 2 )
+Moving Pin [out_core2[65]] to LEGAL location ( 425.900    0.000 2 )
+Moving Pin [out_core2[64]] to LEGAL location ( 426.700    0.000 2 )
+Moving Pin [out_core2[63]] to LEGAL location ( 427.500    0.000 2 )
+Moving Pin [out_core2[62]] to LEGAL location ( 428.300    0.000 2 )
+Moving Pin [out_core2[61]] to LEGAL location ( 429.100    0.000 2 )
+Moving Pin [out_core2[60]] to LEGAL location ( 429.900    0.000 2 )
+Moving Pin [out_core2[59]] to LEGAL location ( 430.700    0.000 2 )
+Moving Pin [out_core2[58]] to LEGAL location ( 431.500    0.000 2 )
+Moving Pin [out_core2[57]] to LEGAL location ( 432.300    0.000 2 )
+Moving Pin [out_core2[56]] to LEGAL location ( 433.100    0.000 2 )
+Moving Pin [out_core2[55]] to LEGAL location ( 433.900    0.000 2 )
+Moving Pin [out_core2[54]] to LEGAL location ( 434.700    0.000 2 )
+Moving Pin [out_core2[53]] to LEGAL location ( 435.500    0.000 2 )
+Moving Pin [out_core2[52]] to LEGAL location ( 436.300    0.000 2 )
+Moving Pin [out_core2[51]] to LEGAL location ( 437.100    0.000 2 )
+Moving Pin [out_core2[50]] to LEGAL location ( 437.900    0.000 2 )
+Moving Pin [out_core2[49]] to LEGAL location ( 438.700    0.000 2 )
+Moving Pin [out_core2[48]] to LEGAL location ( 439.500    0.000 2 )
+Moving Pin [out_core2[47]] to LEGAL location ( 440.300    0.000 2 )
+Moving Pin [out_core2[46]] to LEGAL location ( 441.100    0.000 2 )
+Moving Pin [out_core2[45]] to LEGAL location ( 441.900    0.000 2 )
+Moving Pin [out_core2[44]] to LEGAL location ( 442.700    0.000 2 )
+Moving Pin [out_core2[43]] to LEGAL location ( 443.500    0.000 2 )
+Moving Pin [out_core2[42]] to LEGAL location ( 444.300    0.000 2 )
+Moving Pin [out_core2[41]] to LEGAL location ( 445.100    0.000 2 )
+Moving Pin [out_core2[40]] to LEGAL location ( 445.900    0.000 2 )
+Moving Pin [out_core2[39]] to LEGAL location ( 446.700    0.000 2 )
+Moving Pin [out_core2[38]] to LEGAL location ( 447.500    0.000 2 )
+Moving Pin [out_core2[37]] to LEGAL location ( 448.300    0.000 2 )
+Moving Pin [out_core2[36]] to LEGAL location ( 449.100    0.000 2 )
+Moving Pin [out_core2[35]] to LEGAL location ( 449.900    0.000 2 )
+Moving Pin [out_core2[34]] to LEGAL location ( 450.700    0.000 2 )
+Moving Pin [out_core2[33]] to LEGAL location ( 451.500    0.000 2 )
+Moving Pin [out_core2[32]] to LEGAL location ( 452.300    0.000 2 )
+Moving Pin [out_core2[31]] to LEGAL location ( 453.100    0.000 2 )
+Moving Pin [out_core2[30]] to LEGAL location ( 453.900    0.000 2 )
+Moving Pin [out_core2[29]] to LEGAL location ( 454.700    0.000 2 )
+Moving Pin [out_core2[28]] to LEGAL location ( 455.500    0.000 2 )
+Moving Pin [out_core2[27]] to LEGAL location ( 456.300    0.000 2 )
+Moving Pin [out_core2[26]] to LEGAL location ( 457.100    0.000 2 )
+Moving Pin [out_core2[25]] to LEGAL location ( 457.900    0.000 2 )
+Moving Pin [out_core2[24]] to LEGAL location ( 458.700    0.000 2 )
+Moving Pin [out_core2[23]] to LEGAL location ( 459.500    0.000 2 )
+Moving Pin [out_core2[22]] to LEGAL location ( 460.300    0.000 2 )
+Moving Pin [out_core2[21]] to LEGAL location ( 461.100    0.000 2 )
+Moving Pin [out_core2[20]] to LEGAL location ( 461.900    0.000 2 )
+Moving Pin [out_core2[19]] to LEGAL location ( 462.700    0.000 2 )
+Moving Pin [out_core2[18]] to LEGAL location ( 463.500    0.000 2 )
+Moving Pin [out_core2[17]] to LEGAL location ( 464.300    0.000 2 )
+Moving Pin [out_core2[16]] to LEGAL location ( 465.100    0.000 2 )
+Moving Pin [out_core2[15]] to LEGAL location ( 465.900    0.000 2 )
+Moving Pin [out_core2[14]] to LEGAL location ( 466.700    0.000 2 )
+Moving Pin [out_core2[13]] to LEGAL location ( 467.500    0.000 2 )
+Moving Pin [out_core2[12]] to LEGAL location ( 468.300    0.000 2 )
+Moving Pin [out_core2[11]] to LEGAL location ( 469.100    0.000 2 )
+Moving Pin [out_core2[10]] to LEGAL location ( 469.900    0.000 2 )
+Moving Pin [out_core2[9]] to LEGAL location ( 470.700    0.000 2 )
+Moving Pin [out_core2[8]] to LEGAL location ( 471.500    0.000 2 )
+Moving Pin [out_core2[7]] to LEGAL location ( 472.300    0.000 2 )
+Moving Pin [out_core2[6]] to LEGAL location ( 473.100    0.000 2 )
+Moving Pin [out_core2[5]] to LEGAL location ( 473.900    0.000 2 )
+Moving Pin [out_core2[4]] to LEGAL location ( 474.700    0.000 2 )
+Moving Pin [out_core2[3]] to LEGAL location ( 475.500    0.000 2 )
+Moving Pin [out_core2[2]] to LEGAL location ( 476.300    0.000 2 )
+Moving Pin [out_core2[1]] to LEGAL location ( 477.100    0.000 2 )
+Moving Pin [out_core2[0]] to LEGAL location ( 477.900    0.000 2 )
+Moving Pin [s_valid1] to LEGAL location ( 388.300    0.000 2 )
+Moving Pin [s_valid2] to LEGAL location ( 407.500    0.000 2 )
+Moving Pin [psum_norm_1[10]] to LEGAL location ( 389.900    0.000 2 )
+Moving Pin [psum_norm_1[9]] to LEGAL location ( 390.700    0.000 2 )
+Moving Pin [psum_norm_1[8]] to LEGAL location ( 391.500    0.000 2 )
+Moving Pin [psum_norm_1[7]] to LEGAL location ( 392.300    0.000 2 )
+Moving Pin [psum_norm_1[6]] to LEGAL location ( 393.100    0.000 2 )
+Moving Pin [psum_norm_1[5]] to LEGAL location ( 393.900    0.000 2 )
+Moving Pin [psum_norm_1[4]] to LEGAL location ( 394.700    0.000 2 )
+Moving Pin [psum_norm_1[3]] to LEGAL location ( 395.500    0.000 2 )
+Moving Pin [psum_norm_1[2]] to LEGAL location ( 396.300    0.000 2 )
+Moving Pin [psum_norm_1[1]] to LEGAL location ( 397.100    0.000 2 )
+Moving Pin [psum_norm_1[0]] to LEGAL location ( 397.900    0.000 2 )
+Moving Pin [psum_norm_2[10]] to LEGAL location ( 398.700    0.000 2 )
+Moving Pin [psum_norm_2[9]] to LEGAL location ( 399.500    0.000 2 )
+Moving Pin [psum_norm_2[8]] to LEGAL location ( 400.300    0.000 2 )
+Moving Pin [psum_norm_2[7]] to LEGAL location ( 401.100    0.000 2 )
+Moving Pin [psum_norm_2[6]] to LEGAL location ( 401.900    0.000 2 )
+Moving Pin [psum_norm_2[5]] to LEGAL location ( 402.700    0.000 2 )
+Moving Pin [psum_norm_2[4]] to LEGAL location ( 403.500    0.000 2 )
+Moving Pin [psum_norm_2[3]] to LEGAL location ( 404.300    0.000 2 )
+Moving Pin [psum_norm_2[2]] to LEGAL location ( 405.100    0.000 2 )
+Moving Pin [psum_norm_2[1]] to LEGAL location ( 405.900    0.000 2 )
+Moving Pin [psum_norm_2[0]] to LEGAL location ( 406.700    0.000 2 )
+Moving Pin [norm_valid] to LEGAL location ( 389.100    0.000 2 )
+Summary report for top level: [dualcore] 
+	Total Pads                         : 0
+	Total Pins                         : 305
+	Legally Assigned Pins              : 305
+	Illegally Assigned Pins            : 0
+	Unplaced Pins                      : 0
+	Constant/Spl Net Pins              : 0
+	Internal Pins                      : 0
+	Legally Assigned Feedthrough Pins  : 0
+	Illegally Assigned Feedthrough Pins: 0
+End of Summary report
+201 pin(s) of the Partition dualcore were legalized.
+End pin legalization for the partition [dualcore].
+
+#% End legalizePin (date=03/23 17:41:55, total cpu=0:00:00.1, real=0:00:01.0, peak res=964.0M, current mem=964.0M)
+<CMD> checkPinAssignment
+#% Begin checkPinAssignment (date=03/23 17:41:55, mem=964.0M)
+Checking pins of top cell dualcore ... completed
+
+===========================================================================================================================
+                                                checkPinAssignment Summary
+===========================================================================================================================
+Partition   | pads  | pins   | legal  | illegal | internal | internal illegal | FT     | FT illegal | constant | unplaced |
+===========================================================================================================================
+dualcore    |     0 |    305 |    305 |       0 |        0 |                0 |      0 |          0 |        0 |        0 |
+===========================================================================================================================
+TOTAL       |     0 |    305 |    305 |       0 |        0 |                0 |      0 |          0 |        0 |        0 |
+===========================================================================================================================
+#% End checkPinAssignment (date=03/23 17:41:55, total cpu=0:00:00.1, real=0:00:00.0, peak res=964.2M, current mem=964.2M)
+<CMD> zoomBox -901.57150 -615.55100 1464.46900 1572.96000
+<CMD> zoomBox -47.48000 -213.28950 844.87150 612.10700
+<CMD> zoomBox -444.24600 -467.88700 2681.77750 1088.54550
+<CMD> zoomBox -301.35250 -264.78950 1618.41650 691.05450
+<CMD> zoomBox -213.59850 -140.06300 965.38000 446.94500
+<CMD> zoomBox -126.33150 -10.11950 597.70900 350.37700
+<CMD> zoomBox -50.40250 119.23150 222.67000 255.19300
+<CMD> zoomBox -21.76550 168.01600 81.22400 219.29400
+<CMD> zoomBox -13.01900 175.06550 50.22950 206.55650
+<CMD> zoomBox -96.73350 107.63600 347.92500 329.02950
+<CMD> zoomBox -258.18250 -22.73500 920.81700 564.28350
+<CMD> zoomBox -690.38400 -392.38500 2435.69850 1164.07700
+<CMD> zoomBox -295.78700 -245.13700 1624.01850 710.72550
+<CMD> zoomBox -74.39250 -171.63600 1104.60900 415.38350
+<CMD> zoomBox 67.86350 -119.93150 791.91800 240.57200
+<CMD> zoomBox 279.36150 -32.30000 382.35400 18.97950
+<CMD> zoomBox 307.46000 -18.19150 331.31650 -6.31350
+<CMD> zoomBox 291.75750 -31.09400 355.01250 0.40050
+<CMD> zoomBox 275.64850 -47.10700 378.64950 4.17650
+**ERROR: (IMPSYT-6000):	No Object Selected.
+<CMD> zoomBox 312.14450 -6.41250 326.79650 0.88250
+<CMD> zoomBox 315.75950 -2.24300 321.28700 0.50900
+<CMD> gui_select -rect {318.14600 0.14650 318.13950 0.03050}
+<CMD> zoomBox 314.58950 -3.55700 323.59050 0.92450
+<CMD> zoomBox 316.54750 -1.40150 319.94350 0.28950
+<CMD> zoomBox 304.09500 -15.08900 343.00300 4.28300
+<CMD> zoomBox 281.68450 -39.89550 384.84850 11.46950
+<CMD> zoomBox 259.07600 -64.92000 427.06200 18.71950
+<CMD> zoomBox 162.31950 -172.02050 607.73000 49.74750
+<CMD> zoomBox 307.12600 -62.07650 475.11400 21.56400
+<CMD> zoomBox 377.39450 -10.26300 401.29100 1.63500
+<CMD> zoomBox 370.31500 -16.64700 409.22800 2.72750
+<CMD> zoomBox 384.26550 -3.71950 393.27950 0.76850
+<CMD> zoomBox 385.88800 -2.21600 391.42450 0.54050
+<CMD> zoomBox 384.26400 -3.72050 393.28000 0.76850
+<CMD> zoomBox 381.61950 -6.17000 396.30150 1.14000
+<CMD> zoomBox 377.31450 -10.15850 401.22250 1.74500
+<CMD> zoomBox 370.30400 -16.65400 409.23600 2.73000
+<CMD> zoomBox 377.31350 -10.15950 401.22300 1.74500
+<CMD> zoomBox 370.30200 -16.65500 409.23600 2.73000
+<CMD> zoomBox 358.88550 -27.23200 422.28450 4.33400
+<CMD> zoomBox 340.29700 -44.45500 443.53200 6.94500
+<CMD> zoomBox 310.02850 -72.50050 478.13000 11.19650
+<CMD> zoomBox 314.80250 -15.91850 353.73850 3.46750
+<CMD> zoomBox 316.06900 -5.47550 330.75450 1.83650
+<CMD> zoomBox 317.13250 -0.80050 320.53550 0.89400
+<CMD> zoomBox 314.53800 -4.36350 329.23700 2.95500
+<CMD> zoomBox 312.49950 -7.40650 336.43450 4.51050
+<CMD> zoomBox 280.64300 -54.97000 448.91750 28.81300
+<CMD> zoomBox 257.30850 -89.87550 531.31600 46.55150
+<CMD> zoomBox 219.31300 -146.71250 665.48850 75.43600
+<CMD> zoomBox 108.21900 -239.43200 834.74200 122.30050
+<CMD> zoomBox -85.30650 -392.33050 1097.71650 196.69100
+<CMD> zoomBox -399.08950 -639.06550 1527.26750 320.05850
+<CMD> zoomBox -909.30450 -1038.64900 2227.44750 523.12550
+<CMD> zoomBox -375.80050 -500.77750 1550.55900 458.34800
+<CMD> zoomBox -49.95050 -173.13850 1133.07600 415.88500
+<CMD> zoomBox -375.80300 -498.09650 1550.56000 461.03050
+<CMD> zoomBox -101.35450 -310.81050 1081.67300 278.21350
+<CMD> zoomBox 270.96000 -76.31800 544.97050 60.11050
+<CMD> zoomBox 315.14750 -48.91500 483.42500 34.86950
+<CMD> zoomBox 263.83750 -78.16200 537.85000 58.26750
+<CMD> zoomBox 180.28800 -125.78650 626.47250 96.36650
+<CMD> zoomBox 44.24200 -203.33450 770.77900 158.40500
+<CMD> zoomBox -177.28650 -329.60850 1005.75800 259.42400
+<CMD> zoomBox 37.10400 -189.06050 763.64200 172.67950
+<CMD> zoomBox -177.28750 -329.60900 1005.75800 259.42400
+<CMD> zoomBox -526.38850 -558.46900 1400.00500 400.67350
+<CMD> zoomBox 174.99500 -68.03350 621.18200 154.12100
+<CMD> zoomBox -159.49950 -294.85550 1023.55450 294.18150
+<CMD> zoomBox -508.15600 -511.64800 1418.25050 447.50100
+<CMD> zoomBox -159.50050 -294.85600 1023.55450 294.18150
+<CMD> zoomBox 49.95000 -146.89500 776.49450 214.84800
+
+*** Memory Usage v#1 (Current mem = 1286.293M, initial mem = 283.785M) ***
+*** Message Summary: 1646 warning(s), 2 error(s)
+
+--- Ending "Innovus" (totcpu=0:03:20, real=0:15:58, mem=1286.3M) ---

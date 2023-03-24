@@ -2,11 +2,7 @@
 *	Innovus 19.17-s077_1 (64bit) 12/01/2020 11:09 (Linux 2.6.32-431.11.2.el6.x86_64)
 *	
 *
-<<<<<<< HEAD
-* 	Date & Time:	2023-Mar-23 08:38:56 (2023-Mar-23 15:38:56 GMT)
-=======
-* 	Date & Time:	2023-Mar-23 12:31:24 (2023-Mar-23 19:31:24 GMT)
->>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
+* 	Date & Time:	2023-Mar-23 18:38:48 (2023-Mar-24 01:38:48 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -47,71 +43,41 @@
 
 Total Power 
 -----------------------------------------------------------------------------------------
-<<<<<<< HEAD
-Total Internal Power:       47.36356571 	   49.7583%
-Total Switching Power:      45.76164042 	   48.0754%
-Total Leakage Power:         2.06201023 	    2.1663%
-Total Power:                95.18721624 
-=======
-Total Internal Power:       51.04344275 	   55.4995%
-Total Switching Power:      38.77304321 	   42.1579%
-Total Leakage Power:         2.15453542 	    2.3426%
-Total Power:                91.97102129 
->>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
+Total Internal Power:       47.44083151 	   57.7848%
+Total Switching Power:      32.70825261 	   39.8400%
+Total Leakage Power:         1.95001849 	    2.3752%
+Total Power:                82.09910246 
 -----------------------------------------------------------------------------------------
 
 
 Group                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-<<<<<<< HEAD
-Sequential                         23.24       3.238      0.5813       27.06       28.43 
+Sequential                         23.15       2.768      0.5801        26.5       32.28 
 Macro                                  0           0           0           0           0 
-IO                                     0           0    3.04e-05    3.04e-05   3.194e-05 
-Physical-Only                          0           0      0.6833      0.6833      0.7178 
-Combinational                       21.1       38.93      0.7367       60.76       63.84 
-Clock (Combinational)              1.753       2.773      0.0306       4.556       4.787 
-Clock (Sequential)                 1.273      0.8236     0.03017       2.127       2.235 
+IO                                     0           0    3.11e-05    3.11e-05   3.788e-05 
+Physical-Only                          0           0      0.6467      0.6467      0.7878 
+Combinational                      21.54       26.77       0.669       48.98       59.66 
+Clock (Combinational)              1.491       2.387     0.02595       3.904       4.755 
+Clock (Sequential)                 1.257      0.7815      0.0282       2.067       2.517 
 -----------------------------------------------------------------------------------------
-Total                              47.36       45.76       2.062       95.19         100 
-=======
-Sequential                          23.2       2.887      0.5798       26.67          29 
-Macro                                  0           0           0           0           0 
-IO                                     0           0    3.04e-05    3.04e-05   3.305e-05 
-Physical-Only                          0           0      0.6626      0.6626      0.7204 
-Combinational                       25.2       32.57      0.8554       58.63       63.75 
-Clock (Combinational)              1.356       2.468     0.02704       3.851       4.187 
-Clock (Sequential)                 1.283      0.8461     0.02977       2.159       2.347 
------------------------------------------------------------------------------------------
-Total                              51.04       38.77       2.155       91.97         100 
->>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
+Total                              47.44       32.71        1.95        82.1         100 
 -----------------------------------------------------------------------------------------
 
 
 Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-<<<<<<< HEAD
-VDD                       0.9      47.36       45.76       2.062       95.19         100 
-=======
-VDD                       0.9      51.04       38.77       2.155       91.97         100 
->>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
+VDD                       0.9      47.44       32.71        1.95        82.1         100 
 
 
 Clock                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-<<<<<<< HEAD
-clk2                               1.053       1.358     0.02585       2.437        2.56 
-clk1                               1.973       2.238     0.03492       4.246       4.461 
+clk2                                1.13       1.371     0.02542       2.527       3.078 
+clk1                               1.618       1.797     0.02874       3.444       4.195 
 -----------------------------------------------------------------------------------------
-Total (excluding duplicates)       3.026       3.596     0.06077       6.683       7.021 
-=======
-clk2                               1.113       1.383     0.02673       2.523       2.743 
-clk1                               1.525       1.931     0.03007       3.487       3.791 
------------------------------------------------------------------------------------------
-Total (excluding duplicates)       2.639       3.314     0.05681        6.01       6.535 
->>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
+Total (excluding duplicates)       2.748       3.169     0.05415       5.971       7.273 
 -----------------------------------------------------------------------------------------
 Clock: clk2
 Clock Period: 0.001000 usec 
@@ -127,30 +93,15 @@ Clock Static Probability:  0.5000
 
 -----------------------------------------------------------------------------------------
 *	Power Distribution Summary: 
-<<<<<<< HEAD
-*                Highest Average Power: normalizer_inst/FE_USKC5271_CTS_20 (BUFFD16):           0.1594 
-*                Highest Leakage Power: normalizer_inst/FE_RC_585_0 (ND3D8):        0.0003028 
-*          Total Cap:      3.24191e-10 F
-*          Total instances in design: 78764
+*                Highest Average Power: normalizer_inst/CTS_ccl_a_buf_00260 (CKBD16):           0.1246 
+*                Highest Leakage Power: core1_inst/mac_array_instance/col_idx_1__mac_col_inst/intadd_0_U2 (FA1D4):        0.0002609 
+*          Total Cap:      2.14644e-10 F
+*          Total instances in design: 71660
 *          Total instances in design with no power:     0
 *          Total instances in design with no activity:     0
-*          Total Fillers and Decap: 34076
+*          Total Fillers and Decap: 33686
 -----------------------------------------------------------------------------------------
 
-Total leakage power = 2.74529 mW
+Total leakage power = 2.59676 mW
 Cell usage statistics:  
-Library tcbn65gpluswc , 78764 cells ( 100.000000%) , 2.06201 mW ( 75.110751%  ) 
-=======
-*                Highest Average Power: normalizer_inst/FE_USKC5452_CTS_20 (CKBD16):           0.1412 
-*                Highest Leakage Power: normalizer_inst/FE_RC_15_0 (ND3D8):        0.0003028 
-*          Total Cap:      2.62013e-10 F
-*          Total instances in design: 77045
-*          Total instances in design with no power:     0
-*          Total instances in design with no activity:     0
-*          Total Fillers and Decap: 35195
------------------------------------------------------------------------------------------
-
-Total leakage power = 2.81712 mW
-Cell usage statistics:  
-Library tcbn65gpluswc , 77045 cells ( 100.000000%) , 2.15454 mW ( 76.480068%  ) 
->>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
+Library tcbn65gpluswc , 71660 cells ( 100.000000%) , 1.95002 mW ( 75.094316%  ) 
