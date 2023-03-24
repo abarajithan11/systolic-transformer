@@ -1,7 +1,11 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
+<<<<<<< HEAD
 #  Created on Thu Mar 23 07:44:15 2023                
+=======
+#  Created on Thu Mar 23 10:09:30 2023                
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
 #                                                     
 #######################################################
 
@@ -16,7 +20,10 @@
 set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
 suppressMessage ENCEXT-2799
 win
+<<<<<<< HEAD
 setMultiCpuUsage -localCpu 8
+=======
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
 set init_pwr_net VDD
 set init_gnd_net VSS
 set init_verilog ../dualcore.out.v
@@ -36,6 +43,7 @@ create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
 init_design -setup WC_VIEW -hold BC_VIEW
 set_interactive_constraint_modes {CON}
 setDesignMode -process 65
+<<<<<<< HEAD
 floorPlan -site core -r 1 0.50 10.0 10.0 10.0 10.0
 timeDesign -preplace -prefix preplace
 globalNetConnect VDD -type pgpin -pin VDD -inst * -verbose
@@ -170,3 +178,5 @@ zoomBox -37.82050 279.67700 298.73250 590.97750
 zoomBox -118.35150 -183.47750 774.00850 641.92650
 zoomBox 74.53200 -17.32200 622.55300 489.57950
 zoomBox -118.35150 -182.58750 774.00900 642.81700
+=======
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b

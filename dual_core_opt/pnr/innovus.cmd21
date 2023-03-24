@@ -1,7 +1,11 @@
 #######################################################
 #                                                     
 #  Innovus Command Logging File                     
+<<<<<<< HEAD
 #  Created on Thu Mar 23 07:34:56 2023                
+=======
+#  Created on Thu Mar 23 10:07:18 2023                
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
 #                                                     
 #######################################################
 
@@ -16,6 +20,9 @@
 set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
 suppressMessage ENCEXT-2799
 win
+<<<<<<< HEAD
+=======
+setMultiCpuUsage -localCpu 8
 set init_pwr_net VDD
 set init_gnd_net VSS
 set init_verilog ../dualcore.out.v
@@ -35,6 +42,27 @@ create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
 init_design -setup WC_VIEW -hold BC_VIEW
 set_interactive_constraint_modes {CON}
 setDesignMode -process 65
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
+set init_pwr_net VDD
+set init_gnd_net VSS
+set init_verilog ../dualcore.out.v
+set init_design_netlisttype Verilog
+set init_design_settop 1
+set init_top_cell dualcore
+set init_lef_file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef
+create_library_set -name WC_LIB -timing $worst_timing_lib
+create_library_set -name BC_LIB -timing $best_timing_lib
+create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+create_constraint_mode -name CON -sdc_file [list $sdc]
+create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+init_design -setup WC_VIEW -hold BC_VIEW
+set_interactive_constraint_modes {CON}
+setDesignMode -process 65
+<<<<<<< HEAD
 set ptngSprNoRefreshPins 1
 setPtnPinStatus -cell dualcore -pin clk1 -status unplaced -silent
 set ptngSprNoRefreshPins 0
@@ -118,3 +146,5 @@ zoomBox -365.62250 -179.86850 526.73000 645.52850
 zoomBox -1263.10950 -613.09100 1102.93550 1575.42400
 zoomBox -670.19300 -352.06600 782.85450 991.95600
 zoomBox -306.06850 -191.76450 586.28500 633.63350
+=======
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b

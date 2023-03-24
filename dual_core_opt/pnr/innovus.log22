@@ -4,8 +4,13 @@ Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
 
 Version:	v19.17-s077_1, built Tue Dec 1 11:09:44 PST 2020
 Options:	
+<<<<<<< HEAD
 Date:		Thu Mar 23 07:43:56 2023
 Host:		ieng6-ece-03.ucsd.edu (x86_64 w/Linux 3.10.0-1160.80.1.el7.x86_64) (4cores*8cpus*Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz 20480KB)
+=======
+Date:		Thu Mar 23 10:09:12 2023
+Host:		ieng6-ece-10.ucsd.edu (x86_64 w/Linux 3.10.0-1160.80.1.el7.x86_64) (4cores*8cpus*Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz 20480KB)
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
 OS:		CentOS Linux release 7.9.2009 (Core)
 
 License:
@@ -18,7 +23,10 @@ Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_si
 <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
 <CMD> suppressMessage ENCEXT-2799
 <CMD> win
+<<<<<<< HEAD
 <CMD> setMultiCpuUsage -localCpu 8
+=======
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
 <CMD> set init_pwr_net VDD
 <CMD> set init_gnd_net VSS
 <CMD> set init_verilog ../dualcore.out.v
@@ -102,12 +110,18 @@ Set DBUPerIGU to M2 pitch 400.
 **WARN: (IMPLF-200):	Pin 'I' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
 Type 'man IMPLF-200' for more detail.
 
+<<<<<<< HEAD
 viaInitial starts at Thu Mar 23 07:44:25 2023
 viaInitial ends at Thu Mar 23 07:44:25 2023
+=======
+viaInitial starts at Thu Mar 23 10:09:38 2023
+viaInitial ends at Thu Mar 23 10:09:38 2023
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
 
 ##  Check design process and node:  
 ##  Both design process and tech node are not set.
 
+<<<<<<< HEAD
 Starting library reading in 'Multi-threaded flow' (with '8' threads)
 Reading WC_LIB timing library /home/linux/ieng6/ee260bwi23/public/PDKdata/lib/tcbn65gpluswc.lib.
 Read 811 cells in library tcbn65gpluswc.
@@ -119,6 +133,15 @@ Library reading multithread flow ended.
 *** End library_loading (cpu=0.07min, real=0.02min, mem=74.0M, fe_cpu=0.36min, fe_real=0.50min, fe_mem=787.4M) ***
 #% Begin Load netlist data ... (date=03/23 07:44:26, mem=522.6M)
 *** Begin netlist parsing (mem=787.4M) ***
+=======
+Reading WC_LIB timing library '/home/linux/ieng6/ee260bwi23/public/PDKdata/lib/tcbn65gpluswc.lib' ...
+Read 811 cells in library 'tcbn65gpluswc' 
+Reading BC_LIB timing library '/home/linux/ieng6/ee260bwi23/public/PDKdata/lib/tcbn65gplusbc.lib' ...
+Read 811 cells in library 'tcbn65gplusbc' 
+*** End library_loading (cpu=0.04min, real=0.03min, mem=29.0M, fe_cpu=0.34min, fe_real=0.47min, fe_mem=743.1M) ***
+#% Begin Load netlist data ... (date=03/23 10:09:40, mem=515.8M)
+*** Begin netlist parsing (mem=743.1M) ***
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
 **WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D4' is defined in LEF but not in the timing library.
 Type 'man IMPVL-159' for more detail.
 **WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D4' is defined in LEF but not in the timing library.
@@ -166,9 +189,15 @@ Reading netlist ...
 Backslashed names will retain backslash and a trailing blank character.
 Reading verilog netlist '../dualcore.out.v'
 
+<<<<<<< HEAD
 *** Memory Usage v#1 (Current mem = 787.352M, initial mem = 283.785M) ***
 *** End netlist parsing (cpu=0:00:00.3, real=0:00:00.0, mem=787.4M) ***
 #% End Load netlist data ... (date=03/23 07:44:26, total cpu=0:00:00.3, real=0:00:00.0, peak res=550.9M, current mem=550.9M)
+=======
+*** Memory Usage v#1 (Current mem = 760.137M, initial mem = 283.785M) ***
+*** End netlist parsing (cpu=0:00:00.3, real=0:00:01.0, mem=760.1M) ***
+#% End Load netlist data ... (date=03/23 10:09:41, total cpu=0:00:00.3, real=0:00:01.0, peak res=548.5M, current mem=548.5M)
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
 Set top cell to dualcore.
 Hooked 1622 DB cells to tlib cells.
 Starting recursive module instantiation check.
@@ -178,7 +207,11 @@ Building hierarchical netlist for Cell dualcore ...
 ** info: there are 2186 modules.
 ** info: there are 39654 stdCell insts.
 
+<<<<<<< HEAD
 *** Memory Usage v#1 (Current mem = 832.266M, initial mem = 283.785M) ***
+=======
+*** Memory Usage v#1 (Current mem = 840.062M, initial mem = 283.785M) ***
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
 **WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
 Type 'man IMPFP-3961' for more detail.
 **WARN: (IMPFP-3961):	The techSite 'ccore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
@@ -235,11 +268,19 @@ Updating RC grid for preRoute extraction ...
 Initializing multi-corner capacitance tables ... 
 Initializing multi-corner resistance tables ...
 *Info: initialize multi-corner CTS.
+<<<<<<< HEAD
 Reading timing constraints file '../dualcore.sdc' ...
 Current (total cpu=0:00:23.6, real=0:00:31.0, peak res=794.7M, current mem=794.7M)
 INFO (CTE): Constraints read successfully.
 Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:01.0, peak res=838.7M, current mem=838.7M)
 Current (total cpu=0:00:23.8, real=0:00:32.0, peak res=838.7M, current mem=838.7M)
+=======
+Reading timing constraints file './dualcore.sdc' ...
+Current (total cpu=0:00:21.8, real=0:00:30.0, peak res=788.2M, current mem=788.2M)
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=832.1M, current mem=832.1M)
+Current (total cpu=0:00:22.0, real=0:00:30.0, peak res=832.1M, current mem=832.1M)
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
 Total number of combinational cells: 497
 Total number of sequential cells: 303
 Total number of tristate cells: 11
@@ -288,6 +329,7 @@ Applying the recommended capacitance filtering threshold values for 65nm process
 	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
 	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+<<<<<<< HEAD
 <CMD> floorPlan -site core -r 1 0.50 10.0 10.0 10.0 10.0
 **WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
 Type 'man IMPFP-3961' for more detail.
@@ -27588,3 +27630,17 @@ End delay calculation (fullDC). (MEM=6625.46 CPU=0:00:05.9 REAL=0:00:01.0)
 <CMD> zoomBox -118.35150 -183.47750 774.00850 641.92650
 <CMD> zoomBox 74.53200 -17.32200 622.55300 489.57950
 <CMD> zoomBox -118.35150 -182.58750 774.00900 642.81700
+=======
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Thu Mar 23 10:11:30 2023
+  Total CPU time:     0:00:42
+  Total real time:    0:02:20
+  Peak memory (main): 856.29MB
+
+
+*** Memory Usage v#1 (Current mem = 1085.914M, initial mem = 283.785M) ***
+*** Message Summary: 1633 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:43.0, real=0:02:18, mem=1085.9M) ---
+>>>>>>> aed9910e876bdd4365d7eb9a7bdff198e5814b9b
