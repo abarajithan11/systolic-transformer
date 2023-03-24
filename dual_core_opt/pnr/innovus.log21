@@ -1,0 +1,920 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v19.17-s077_1, built Tue Dec 1 11:09:44 PST 2020
+Options:	
+Date:		Thu Mar 23 07:34:38 2023
+Host:		ieng6-ece-03.ucsd.edu (x86_64 w/Linux 3.10.0-1160.80.1.el7.x86_64) (4cores*8cpus*Intel(R) Xeon(R) CPU E5-2650 0 @ 2.00GHz 20480KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		invs	Innovus Implementation System	19.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (64 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> set init_verilog ../dualcore.out.v
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_design_settop 1
+<CMD> set init_top_cell dualcore
+<CMD> set init_lef_file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef
+<CMD> create_library_set -name WC_LIB -timing $worst_timing_lib
+<CMD> create_library_set -name BC_LIB -timing $best_timing_lib
+<CMD> create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+<CMD> create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+<CMD> create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+<CMD> create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+<CMD> create_constraint_mode -name CON -sdc_file [list $sdc]
+<CMD> create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+<CMD> create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+<CMD> init_design -setup WC_VIEW -hold BC_VIEW
+
+Loading LEF file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef ...
+WARNING (LEFPARS-2007): NAMESCASESENSITIVE statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 28.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 867.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 877.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1014.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1024.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1161.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1171.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1308.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1318.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1372.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1383.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1604.
+WARNING (LEFPARS-2019): TOPOFSTACKONLY statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1614.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1769.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1771.
+WARNING (LEFPARS-2021): turn-via is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1772.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1776.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1778.
+WARNING (LEFPARS-2021): turn-via is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1779.
+WARNING (LEFPARS-2022): DIRECTION statement in VIARULE is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef at line 1783.
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'I' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+viaInitial starts at Thu Mar 23 07:35:05 2023
+viaInitial ends at Thu Mar 23 07:35:05 2023
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Reading WC_LIB timing library '/home/linux/ieng6/ee260bwi23/public/PDKdata/lib/tcbn65gpluswc.lib' ...
+Read 811 cells in library 'tcbn65gpluswc' 
+Reading BC_LIB timing library '/home/linux/ieng6/ee260bwi23/public/PDKdata/lib/tcbn65gplusbc.lib' ...
+Read 811 cells in library 'tcbn65gplusbc' 
+*** End library_loading (cpu=0.06min, real=0.05min, mem=27.0M, fe_cpu=0.35min, fe_real=0.50min, fe_mem=741.5M) ***
+#% Begin Load netlist data ... (date=03/23 07:35:08, mem=514.1M)
+*** Begin netlist parsing (mem=741.5M) ***
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR4D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR4D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D1' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR3D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR3D0' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2D4' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VSS' of cell 'XOR2D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (IMPVL-159):	Pin 'VDD' of cell 'XOR2D2' is defined in LEF but not in the timing library.
+Type 'man IMPVL-159' for more detail.
+**WARN: (EMS-27):	Message (IMPVL-159) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Created 811 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../dualcore.out.v'
+
+*** Memory Usage v#1 (Current mem = 760.527M, initial mem = 291.785M) ***
+*** End netlist parsing (cpu=0:00:00.4, real=0:00:01.0, mem=760.5M) ***
+#% End Load netlist data ... (date=03/23 07:35:09, total cpu=0:00:00.4, real=0:00:01.0, peak res=547.4M, current mem=547.4M)
+Set top cell to dualcore.
+Hooked 1622 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell dualcore ...
+*** Netlist is unique.
+** info: there are 2186 modules.
+** info: there are 39654 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 840.453M, initial mem = 291.785M) ***
+**WARN: (IMPFP-3961):	The techSite 'dcore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'ccore' has no related standard cells in LEF/OA library. Cannot make calculations for this site type unless standard cell models of this type exist in the LEF/OA library. If the SITE is not used by the library you can ignore this warning or remove the SITE definition from the LEF/OA to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Set Default Input Pin Transition as 0.1 ps.
+WC_VIEW BC_VIEW
+Extraction setup Started 
+Initializing multi-corner RC extraction with 2 active RC Corners ...
+Reading Capacitance Table File /home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cworst.captable ...
+**WARN: (IMPEXT-2760):	Layer M9 specified in the cap table is ignored because it is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2771):	Via VIA_8 specified in the cap table is ignored because its top layer, M9, is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2801):	Resistance values are not provided in the Cap Table. Sheet resistance defined in the LEF file will be used.
+**WARN: (IMPEXT-2710):	Basic Cap table for layer M9 is ignored because the layer is not specified in the technology LEF file.
+Reading Capacitance Table File /home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cbest.captable ...
+**WARN: (IMPEXT-2760):	Layer M9 specified in the cap table is ignored because it is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2771):	Via VIA_8 specified in the cap table is ignored because its top layer, M9, is greater than the maximum number of layers, 8, specified in the technology LEF file. Check the cap table for the invalid layer specification.
+**WARN: (IMPEXT-2801):	Resistance values are not provided in the Cap Table. Sheet resistance defined in the LEF file will be used.
+**WARN: (IMPEXT-2710):	Basic Cap table for layer M9 is ignored because the layer is not specified in the technology LEF file.
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: WC_VIEW
+    RC-Corner Name        : Cmax
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 125 Celsius
+    RC-Corner Cap Table   : '/home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cworst.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+ 
+ Analysis View: BC_VIEW
+    RC-Corner Name        : Cmin
+    RC-Corner Index       : 1
+    RC-Corner Temperature : -40 Celsius
+    RC-Corner Cap Table   : '/home/linux/ieng6/ee260bwi23/public/PDKdata/captbl/cln65g+_1p08m+alrdl_top2_cbest.captable'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '../dualcore.sdc' ...
+Current (total cpu=0:00:23.0, real=0:00:32.0, peak res=786.9M, current mem=786.9M)
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.2, real=0:00:01.0, peak res=833.9M, current mem=833.9M)
+Current (total cpu=0:00:23.2, real=0:00:33.0, peak res=833.9M, current mem=833.9M)
+Total number of combinational cells: 497
+Total number of sequential cells: 303
+Total number of tristate cells: 11
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers: BUFFD1 BUFFD0 BUFFD2 BUFFD3 BUFFD4 BUFFD6 BUFFD8 BUFFD12 BUFFD16 CKBD1 CKBD0 CKBD2 CKBD3 CKBD4 CKBD6 CKBD8 CKBD12 CKBD16
+Total number of usable buffers: 18
+List of unusable buffers: BUFFD20 BUFFD24 CKBD20 CKBD24 GBUFFD1 GBUFFD3 GBUFFD2 GBUFFD4 GBUFFD8
+Total number of unusable buffers: 9
+List of usable inverters: CKND1 CKND0 CKND2 CKND3 CKND4 CKND6 CKND8 CKND12 CKND16 INVD1 INVD0 INVD2 INVD3 INVD4 INVD6 INVD8 INVD12 INVD16
+Total number of usable inverters: 18
+List of unusable inverters: CKND20 CKND24 GINVD2 GINVD1 GINVD4 GINVD3 GINVD8 INVD20 INVD24
+Total number of unusable inverters: 9
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells: DEL0 DEL005 DEL01 DEL015 DEL02 DEL1 DEL2 DEL3 DEL4
+Total number of identified unusable delay cells: 9
+All delay cells are dont_use. Buffers will be used to fix hold violations.
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+WARNING   IMPFP-3961           2  The techSite '%s' has no related standar...
+WARNING   IMPEXT-2710          2  Basic Cap table for layer M%d is ignored...
+WARNING   IMPEXT-2760          2  Layer M%d specified in the cap table is ...
+WARNING   IMPEXT-2771          2  Via %s specified in the cap table is ign...
+WARNING   IMPEXT-2801          2  Resistance values are not provided in th...
+WARNING   IMPVL-159         1622  Pin '%s' of cell '%s' is defined in LEF ...
+*** Message Summary: 1633 warning(s), 0 error(s)
+
+<CMD> set_interactive_constraint_modes {CON}
+<CMD> setDesignMode -process 65
+##  Process: 65            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 65nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+<CMD> set ptngSprNoRefreshPins 1
+<CMD> setPtnPinStatus -cell dualcore -pin clk1 -status unplaced -silent
+<CMD> set ptngSprNoRefreshPins 0
+<CMD_INTERNAL> ptnSprRefreshPinsAndBlockages
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Left -layer 1 -spreadType start -spacing 1.0 -start 0.0 0.0 -pin clk1
+Successfully spread [1] pins.
+editPin : finished (cpu = 0:00:01.0 real = 0:00:01.0, mem = 1129.7M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.09 -pinDepth 0.47 -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Left -layer 1 -spreadType start -spacing 0.2 -start 0.0 460.6 -pin clk1
+Successfully spread [1] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1130.9M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Left -layer 3 -spreadType start -spacing 0.8 -start 0.0 460.6 -pin {clk* core_gate* rst* inst_core* mem_in_*}
+To speed up, if you have to run multiple editPin commands then wrap all editPin commands within  'setPinAssignMode -pinEditInBatch true' (then editPin commands) and 'setPinAssignMode -pinEditInBatch false'
+Successfully spread [104] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1132.2M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 0.8 -start 0.0 460.6 -pin {s_valid* norm_valid psum_norm* out_core* }
+**ERROR: (IMPPTN-971):	Selected region for spreading the selected [201] pins is not sufficient to spread all the pins. Ensure that the space on the specified region is enough to spread the pins uniformly.
+Selected [201] pin for spreading. Could not spread (201 out of 201) pins because of constraints on the selected pins or because of some blockage (pin blockage, routing blockage, power stripes etc.) on the selected region.
+
+Following pins are not spread:
+  s_valid1
+  s_valid2
+  norm_valid
+  psum_norm_1[10]
+  psum_norm_1[9]
+  psum_norm_1[8]
+  psum_norm_1[7]
+  psum_norm_1[6]
+  psum_norm_1[5]
+  psum_norm_1[4]
+  psum_norm_1[3]
+  psum_norm_1[2]
+  psum_norm_1[1]
+  psum_norm_1[0]
+  psum_norm_2[10]
+  psum_norm_2[9]
+  psum_norm_2[8]
+  psum_norm_2[7]
+  psum_norm_2[6]
+  psum_norm_2[5]
+  psum_norm_2[4]
+  psum_norm_2[3]
+  psum_norm_2[2]
+  psum_norm_2[1]
+  psum_norm_2[0]
+  out_core1[87]
+  out_core1[86]
+  out_core1[85]
+  out_core1[84]
+  out_core1[83]
+  out_core1[82]
+  out_core1[81]
+  out_core1[80]
+  out_core1[79]
+  out_core1[78]
+  out_core1[77]
+  out_core1[76]
+  out_core1[75]
+  out_core1[74]
+  out_core1[73]
+  out_core1[72]
+  out_core1[71]
+  out_core1[70]
+  out_core1[69]
+  out_core1[68]
+  out_core1[67]
+  out_core1[66]
+  out_core1[65]
+  out_core1[64]
+  out_core1[63]
+  out_core1[62]
+  out_core1[61]
+  out_core1[60]
+  out_core1[59]
+  out_core1[58]
+  out_core1[57]
+  out_core1[56]
+  out_core1[55]
+  out_core1[54]
+  out_core1[53]
+  out_core1[52]
+  out_core1[51]
+  out_core1[50]
+  out_core1[49]
+  out_core1[48]
+  out_core1[47]
+  out_core1[46]
+  out_core1[45]
+  out_core1[44]
+  out_core1[43]
+  out_core1[42]
+  out_core1[41]
+  out_core1[40]
+  out_core1[39]
+  out_core1[38]
+  out_core1[37]
+  out_core1[36]
+  out_core1[35]
+  out_core1[34]
+  out_core1[33]
+  out_core1[32]
+  out_core1[31]
+  out_core1[30]
+  out_core1[29]
+  out_core1[28]
+  out_core1[27]
+  out_core1[26]
+  out_core1[25]
+  out_core1[24]
+  out_core1[23]
+  out_core1[22]
+  out_core1[21]
+  out_core1[20]
+  out_core1[19]
+  out_core1[18]
+  out_core1[17]
+  out_core1[16]
+  out_core1[15]
+  out_core1[14]
+  out_core1[13]
+  out_core1[12]
+  out_core1[11]
+  out_core1[10]
+  out_core1[9]
+  out_core1[8]
+  out_core1[7]
+  out_core1[6]
+  out_core1[5]
+  out_core1[4]
+  out_core1[3]
+  out_core1[2]
+  out_core1[1]
+  out_core1[0]
+  out_core2[87]
+  out_core2[86]
+  out_core2[85]
+  out_core2[84]
+  out_core2[83]
+  out_core2[82]
+  out_core2[81]
+  out_core2[80]
+  out_core2[79]
+  out_core2[78]
+  out_core2[77]
+  out_core2[76]
+  out_core2[75]
+  out_core2[74]
+  out_core2[73]
+  out_core2[72]
+  out_core2[71]
+  out_core2[70]
+  out_core2[69]
+  out_core2[68]
+  out_core2[67]
+  out_core2[66]
+  out_core2[65]
+  out_core2[64]
+  out_core2[63]
+  out_core2[62]
+  out_core2[61]
+  out_core2[60]
+  out_core2[59]
+  out_core2[58]
+  out_core2[57]
+  out_core2[56]
+  out_core2[55]
+  out_core2[54]
+  out_core2[53]
+  out_core2[52]
+  out_core2[51]
+  out_core2[50]
+  out_core2[49]
+  out_core2[48]
+  out_core2[47]
+  out_core2[46]
+  out_core2[45]
+  out_core2[44]
+  out_core2[43]
+  out_core2[42]
+  out_core2[41]
+  out_core2[40]
+  out_core2[39]
+  out_core2[38]
+  out_core2[37]
+  out_core2[36]
+  out_core2[35]
+  out_core2[34]
+  out_core2[33]
+  out_core2[32]
+  out_core2[31]
+  out_core2[30]
+  out_core2[29]
+  out_core2[28]
+  out_core2[27]
+  out_core2[26]
+  out_core2[25]
+  out_core2[24]
+  out_core2[23]
+  out_core2[22]
+  out_core2[21]
+  out_core2[20]
+  out_core2[19]
+  out_core2[18]
+  out_core2[17]
+  out_core2[16]
+  out_core2[15]
+  out_core2[14]
+  out_core2[13]
+  out_core2[12]
+  out_core2[11]
+  out_core2[10]
+  out_core2[9]
+  out_core2[8]
+  out_core2[7]
+  out_core2[6]
+  out_core2[5]
+  out_core2[4]
+  out_core2[3]
+  out_core2[2]
+  out_core2[1]
+  out_core2[0]
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1132.2M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> zoomBox -373.97050 -601.59150 1991.99550 1586.85050
+<CMD> zoomBox -207.44000 -311.04850 1245.55900 1032.92850
+<CMD> zoomBox -105.16950 -132.61850 787.15350 692.75150
+<CMD> zoomBox -65.97100 -46.64850 482.02700 460.23200
+<CMD> zoomBox -105.16950 -132.61850 787.15350 692.75150
+<CMD> zoomBox -59.87450 -78.69500 276.66600 232.59400
+<CMD> zoomBox -31.59800 -41.49100 46.35100 30.60950
+<CMD> zoomBox -55.41350 -74.79900 151.26800 116.37450
+<CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 0.8 -start 0.0 460.6 -pin {s_valid* norm_valid psum_norm* out_core* }
+To speed up, if you have to run multiple editPin commands then wrap all editPin commands within  'setPinAssignMode -pinEditInBatch true' (then editPin commands) and 'setPinAssignMode -pinEditInBatch false'
+**ERROR: (IMPPTN-971):	Selected region for spreading the selected [201] pins is not sufficient to spread all the pins. Ensure that the space on the specified region is enough to spread the pins uniformly.
+Selected [201] pin for spreading. Could not spread (201 out of 201) pins because of constraints on the selected pins or because of some blockage (pin blockage, routing blockage, power stripes etc.) on the selected region.
+
+Following pins are not spread:
+  s_valid1
+  s_valid2
+  norm_valid
+  psum_norm_1[10]
+  psum_norm_1[9]
+  psum_norm_1[8]
+  psum_norm_1[7]
+  psum_norm_1[6]
+  psum_norm_1[5]
+  psum_norm_1[4]
+  psum_norm_1[3]
+  psum_norm_1[2]
+  psum_norm_1[1]
+  psum_norm_1[0]
+  psum_norm_2[10]
+  psum_norm_2[9]
+  psum_norm_2[8]
+  psum_norm_2[7]
+  psum_norm_2[6]
+  psum_norm_2[5]
+  psum_norm_2[4]
+  psum_norm_2[3]
+  psum_norm_2[2]
+  psum_norm_2[1]
+  psum_norm_2[0]
+  out_core1[87]
+  out_core1[86]
+  out_core1[85]
+  out_core1[84]
+  out_core1[83]
+  out_core1[82]
+  out_core1[81]
+  out_core1[80]
+  out_core1[79]
+  out_core1[78]
+  out_core1[77]
+  out_core1[76]
+  out_core1[75]
+  out_core1[74]
+  out_core1[73]
+  out_core1[72]
+  out_core1[71]
+  out_core1[70]
+  out_core1[69]
+  out_core1[68]
+  out_core1[67]
+  out_core1[66]
+  out_core1[65]
+  out_core1[64]
+  out_core1[63]
+  out_core1[62]
+  out_core1[61]
+  out_core1[60]
+  out_core1[59]
+  out_core1[58]
+  out_core1[57]
+  out_core1[56]
+  out_core1[55]
+  out_core1[54]
+  out_core1[53]
+  out_core1[52]
+  out_core1[51]
+  out_core1[50]
+  out_core1[49]
+  out_core1[48]
+  out_core1[47]
+  out_core1[46]
+  out_core1[45]
+  out_core1[44]
+  out_core1[43]
+  out_core1[42]
+  out_core1[41]
+  out_core1[40]
+  out_core1[39]
+  out_core1[38]
+  out_core1[37]
+  out_core1[36]
+  out_core1[35]
+  out_core1[34]
+  out_core1[33]
+  out_core1[32]
+  out_core1[31]
+  out_core1[30]
+  out_core1[29]
+  out_core1[28]
+  out_core1[27]
+  out_core1[26]
+  out_core1[25]
+  out_core1[24]
+  out_core1[23]
+  out_core1[22]
+  out_core1[21]
+  out_core1[20]
+  out_core1[19]
+  out_core1[18]
+  out_core1[17]
+  out_core1[16]
+  out_core1[15]
+  out_core1[14]
+  out_core1[13]
+  out_core1[12]
+  out_core1[11]
+  out_core1[10]
+  out_core1[9]
+  out_core1[8]
+  out_core1[7]
+  out_core1[6]
+  out_core1[5]
+  out_core1[4]
+  out_core1[3]
+  out_core1[2]
+  out_core1[1]
+  out_core1[0]
+  out_core2[87]
+  out_core2[86]
+  out_core2[85]
+  out_core2[84]
+  out_core2[83]
+  out_core2[82]
+  out_core2[81]
+  out_core2[80]
+  out_core2[79]
+  out_core2[78]
+  out_core2[77]
+  out_core2[76]
+  out_core2[75]
+  out_core2[74]
+  out_core2[73]
+  out_core2[72]
+  out_core2[71]
+  out_core2[70]
+  out_core2[69]
+  out_core2[68]
+  out_core2[67]
+  out_core2[66]
+  out_core2[65]
+  out_core2[64]
+  out_core2[63]
+  out_core2[62]
+  out_core2[61]
+  out_core2[60]
+  out_core2[59]
+  out_core2[58]
+  out_core2[57]
+  out_core2[56]
+  out_core2[55]
+  out_core2[54]
+  out_core2[53]
+  out_core2[52]
+  out_core2[51]
+  out_core2[50]
+  out_core2[49]
+  out_core2[48]
+  out_core2[47]
+  out_core2[46]
+  out_core2[45]
+  out_core2[44]
+  out_core2[43]
+  out_core2[42]
+  out_core2[41]
+  out_core2[40]
+  out_core2[39]
+  out_core2[38]
+  out_core2[37]
+  out_core2[36]
+  out_core2[35]
+  out_core2[34]
+  out_core2[33]
+  out_core2[32]
+  out_core2[31]
+  out_core2[30]
+  out_core2[29]
+  out_core2[28]
+  out_core2[27]
+  out_core2[26]
+  out_core2[25]
+  out_core2[24]
+  out_core2[23]
+  out_core2[22]
+  out_core2[21]
+  out_core2[20]
+  out_core2[19]
+  out_core2[18]
+  out_core2[17]
+  out_core2[16]
+  out_core2[15]
+  out_core2[14]
+  out_core2[13]
+  out_core2[12]
+  out_core2[11]
+  out_core2[10]
+  out_core2[9]
+  out_core2[8]
+  out_core2[7]
+  out_core2[6]
+  out_core2[5]
+  out_core2[4]
+  out_core2[3]
+  out_core2[2]
+  out_core2[1]
+  out_core2[0]
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1136.4M).
+<CMD> zoomBox -120.93350 -111.08700 215.61250 200.20700
+<CMD> zoomBox -399.01900 -266.83900 493.32250 558.54800
+<CMD> zoomBox -1100.58900 -709.13400 1265.43000 1479.35700
+<CMD> zoomBox -241.86950 249.27450 94.67800 560.57000
+<CMD> zoomBox -145.60450 311.60350 61.07750 502.77750
+<CMD> zoomBox -86.48650 349.88100 40.44250 467.28600
+<CMD> zoomBox -123.83550 313.56350 82.84700 504.73800
+<CMD> zoomBox -184.48450 254.42650 152.06400 565.72300
+<CMD> zoomBox -235.09400 121.20100 312.91900 628.09550
+<CMD> zoomBox -306.81250 -105.08900 585.53600 720.30450
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 1.0 -start 0.0 0.0 -pin {{out_core1[0]} {out_core1[1]} {out_core1[2]} {out_core1[3]} {out_core1[4]} {out_core1[5]} {out_core1[6]} {out_core1[7]} {out_core1[8]} {out_core1[9]} {out_core1[10]} {out_core1[11]} {out_core1[12]} {out_core1[13]} {out_core1[14]} {out_core1[15]} {out_core1[16]} {out_core1[17]} {out_core1[18]} {out_core1[19]} {out_core1[20]} {out_core1[21]} {out_core1[22]} {out_core1[23]} {out_core1[24]} {out_core1[25]} {out_core1[26]} {out_core1[27]} {out_core1[28]} {out_core1[29]} {out_core1[30]} {out_core1[31]} {out_core1[32]} {out_core1[33]} {out_core1[34]} {out_core1[35]} {out_core1[36]} {out_core1[37]} {out_core1[38]} {out_core1[39]} {out_core1[40]} {out_core1[41]} {out_core1[42]} {out_core1[43]} {out_core1[44]} {out_core1[45]} {out_core1[46]} {out_core1[47]} {out_core1[48]} {out_core1[49]} {out_core1[50]} {out_core1[51]} {out_core1[52]} {out_core1[53]} {out_core1[54]} {out_core1[55]} {out_core1[56]} {out_core1[57]} {out_core1[58]} {out_core1[59]} {out_core1[60]} {out_core1[61]} {out_core1[62]} {out_core1[63]} {out_core1[64]} {out_core1[65]} {out_core1[66]} {out_core1[67]} {out_core1[68]} {out_core1[69]} {out_core1[70]} {out_core1[71]} {out_core1[72]} {out_core1[73]} {out_core1[74]} {out_core1[75]} {out_core1[76]} {out_core1[77]} {out_core1[78]} {out_core1[79]} {out_core1[80]} {out_core1[81]} {out_core1[82]} {out_core1[83]} {out_core1[84]} {out_core1[85]} {out_core1[86]} {out_core1[87]}}
+**ERROR: (IMPPTN-971):	Selected region for spreading the selected [88] pins is not sufficient to spread all the pins. Ensure that the space on the specified region is enough to spread the pins uniformly.
+Selected [88] pin for spreading. Could not spread (88 out of 88) pins because of constraints on the selected pins or because of some blockage (pin blockage, routing blockage, power stripes etc.) on the selected region.
+
+Following pins are not spread:
+  out_core1[0]
+  out_core1[1]
+  out_core1[2]
+  out_core1[3]
+  out_core1[4]
+  out_core1[5]
+  out_core1[6]
+  out_core1[7]
+  out_core1[8]
+  out_core1[9]
+  out_core1[10]
+  out_core1[11]
+  out_core1[12]
+  out_core1[13]
+  out_core1[14]
+  out_core1[15]
+  out_core1[16]
+  out_core1[17]
+  out_core1[18]
+  out_core1[19]
+  out_core1[20]
+  out_core1[21]
+  out_core1[22]
+  out_core1[23]
+  out_core1[24]
+  out_core1[25]
+  out_core1[26]
+  out_core1[27]
+  out_core1[28]
+  out_core1[29]
+  out_core1[30]
+  out_core1[31]
+  out_core1[32]
+  out_core1[33]
+  out_core1[34]
+  out_core1[35]
+  out_core1[36]
+  out_core1[37]
+  out_core1[38]
+  out_core1[39]
+  out_core1[40]
+  out_core1[41]
+  out_core1[42]
+  out_core1[43]
+  out_core1[44]
+  out_core1[45]
+  out_core1[46]
+  out_core1[47]
+  out_core1[48]
+  out_core1[49]
+  out_core1[50]
+  out_core1[51]
+  out_core1[52]
+  out_core1[53]
+  out_core1[54]
+  out_core1[55]
+  out_core1[56]
+  out_core1[57]
+  out_core1[58]
+  out_core1[59]
+  out_core1[60]
+  out_core1[61]
+  out_core1[62]
+  out_core1[63]
+  out_core1[64]
+  out_core1[65]
+  out_core1[66]
+  out_core1[67]
+  out_core1[68]
+  out_core1[69]
+  out_core1[70]
+  out_core1[71]
+  out_core1[72]
+  out_core1[73]
+  out_core1[74]
+  out_core1[75]
+  out_core1[76]
+  out_core1[77]
+  out_core1[78]
+  out_core1[79]
+  out_core1[80]
+  out_core1[81]
+  out_core1[82]
+  out_core1[83]
+  out_core1[84]
+  out_core1[85]
+  out_core1[86]
+  out_core1[87]
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1136.4M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 3 -spreadType start -spacing 0.2 -start 0.0 460.6 -pin clk1
+Successfully spread [1] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1136.4M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> zoomBox -916.87700 -722.77900 1449.15800 1465.72700
+<CMD> zoomBox 19.18900 -170.63350 911.53850 654.76100
+<CMD> zoomBox -303.15800 -356.55100 1149.88550 987.46700
+<CMD> zoomBox -113.11700 -156.35600 779.23350 669.03950
+<CMD> zoomBox -303.15900 -356.55200 1149.88550 987.46700
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 0.2 -start 0.0 460.6 -pin clk1
+**ERROR: (IMPPTN-971):	Selected region for spreading the selected [1] pins is not sufficient to spread all the pins. Ensure that the space on the specified region is enough to spread the pins uniformly.
+Selected [1] pin for spreading. Could not spread (1 out of 1) pins because of constraints on the selected pins or because of some blockage (pin blockage, routing blockage, power stripes etc.) on the selected region.
+
+Following pin is not spread:
+  clk1
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1133.4M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 1.0 -start 0.0 0.0 -pin clk1
+**ERROR: (IMPPTN-971):	Selected region for spreading the selected [1] pins is not sufficient to spread all the pins. Ensure that the space on the specified region is enough to spread the pins uniformly.
+Selected [1] pin for spreading. Could not spread (1 out of 1) pins because of constraints on the selected pins or because of some blockage (pin blockage, routing blockage, power stripes etc.) on the selected region.
+
+Following pin is not spread:
+  clk1
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1137.6M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.1 -pinDepth 0.2 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 1.0 -start 0.0 0.0 -pin clk1
+**ERROR: (IMPPTN-971):	Selected region for spreading the selected [1] pins is not sufficient to spread all the pins. Ensure that the space on the specified region is enough to spread the pins uniformly.
+Selected [1] pin for spreading. Could not spread (1 out of 1) pins because of constraints on the selected pins or because of some blockage (pin blockage, routing blockage, power stripes etc.) on the selected region.
+
+Following pin is not spread:
+  clk1
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1137.6M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> ::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+<CMD> uiSetTool select
+<CMD> ::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+**ERROR: (IMPSYT-16254):	Location specified (920037 -6319) is not within the partition area.
+<CMD> uiSetTool select
+<CMD> ::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+<CMD> ::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+**ERROR: (IMPSYT-16254):	Location specified (927556 -2560) is not within the partition area.
+<CMD> uiSetTool select
+<CMD> ::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+<CMD> uiSetTool select
+**ERROR: (IMPSYT-16250):	Choose the pin list first.
+<CMD> getPinAssignMode -pinEditInBatch -quiet
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Top -layer 1 -spreadType start -spacing 0.2 -start 454.379 4.3595 -pin {}
+**ERROR: (IMPPTN-963):	Either specified pin name for the selected partition does not exist or has status 'cover'. Specify the pin or the list of pins correctly and run the command again.
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 0.8 -start 460.6 0.0 -pin {s_valid* norm_valid psum_norm* out_core* }
+To speed up, if you have to run multiple editPin commands then wrap all editPin commands within  'setPinAssignMode -pinEditInBatch true' (then editPin commands) and 'setPinAssignMode -pinEditInBatch false'
+Successfully spread [201] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1137.6M).
+<CMD> zoomBox -1739.83350 -1084.75650 2112.87000 2478.86950
+<CMD> zoomBox -1280.18000 -573.17600 1085.86150 1615.33600
+<CMD> zoomBox -844.35150 -313.33200 608.69400 1030.68800
+<CMD> zoomBox -365.62250 -179.86850 526.73000 645.52850
+<CMD> zoomBox -1263.10950 -613.09100 1102.93550 1575.42400
+<CMD> zoomBox -670.19300 -352.06600 782.85450 991.95600
+<CMD> zoomBox -306.06850 -191.76450 586.28500 633.63350
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Thu Mar 23 07:43:52 2023
+  Total CPU time:     0:02:00
+  Total real time:    0:09:16
+  Peak memory (main): 911.56MB
+
+
+*** Memory Usage v#1 (Current mem = 1137.598M, initial mem = 291.785M) ***
+*** Message Summary: 1633 warning(s), 13 error(s)
+
+--- Ending "Innovus" (totcpu=0:02:00, real=0:09:14, mem=1137.6M) ---

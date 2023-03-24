@@ -3306,3 +3306,8 @@ can't read "design": no such variable
 <CMD> report_timing -max_paths 1000 > ${design}.post_route.timing.rpt
 <CMD> zoomBox 82.39950 136.19900 495.33250 518.14850
 <CMD> zoomBox -52.19700 -26.92850 620.19550 595.01300
+
+*** Memory Usage v#1 (Current mem = 1863.832M, initial mem = 283.785M) ***
+*** Message Summary: 1645 warning(s), 1 error(s)
+
+--- Ending "Innovus" (totcpu=0:24:27, real=0:30:22, mem=1863.8M) ---

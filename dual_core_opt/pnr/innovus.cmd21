@@ -1,0 +1,120 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Thu Mar 23 07:34:56 2023                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v19.17-s077_1 (64bit) 12/01/2020 11:09 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 19.17-s077_1 NR201130-0207/19_17-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+#@(#)CDS: AAE 19.17-s018 (64bit) 12/01/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 19.17-s022_1 () Nov 18 2020 03:10:35 ( )
+#@(#)CDS: SYNTECH 19.17-s005_1 () Oct 28 2020 05:12:49 ( )
+#@(#)CDS: CPE v19.17-s044
+#@(#)CDS: IQuantus/TQuantus 19.1.3-s268 (64bit) Mon Aug 10 22:57:12 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+win
+set init_pwr_net VDD
+set init_gnd_net VSS
+set init_verilog ../dualcore.out.v
+set init_design_netlisttype Verilog
+set init_design_settop 1
+set init_top_cell dualcore
+set init_lef_file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef
+create_library_set -name WC_LIB -timing $worst_timing_lib
+create_library_set -name BC_LIB -timing $best_timing_lib
+create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+create_constraint_mode -name CON -sdc_file [list $sdc]
+create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+init_design -setup WC_VIEW -hold BC_VIEW
+set_interactive_constraint_modes {CON}
+setDesignMode -process 65
+set ptngSprNoRefreshPins 1
+setPtnPinStatus -cell dualcore -pin clk1 -status unplaced -silent
+set ptngSprNoRefreshPins 0
+ptnSprRefreshPinsAndBlockages
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Left -layer 1 -spreadType start -spacing 1.0 -start 0.0 0.0 -pin clk1
+setPinAssignMode -pinEditInBatch false
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.09 -pinDepth 0.47 -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Left -layer 1 -spreadType start -spacing 0.2 -start 0.0 460.6 -pin clk1
+setPinAssignMode -pinEditInBatch false
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Left -layer 3 -spreadType start -spacing 0.8 -start 0.0 460.6 -pin {clk* core_gate* rst* inst_core* mem_in_*}
+setPinAssignMode -pinEditInBatch false
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 0.8 -start 0.0 460.6 -pin {s_valid* norm_valid psum_norm* out_core* }
+setPinAssignMode -pinEditInBatch false
+zoomBox -373.97050 -601.59150 1991.99550 1586.85050
+zoomBox -207.44000 -311.04850 1245.55900 1032.92850
+zoomBox -105.16950 -132.61850 787.15350 692.75150
+zoomBox -65.97100 -46.64850 482.02700 460.23200
+zoomBox -105.16950 -132.61850 787.15350 692.75150
+zoomBox -59.87450 -78.69500 276.66600 232.59400
+zoomBox -31.59800 -41.49100 46.35100 30.60950
+zoomBox -55.41350 -74.79900 151.26800 116.37450
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 0.8 -start 0.0 460.6 -pin {s_valid* norm_valid psum_norm* out_core* }
+zoomBox -120.93350 -111.08700 215.61250 200.20700
+zoomBox -399.01900 -266.83900 493.32250 558.54800
+zoomBox -1100.58900 -709.13400 1265.43000 1479.35700
+zoomBox -241.86950 249.27450 94.67800 560.57000
+zoomBox -145.60450 311.60350 61.07750 502.77750
+zoomBox -86.48650 349.88100 40.44250 467.28600
+zoomBox -123.83550 313.56350 82.84700 504.73800
+zoomBox -184.48450 254.42650 152.06400 565.72300
+zoomBox -235.09400 121.20100 312.91900 628.09550
+zoomBox -306.81250 -105.08900 585.53600 720.30450
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 1.0 -start 0.0 0.0 -pin {{out_core1[0]} {out_core1[1]} {out_core1[2]} {out_core1[3]} {out_core1[4]} {out_core1[5]} {out_core1[6]} {out_core1[7]} {out_core1[8]} {out_core1[9]} {out_core1[10]} {out_core1[11]} {out_core1[12]} {out_core1[13]} {out_core1[14]} {out_core1[15]} {out_core1[16]} {out_core1[17]} {out_core1[18]} {out_core1[19]} {out_core1[20]} {out_core1[21]} {out_core1[22]} {out_core1[23]} {out_core1[24]} {out_core1[25]} {out_core1[26]} {out_core1[27]} {out_core1[28]} {out_core1[29]} {out_core1[30]} {out_core1[31]} {out_core1[32]} {out_core1[33]} {out_core1[34]} {out_core1[35]} {out_core1[36]} {out_core1[37]} {out_core1[38]} {out_core1[39]} {out_core1[40]} {out_core1[41]} {out_core1[42]} {out_core1[43]} {out_core1[44]} {out_core1[45]} {out_core1[46]} {out_core1[47]} {out_core1[48]} {out_core1[49]} {out_core1[50]} {out_core1[51]} {out_core1[52]} {out_core1[53]} {out_core1[54]} {out_core1[55]} {out_core1[56]} {out_core1[57]} {out_core1[58]} {out_core1[59]} {out_core1[60]} {out_core1[61]} {out_core1[62]} {out_core1[63]} {out_core1[64]} {out_core1[65]} {out_core1[66]} {out_core1[67]} {out_core1[68]} {out_core1[69]} {out_core1[70]} {out_core1[71]} {out_core1[72]} {out_core1[73]} {out_core1[74]} {out_core1[75]} {out_core1[76]} {out_core1[77]} {out_core1[78]} {out_core1[79]} {out_core1[80]} {out_core1[81]} {out_core1[82]} {out_core1[83]} {out_core1[84]} {out_core1[85]} {out_core1[86]} {out_core1[87]}}
+setPinAssignMode -pinEditInBatch false
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 3 -spreadType start -spacing 0.2 -start 0.0 460.6 -pin clk1
+setPinAssignMode -pinEditInBatch false
+zoomBox -916.87700 -722.77900 1449.15800 1465.72700
+zoomBox 19.18900 -170.63350 911.53850 654.76100
+zoomBox -303.15800 -356.55100 1149.88550 987.46700
+zoomBox -113.11700 -156.35600 779.23350 669.03950
+zoomBox -303.15900 -356.55200 1149.88550 987.46700
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 0.2 -start 0.0 460.6 -pin clk1
+setPinAssignMode -pinEditInBatch false
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 1.0 -start 0.0 0.0 -pin clk1
+setPinAssignMode -pinEditInBatch false
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.1 -pinDepth 0.2 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 1.0 -start 0.0 0.0 -pin clk1
+setPinAssignMode -pinEditInBatch false
+::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+uiSetTool select
+::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+uiSetTool select
+::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+uiSetTool select
+::uiSetTool getLocation Rda_PE::Attr:getStartCoord
+uiSetTool select
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Top -layer 1 -spreadType start -spacing 0.2 -start 454.379 4.3595 -pin {}
+setPinAssignMode -pinEditInBatch false
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 0.8 -start 460.6 0.0 -pin {s_valid* norm_valid psum_norm* out_core* }
+zoomBox -1739.83350 -1084.75650 2112.87000 2478.86950
+zoomBox -1280.18000 -573.17600 1085.86150 1615.33600
+zoomBox -844.35150 -313.33200 608.69400 1030.68800
+zoomBox -365.62250 -179.86850 526.73000 645.52850
+zoomBox -1263.10950 -613.09100 1102.93550 1575.42400
+zoomBox -670.19300 -352.06600 782.85450 991.95600
+zoomBox -306.06850 -191.76450 586.28500 633.63350

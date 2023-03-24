@@ -1,0 +1,172 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Thu Mar 23 07:44:15 2023                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v19.17-s077_1 (64bit) 12/01/2020 11:09 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: NanoRoute 19.17-s077_1 NR201130-0207/19_17-UB (database version 18.20, 510.7.1) {superthreading v1.53}
+#@(#)CDS: AAE 19.17-s018 (64bit) 12/01/2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+#@(#)CDS: CTE 19.17-s022_1 () Nov 18 2020 03:10:35 ( )
+#@(#)CDS: SYNTECH 19.17-s005_1 () Oct 28 2020 05:12:49 ( )
+#@(#)CDS: CPE v19.17-s044
+#@(#)CDS: IQuantus/TQuantus 19.1.3-s268 (64bit) Mon Aug 10 22:57:12 PDT 2020 (Linux 2.6.32-431.11.2.el6.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+win
+setMultiCpuUsage -localCpu 8
+set init_pwr_net VDD
+set init_gnd_net VSS
+set init_verilog ../dualcore.out.v
+set init_design_netlisttype Verilog
+set init_design_settop 1
+set init_top_cell dualcore
+set init_lef_file /home/linux/ieng6/ee260bwi23/public/PDKdata/lef/tcbn65gplus_8lmT2.lef
+create_library_set -name WC_LIB -timing $worst_timing_lib
+create_library_set -name BC_LIB -timing $best_timing_lib
+create_rc_corner -name Cmax -cap_table $worst_captbl -T 125
+create_rc_corner -name Cmin -cap_table $best_captbl -T -40
+create_delay_corner -name WC -library_set WC_LIB -rc_corner Cmax
+create_delay_corner -name BC -library_set BC_LIB -rc_corner Cmin
+create_constraint_mode -name CON -sdc_file [list $sdc]
+create_analysis_view -name WC_VIEW -delay_corner WC -constraint_mode CON
+create_analysis_view -name BC_VIEW -delay_corner BC -constraint_mode CON
+init_design -setup WC_VIEW -hold BC_VIEW
+set_interactive_constraint_modes {CON}
+setDesignMode -process 65
+floorPlan -site core -r 1 0.50 10.0 10.0 10.0 10.0
+timeDesign -preplace -prefix preplace
+globalNetConnect VDD -type pgpin -pin VDD -inst * -verbose
+globalNetConnect VSS -type pgpin -pin VSS -inst * -verbose
+addRing -spacing {top 2 bottom 2 left 2 right 2} -width {top 3 bottom 3 left 3 right 3} -layer {top M1 bottom M1 left M2 right M2} -center 1 -type core_rings -nets {VSS  VDD}
+setAddStripeMode -ignore_block_check false -break_at none -route_over_rows_only false -rows_without_stripes_only false -extend_to_closest_target none -stop_at_last_wire_for_area false -partial_set_thru_domain false -ignore_nondefault_domains false -trim_antenna_back_to_shape none -spacing_type edge_to_edge -spacing_from_block 0 -stripe_min_length stripe_width -stacked_via_top_layer M8 -stacked_via_bottom_layer M1 -via_using_exact_crossover_size false -split_vias false -orthogonal_only true -allow_jog { padcore_ring  block_ring } -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape   }
+addStripe -nets {VSS VDD} -layer M4 -direction vertical -width 1.8 -spacing 1.8 -number_of_sets 20 -start_from left -switch_layer_over_obs false -max_same_layer_jog_length 2 -padcore_ring_top_layer_limit M8 -padcore_ring_bottom_layer_limit M1 -block_ring_top_layer_limit M8 -block_ring_bottom_layer_limit M1 -use_wire_group 0 -snap_wire_center_to_grid None
+sroute
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection counterclockwise -side Left -layer 3 -spreadType start -spacing 0.8 -start 0.0 460.6 -pin {clk* core_gate* rst* inst_core* mem_in_*}
+setPinAssignMode -pinEditInBatch false
+getPinAssignMode -pinEditInBatch -quiet
+setPinAssignMode -pinEditInBatch true
+editPin -pinWidth 0.2 -pinDepth 0.6 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 3 -spreadType start -spacing 0.8 -start 460.6 0.0 -pin {s_valid* norm_valid psum_norm* out_core* }
+setPinAssignMode -pinEditInBatch false
+legalizePin
+checkPinAssignment
+saveDesign floorplan.enc
+setPlaceMode -timingDriven true -reorderScan false -congEffort medium -modulePlan false
+setOptMode -effort high -powerEffort high -leakageToDynamicRatio 0.5 -fixFanoutLoad true -restruct true -verbose true
+place_opt_design
+addFiller -cell {DCAP DCAP4 DCAP8 DCAP16 DCAP32} -merge true
+saveDesign placement.enc
+set_ccopt_property -update_io_latency false
+create_ccopt_clock_tree_spec -file ./constraints/dualcore.ccopt
+ccopt_design
+set_propagated_clock [all_clocks]
+optDesign -postCTS -hold
+saveDesign cts.enc
+setNanoRouteMode -quiet -drouteAllowMergedWireAtPin false
+setNanoRouteMode -quiet -drouteFixAntenna true
+setNanoRouteMode -quiet -routeWithTimingDriven true
+setNanoRouteMode -quiet -routeWithSiDriven true
+setNanoRouteMode -quiet -routeSiEffort medium
+setNanoRouteMode -quiet -routeWithSiPostRouteFix false
+setNanoRouteMode -quiet -drouteAutoStop true
+setNanoRouteMode -quiet -routeSelectedNetOnly false
+setNanoRouteMode -quiet -drouteStartIteration default
+routeDesign
+setExtractRCMode -engine postRoute
+extractRC
+setAnalysisMode -analysisType onChipVariation -cppr both
+optDesign -postRoute -setup -hold
+optDesign -postRoute -drv
+optDesign -postRoute -inc
+saveDesign route.enc
+verifyGeometry
+verifyConnectivity
+report_timing -max_paths 5 > ${design}.post_route.timing.rpt
+report_power -outfile dualcore.post_route.power.rpt
+summaryReport -nohtml -outfile dualcore.post_route.summary.rpt
+streamOut dualcore.gds2
+write_lef_abstract dualcore.lef
+defOut -netlist -routing dualcore.def
+saveNetlist dualcore.pnr.v
+setAnalysisMode -setup
+set_analysis_view -setup WC_VIEW -hold WC_VIEW
+do_extract_model -view WC_VIEW -format dotlib ${design}_WC.lib
+write_sdf -view WC_VIEW ${design}_WC.sdf
+setAnalysisMode -hold
+set_analysis_view -setup BC_VIEW -hold BC_VIEW
+do_extract_model -view BC_VIEW -format dotlib ${design}_BC.lib
+write_sdf -view BC_VIEW ${design}_BC.sdf
+report_timing -max_paths 1000 > ${design}.post_route.timing.rpt
+zoomBox -795.09600 -961.70450 1570.87300 1226.74050
+zoomBox -320.30600 -506.99250 1132.69550 836.98700
+zoomBox 150.34150 -56.24800 698.34100 450.63400
+zoomBox -28.72650 -227.74350 863.60000 597.62950
+zoomBox -320.30850 -506.99500 1132.69650 836.98750
+zoomBox -844.92900 -2214.33800 3007.66900 1349.19050
+zoomBox -143.82550 16.05550 404.17550 522.93850
+zoomBox -529.52900 -1176.33300 1836.45250 1012.12350
+zoomBox -263.78700 -817.28600 1189.22200 526.70050
+zoomBox -98.41250 -596.78600 793.91700 228.59000
+zoomBox -279.74550 -867.33500 1173.26450 476.65250
+zoomBox -599.81850 -1349.21600 1766.16650 839.24350
+zoomBox -266.75400 -696.07950 1186.25700 647.90850
+zoomBox -38.27500 -288.44400 854.05550 536.93300
+zoomBox 126.53900 -45.67700 674.54150 461.20750
+zoomBox -38.27500 -287.99900 854.05550 537.37800
+zoomBox -308.82400 -673.87550 1144.18800 670.11350
+zoomBox -92.67500 -346.02600 799.65600 479.35150
+optDesign -postRoute -drv
+zoomBox -102276.08900 -88930.90450 88139.19050 87197.07050
+optDesign -postRoute -inc
+report_timing -max_paths 1000 > ${design}.post_route.timing.rpt
+zoomBox -303647.47250 -206189.69000 201232.61400 260808.06150
+zoomBox -93963.14100 -37468.14600 22975.64300 70696.44700
+zoomBox -63724.97350 -21531.81450 8090.05800 44894.76700
+zoomBox -43505.88400 -12820.39850 597.52300 27973.82650
+zoomBox -27081.91500 -8285.09350 3.09000 16767.66000
+zoomBox -18509.85300 -4945.50450 -1876.27400 10440.01800
+zoomBox -13245.53550 -2886.27700 -3030.43800 6562.35800
+zoomBox -18733.03450 -8543.16400 8351.97550 16509.59450
+zoomBox -21991.41050 -14971.85050 22112.00550 25822.38300
+zoomBox -12700.63850 -9225.66200 14384.37250 15827.09700
+zoomBox -3512.75650 -3551.43600 6702.34250 5897.20000
+zoomBox -1438.57200 -1046.11400 2414.04800 2517.43500
+zoomBox -765.45400 -598.00950 1600.53650 1590.45500
+zoomBox -350.89450 -323.99850 1102.11950 1019.99250
+zoomBox 60.04750 -52.37900 608.05200 454.50750
+zoomBox -96.30450 -155.72250 796.02950 669.65750
+zoomBox -382.81200 -324.00050 1070.20550 1019.99350
+zoomBox -244.27350 -166.60350 648.06100 658.77700
+zoomBox -159.19350 -69.94250 388.81200 436.94500
+zoomBox -228.23800 -175.95900 664.09800 649.42300
+zoomBox -160.97600 -68.60750 387.03050 438.28100
+zoomBox -228.23900 -175.96100 664.09900 649.42300
+zoomBox 160.02450 164.84850 496.57000 476.14200
+zoomBox 334.38850 301.24850 461.31700 418.65350
+zoomBox 136.64600 19.07300 684.66000 525.96800
+zoomBox -36.19000 -211.67250 856.15950 613.72200
+zoomBox -369.85000 -585.95200 1083.19300 758.06600
+zoomBox -148.61950 -255.19400 743.73050 570.20100
+zoomBox -404.66700 -536.62850 1048.37650 807.38950
+zoomBox -169.65450 -313.94750 722.69600 511.44800
+zoomBox -25.32850 -177.19400 522.68750 329.70300
+zoomBox -191.92850 -338.00300 700.42400 487.39400
+zoomBox -457.40700 -592.60100 995.64050 751.42100
+zoomBox -157.83800 -195.11000 734.51500 630.28750
+zoomBox 5.19800 -34.30150 553.21500 472.59650
+zoomBox -157.83900 -195.11100 734.51550 630.28800
+zoomBox -368.19150 -475.82250 1084.86000 868.20300
+zoomBox -156.38900 -198.01350 735.96650 627.38650
+zoomBox -30.77050 -18.04950 517.24750 488.84950
+zoomBox -156.38950 -198.01450 735.96700 627.38650
+zoomBox -67.74450 94.20450 480.27450 601.10450
+zoomBox -37.65250 277.49400 298.90000 588.79400
+zoomBox -19.17200 390.05600 187.51350 581.23350
+zoomBox -37.82050 279.67700 298.73250 590.97750
+zoomBox -118.35150 -183.47750 774.00850 641.92650
+zoomBox 74.53200 -17.32200 622.55300 489.57950
+zoomBox -118.35150 -182.58750 774.00900 642.81700
