@@ -44,8 +44,6 @@ assign out =
 	+	{{(5){product5[2*bw-1]}},product5	}
 	+	{{(5){product6[2*bw-1]}},product6	}
 	+	{{(5){product7[2*bw-1]}},product7	};
-
-//assign out = product0 + product1 + product2 + product3 + product4 + product5 + product6 + product7 ;
                 
 
 */

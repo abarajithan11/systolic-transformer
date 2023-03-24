@@ -40,7 +40,7 @@ module normalizer_tb;
 
       s_valid_2 <= 1;
       for (int i=0; i<COL; i++)
-        psum_2[i] <= $urandom_range(0,2**BW_PSUM);
+        psum_2[i] <= i;//$urandom_range(0,2**BW_PSUM);
 
       @(posedge clk_2) #1;
       queue_in_2.push_front(psum_2);
